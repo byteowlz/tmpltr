@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tmpltr.dev/schemas/brand.schema.json",
+  "title": "tmpltr Brand Configuration",
+  "description": "Schema for brand.toml files used by tmpltr",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the brand (used as directory name)",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "default_language": {
+      "type": "string",
+      "description": "Default language code for localized content",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
+      "examples": ["en", "de", "en-US"]
+    },
+    "languages": {
+      "type": "array",
+      "description": "List of supported language codes",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+      },
+      "uniqueItems": true
+    },
+    "name": {
+      "$ref": "#/$defs/localizedText",
+      "description": "Brand name (can be localized)"
+    },
+    "description": {
+      "$ref": "#/$defs/localizedText",
+      "description": "Brand description (can be localized)"
+    },
+    "colors": {
+      "type": "object",
+      "description": "Brand color palette",
+      "properties": {
+        "primary": {
+          "$ref": "#/$defs/color",
+          "description": "Primary brand color"
+        },
+        "secondary": {
+          "$ref": "#/$defs/color",
+          "description": "Secondary brand color"
+        },
+        "accent": {
+          "$ref": "#/$defs/color",
+          "description": "Accent color for highlights"
+        },
+        "background": {
+          "$ref": "#/$defs/color",
+          "description": "Default background color"
+        },
+        "text": {
+          "$ref": "#/$defs/color",
+          "description": "Default text color"
+        },
+        "palette": {
+          "type": "object",
+          "description": "Additional named colors",
+          "additionalProperties": {
+            "$ref": "#/$defs/color"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "logos": {
+      "type": "object",
+      "description": "Logo asset paths (relative to brand directory)",
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "Primary logo file path"
+        },
+        "secondary": {
+          "type": "string",
+          "description": "Secondary/alternate logo file path"
+        },
+        "monochrome": {
+          "type": "string",
+          "description": "Monochrome logo for single-color printing"
+        },
+        "favicon": {
+          "type": "string",
+          "description": "Favicon or small icon path"
+        }
+      },
+      "additionalProperties": false
+    },
+    "typography": {
+      "type": "object",
+      "description": "Typography settings",
+      "properties": {
+        "body": {
+          "$ref": "#/$defs/fontFace",
+          "description": "Font for body text"
+        },
+        "heading": {
+          "$ref": "#/$defs/fontFace",
+          "description": "Font for headings"
+        },
+        "mono": {
+          "$ref": "#/$defs/fontFace",
+          "description": "Monospace font for code"
+        }
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/fontFace"
+      }
+    },
+    "contact": {
+      "type": "object",
+      "description": "Contact information for the brand",
+      "properties": {
+        "company": {
+          "$ref": "#/$defs/localizedText",
+          "description": "Company name (without legal form)"
+        },
+        "legal-form": {
+          "type": "string",
+          "description": "Legal form of the company (e.g., GmbH, UG, Inc.)"
+        },
+        "street": {
+          "$ref": "#/$defs/localizedText",
+          "description": "Street address"
+        },
+        "postal-code": {
+          "type": "string",
+          "description": "Postal/ZIP code"
+        },
+        "city": {
+          "$ref": "#/$defs/localizedText",
+          "description": "City name"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number"
+        },
+        "fax": {
+          "type": "string",
+          "description": "Fax number"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Contact email address"
+        },
+        "website": {
+          "type": "string",
+          "description": "Website URL"
+        },
+        "people": {
+          "type": "array",
+          "description": "List of company representatives with roles",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "localizedText": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "Simple text value (no localization)"
+        },
+        {
+          "type": "object",
+          "description": "Localized text with language codes as keys",
+          "propertyNames": {
+            "pattern": "^[a-z]{2}(-[A-Z]{2})?$|^default$"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "color": {
+      "type": "string",
+      "description": "Color value in hex format",
+      "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+      "examples": ["#0f172a", "#fff", "#38bdf8"]
+    },
+    "fontFace": {
+      "type": "object",
+      "description": "Font face definition",
+      "required": ["family"],
+      "properties": {
+        "family": {
+          "type": "string",
+          "description": "Font family name",
+          "minLength": 1
+        },
+        "files": {
+          "type": "array",
+          "description": "Font file paths (relative to brand directory)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "weight": {
+          "type": "integer",
+          "description": "Font weight (100-900)",
+          "minimum": 100,
+          "maximum": 900,
+          "multipleOf": 100
+        },
+        "style": {
+          "type": "string",
+          "description": "Font style",
+          "enum": ["normal", "italic", "oblique"]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

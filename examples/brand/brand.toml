@@ -1,0 +1,45 @@
+# Example brand configuration
+"$schema" = "./brand.schema.json"
+id = "demo-brand"
+default_language = "en"
+languages = ["en", "de"]
+
+[name]
+en = "Demo Brand"
+de = "Demo Marke"
+
+[description]
+en = "Default brand used for docs and tests."
+de = "Standardmarke für Dokumentation und Tests."
+
+[colors]
+primary = "#0f172a"
+accent = "#38bdf8"
+background = "#ffffff"
+text = "#0b1120"
+
+[logos]
+primary = "logos/demo.svg"
+monochrome = "logos/demo-mono.svg"
+
+[typography.body]
+family = "Inter"
+files = ["fonts/Inter-Regular.ttf"]
+
+[typography.heading]
+family = "Inter Tight"
+
+[contact]
+company = { en = "Demo GmbH", de = "Demo GmbH" }
+legal-form = "GmbH"
+street = "Example Street 123"
+postal-code = "12345"
+city = "Example City"
+phone = "+49 123 456789"
+fax = "+49 123 456780"
+email = "info@example.com"
+website = "https://example.com"
+people = [
+  "John Doe (CEO)",
+  "Jane Smith (CFO)",
+]
