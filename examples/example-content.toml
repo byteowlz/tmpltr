@@ -1,0 +1,30 @@
+# Example content file for tmpltr
+# Usage: tmpltr compile examples/example-content.toml -o output.pdf
+
+[meta]
+template = "../typst_templates/example-template.typ"
+template_id = "example-template"
+template_version = "1.0.0"
+
+# Document data
+title = "Example Document"
+subtitle = "A demonstration of tmpltr"
+
+# Brand settings (optional)
+[brand.colors]
+primary = "#0f172a"
+accent = "#38bdf8"
+text = "#000000"
+
+# Content blocks
+[blocks.intro]
+title = "Introduction"
+format = "markdown"
+content = """
+This is an example document created with **tmpltr**.
+
+Features demonstrated:
+- Brand configuration
+- Content blocks
+- Markdown rendering
+"""
