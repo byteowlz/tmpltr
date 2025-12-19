@@ -5,6 +5,7 @@ edition = "2021"
 description = "Template-based document generation CLI"
 authors = ["ByteOwlz"]
 license = "MIT"
+repository = "https://github.com/byteowlz/tmpltr"
 
 [dependencies]
 # CLI
@@ -55,3 +56,8 @@ tempfile = "3.10"
 [dev-dependencies]
 assert_cmd = "2.0"
 predicates = "3.1"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
