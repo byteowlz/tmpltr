@@ -132,6 +132,15 @@ pub enum Command {
 
     /// Create a new template with matching content file
     NewTemplate(NewTemplateArgs),
+
+    /// Fill template with JSON data to create content file
+    Fill(FillArgs),
+
+    /// Pipe JSON data through template directly to PDF (no intermediate TOML)
+    Pipe(PipeArgs),
+
+    /// Generate JSON schema for a template
+    Schema(SchemaArgs),
 }
 
 /// Arguments for the init command
@@ -201,6 +210,10 @@ pub struct CompileArgs {
     /// Validate template + content compatibility without generating output
     #[arg(long)]
     pub check: bool,
+
+    /// JSON data to merge into content (file path, '-' for stdin, or inline JSON)
+    #[arg(long, value_name = "JSON")]
+    pub data: Option<String>,
 }
 
 /// Arguments for the get command
@@ -530,4 +543,61 @@ pub struct NewTemplateArgs {
     /// Overwrite existing files
     #[arg(long, short = 'f')]
     pub force: bool,
+}
+
+/// Arguments for the fill command
+#[derive(Debug, Clone, Args)]
+pub struct FillArgs {
+    /// Template name or path
+    pub template: String,
+
+    /// JSON data file (or '-' for stdin, or inline JSON string)
+    #[arg(long, short = 'd', value_name = "JSON")]
+    pub data: Option<String>,
+
+    /// Output content file path
+    #[arg(short, long, value_name = "PATH")]
+    pub output: Option<PathBuf>,
+
+    /// Also generate JSON schema
+    #[arg(long)]
+    pub schema: bool,
+}
+
+/// Arguments for the pipe command (JSON → PDF directly)
+#[derive(Debug, Clone, Args)]
+pub struct PipeArgs {
+    /// Template name or path
+    pub template: String,
+
+    /// JSON data file (or '-' for stdin, or inline JSON string)
+    #[arg(long, short = 'd', value_name = "JSON")]
+    pub data: Option<String>,
+
+    /// Output file path (defaults to <template>.pdf)
+    #[arg(short, long, value_name = "PATH")]
+    pub output: Option<PathBuf>,
+
+    /// Output format (pdf, svg, html)
+    #[arg(long, value_name = "FORMAT", default_value = "pdf")]
+    pub format: String,
+
+    /// Brand ID or path to use
+    #[arg(long, short = 'b', value_name = "BRAND")]
+    pub brand: Option<String>,
+
+    /// Enable experimental HTML output
+    #[arg(long)]
+    pub experimental_html: bool,
+}
+
+/// Arguments for the schema command
+#[derive(Debug, Clone, Args)]
+pub struct SchemaArgs {
+    /// Template name or path
+    pub template: String,
+
+    /// Output schema file path (defaults to stdout)
+    #[arg(short, long, value_name = "PATH")]
+    pub output: Option<PathBuf>,
 }

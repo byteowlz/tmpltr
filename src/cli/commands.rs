@@ -15,8 +15,8 @@ use crate::typst::{CompileOptions, OutputFormat, TypstCompiler};
 use super::{
     AddCommand, AddFontArgs, AddLogoArgs, AddTemplateArgs, BlocksArgs, BrandsCommand,
     BrandsListArgs, BrandsNewArgs, BrandsShowArgs, BrandsValidateArgs, CommonOpts, CompileArgs,
-    ConfigCommand, ExampleArgs, GetArgs, InitArgs, NewArgs, NewTemplateArgs, RecentArgs, SetArgs,
-    TemplatesArgs, ValidateArgs, WatchArgs,
+    ConfigCommand, ExampleArgs, FillArgs, GetArgs, InitArgs, NewArgs, NewTemplateArgs, PipeArgs,
+    RecentArgs, SchemaArgs, SetArgs, TemplatesArgs, ValidateArgs, WatchArgs,
 };
 
 /// Runtime context for command execution
@@ -243,13 +243,14 @@ pub fn handle_new(ctx: &Context, args: NewArgs) -> Result<()> {
     let template = registry.find(&args.template)?;
 
     // Use init logic with the found template
+    // analyze_data: true to also extract get(data, "path") patterns
     let init_args = InitArgs {
         template: template.path,
         output: args.output,
         schema: None,
         update: false,
         content: None,
-        analyze_data: false,
+        analyze_data: true,
     };
 
     handle_init(ctx, init_args)
@@ -314,7 +315,13 @@ pub fn handle_example(ctx: &Context, args: ExampleArgs) -> Result<()> {
 
 /// Handle compile command
 pub fn handle_compile(ctx: &mut Context, args: CompileArgs) -> Result<()> {
-    let content = ContentFile::load(&args.content)?;
+    let mut content = ContentFile::load(&args.content)?;
+
+    // Handle --data flag for JSON overrides
+    if let Some(ref data_str) = args.data {
+        let json_data = parse_json_input(data_str)?;
+        crate::content::apply_json_overrides(&mut content, &json_data)?;
+    }
 
     // Update cache
     ctx.cache.update(&content)?;
@@ -1813,4 +1820,255 @@ content = "Add your conclusion here."
             content_path.display()
         ),
     )
+}
+
+/// Parse JSON input from a string, file path, or stdin
+fn parse_json_input(input: &str) -> Result<serde_json::Value> {
+    // Try as inline JSON first (starts with '{')
+    let trimmed = input.trim();
+    if trimmed.starts_with('{') || trimmed.starts_with('[') {
+        return serde_json::from_str(trimmed)
+            .map_err(|e| Error::Content(format!("parsing inline JSON: {}", e)));
+    }
+
+    // Try as stdin
+    if trimmed == "-" {
+        let mut buf = String::new();
+        io::stdin()
+            .read_to_string(&mut buf)
+            .map_err(|e| Error::Io(e))?;
+        return serde_json::from_str(&buf)
+            .map_err(|e| Error::Content(format!("parsing JSON from stdin: {}", e)));
+    }
+
+    // Try as file path
+    let path = PathBuf::from(trimmed);
+    if path.exists() {
+        let content = fs::read_to_string(&path).map_err(|e| {
+            Error::Io(std::io::Error::new(
+                e.kind(),
+                format!("reading JSON file {}: {}", path.display(), e),
+            ))
+        })?;
+        return serde_json::from_str(&content)
+            .map_err(|e| Error::Content(format!("parsing JSON file {}: {}", path.display(), e)));
+    }
+
+    Err(Error::Content(format!(
+        "cannot parse '{}' as JSON, stdin ('-'), or file path",
+        input
+    )))
+}
+
+/// Handle fill command: create content TOML from template + JSON data
+pub fn handle_fill(ctx: &Context, args: FillArgs) -> Result<()> {
+    // Resolve template
+    let search_paths = vec![
+        ctx.paths.templates_dir.clone(),
+        PathBuf::from("."),
+        PathBuf::from("./templates"),
+    ];
+    let registry = TemplateRegistry::new(search_paths);
+    let template_info = registry.find(&args.template)?;
+
+    // Parse JSON data
+    let json_data = if let Some(ref data_str) = args.data {
+        parse_json_input(data_str)?
+    } else if !io::stdin().is_terminal() {
+        // Read from stdin if piped
+        let mut buf = String::new();
+        io::stdin().read_to_string(&mut buf)?;
+        serde_json::from_str(&buf)
+            .map_err(|e| Error::Content(format!("parsing JSON from stdin: {}", e)))?
+    } else {
+        // No data provided, use empty object (template defaults will be used)
+        serde_json::json!({})
+    };
+
+    // Fill the template with JSON data
+    let content = crate::content::fill_from_json(&template_info.path, &json_data)?;
+
+    // Generate TOML output
+    let toml_str = toml::to_string_pretty(&content.data)?;
+
+    // Determine output path
+    let output_path = args.output.unwrap_or_else(|| {
+        let stem = template_info.id.as_str();
+        PathBuf::from(format!("{}-content.toml", stem))
+    });
+
+    if ctx.common.dry_run {
+        log::info!("dry-run: would write filled content to {}", output_path.display());
+        println!("{}", toml_str);
+        return Ok(());
+    }
+
+    fs::write(&output_path, &toml_str).map_err(|e| {
+        Error::Io(std::io::Error::new(
+            e.kind(),
+            format!("writing content file {}: {}", output_path.display(), e),
+        ))
+    })?;
+
+    // Generate schema if requested
+    if args.schema {
+        let schema = template_info.generate_full_schema();
+        let schema_path = output_path.with_extension("schema.json");
+        let schema_str = serde_json::to_string_pretty(&schema)?;
+        fs::write(&schema_path, &schema_str).map_err(|e| {
+            Error::Io(std::io::Error::new(
+                e.kind(),
+                format!("writing schema file {}: {}", schema_path.display(), e),
+            ))
+        })?;
+
+        ctx.output(
+            &serde_json::json!({
+                "status": "ok",
+                "output": output_path,
+                "schema": schema_path,
+                "template": template_info.id
+            }),
+            &format!(
+                "Filled {} from JSON (schema: {})",
+                output_path.display(),
+                schema_path.display()
+            ),
+        )
+    } else {
+        ctx.output(
+            &serde_json::json!({
+                "status": "ok",
+                "output": output_path,
+                "template": template_info.id
+            }),
+            &format!("Filled {} from JSON", output_path.display()),
+        )
+    }
+}
+
+/// Handle pipe command: JSON -> template -> PDF in one step
+pub fn handle_pipe(ctx: &mut Context, args: PipeArgs) -> Result<()> {
+    // Resolve template
+    let search_paths = vec![
+        ctx.paths.templates_dir.clone(),
+        PathBuf::from("."),
+        PathBuf::from("./templates"),
+    ];
+    let registry = TemplateRegistry::new(search_paths);
+    let template_info = registry.find(&args.template)?;
+
+    // Parse JSON data
+    let json_data = if let Some(ref data_str) = args.data {
+        parse_json_input(data_str)?
+    } else if !io::stdin().is_terminal() {
+        let mut buf = String::new();
+        io::stdin().read_to_string(&mut buf)?;
+        serde_json::from_str(&buf)
+            .map_err(|e| Error::Content(format!("parsing JSON from stdin: {}", e)))?
+    } else {
+        return Err(Error::Content(
+            "no JSON data provided. Use --data <json>, --data <file>, or pipe via stdin".to_string(),
+        ));
+    };
+
+    // Fill the template with JSON data
+    let content = crate::content::fill_from_json(&template_info.path, &json_data)?;
+
+    // Determine output path
+    let output = args.output.unwrap_or_else(|| {
+        PathBuf::from(format!("{}.{}", template_info.id, args.format))
+    });
+
+    let format = OutputFormat::from_str(&args.format);
+
+    // Load brand if specified
+    let (brand_data, brand_font_paths) = load_brand_for_compile(ctx, args.brand.as_deref())?;
+
+    let options = CompileOptions {
+        output: output.clone(),
+        format,
+        brand_data,
+        brand_font_paths,
+        with_positions: false,
+        experimental_html: args.experimental_html,
+        check_only: false,
+    };
+
+    if ctx.common.dry_run {
+        log::info!(
+            "dry-run: would pipe JSON through {} to {}",
+            template_info.id,
+            output.display()
+        );
+        return Ok(());
+    }
+
+    let compiler = TypstCompiler::from_config(&ctx.config)?;
+    let result = compiler.compile(&content, &options)?;
+
+    if ctx.common.json {
+        let json = serde_json::to_string_pretty(&serde_json::json!({
+            "status": "ok",
+            "template": template_info.id,
+            "output": output,
+            "format": args.format,
+        }))?;
+        println!("{}", json);
+    } else {
+        match result.output {
+            Some(ref path) => println!("Piped to {}", path.display()),
+            None => {
+                if let Some(ref pages) = result.pages {
+                    println!("Generated {} pages", pages.len());
+                }
+            }
+        }
+    }
+
+    Ok(())
+}
+
+/// Handle schema command: generate JSON schema for a template
+pub fn handle_schema(ctx: &Context, args: SchemaArgs) -> Result<()> {
+    // Resolve template
+    let search_paths = vec![
+        ctx.paths.templates_dir.clone(),
+        PathBuf::from("."),
+        PathBuf::from("./templates"),
+    ];
+    let registry = TemplateRegistry::new(search_paths);
+    let template_info = registry.find(&args.template)?;
+
+    // Generate schema using the enhanced generator
+    let schema = template_info.generate_full_schema();
+    let schema_str = serde_json::to_string_pretty(&schema)?;
+
+    if let Some(output) = args.output {
+        if ctx.common.dry_run {
+            log::info!("dry-run: would write schema to {}", output.display());
+            println!("{}", schema_str);
+            return Ok(());
+        }
+
+        fs::write(&output, &schema_str).map_err(|e| {
+            Error::Io(std::io::Error::new(
+                e.kind(),
+                format!("writing schema file {}: {}", output.display(), e),
+            ))
+        })?;
+
+        ctx.output(
+            &serde_json::json!({
+                "status": "ok",
+                "template": template_info.id,
+                "output": output
+            }),
+            &format!("Schema written to {}", output.display()),
+        )
+    } else {
+        // Print to stdout
+        println!("{}", schema_str);
+        Ok(())
+    }
 }

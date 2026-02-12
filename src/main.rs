@@ -9,8 +9,9 @@ use log::LevelFilter;
 
 use tmpltr::cli::commands::{
     handle_add, handle_blocks, handle_brands, handle_compile, handle_config, handle_example,
-    handle_get, handle_init, handle_new, handle_new_template, handle_recent, handle_set,
-    handle_templates, handle_validate, handle_watch, Context,
+    handle_fill, handle_get, handle_init, handle_new, handle_new_template, handle_pipe,
+    handle_recent, handle_schema, handle_set, handle_templates, handle_validate, handle_watch,
+    Context,
 };
 use tmpltr::cli::{Cli, ColorOption, Command};
 use tmpltr::error::Error;
@@ -52,6 +53,9 @@ fn run() -> Result<(), Error> {
         Command::Add { command } => handle_add(&ctx, command),
         Command::Config { command } => handle_config(&ctx, command),
         Command::NewTemplate(args) => handle_new_template(&ctx, args),
+        Command::Fill(args) => handle_fill(&ctx, args),
+        Command::Pipe(args) => handle_pipe(&mut ctx, args),
+        Command::Schema(args) => handle_schema(&ctx, args),
         Command::Completions { shell } => {
             let mut cmd = Cli::command();
             clap_complete::generate(shell, &mut cmd, "tmpltr", &mut io::stdout());

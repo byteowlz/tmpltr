@@ -6,6 +6,8 @@ Template-based document generation CLI. Generate professional documents (quotes,
 
 - Separates **content** (TOML + Markdown) from **templates** (Typst)
 - Compiles to **PDF**, **SVG**, or experimental **HTML** via Typst
+- **JSON pipeline**: pipe JSON data directly into PDF output (no intermediate files)
+- **JSON schema** generation for every template (validation, IDE completion, agent tooling)
 - **Granular read/write** access to content blocks via stable paths and titles
 - **File watching** for live preview integration
 - **Document cache** for ergonomic commands like `from last`
@@ -21,19 +23,51 @@ Requires [Typst](https://typst.app/) to be installed and available in PATH.
 
 ## Quick Start
 
+### JSON Pipeline (fastest path)
+
 ```bash
-# Initialize content from a template
-tmpltr init template.typ -o content.toml
+# Pipe JSON directly to PDF -- no intermediate files
+echo '{"seller":{"company":"Acme"},"buyer":{"name":"Globex"},"items":[{"description":"Consulting","qty":10,"price":150}]}' \
+  | tmpltr pipe invoice -o invoice.pdf
+
+# From a JSON file
+tmpltr pipe invoice -d order.json -o invoice.pdf
+
+# With brand
+tmpltr pipe invoice -d order.json --brand mycompany -o invoice.pdf
+
+# See what fields a template expects
+tmpltr schema invoice
+```
+
+### Traditional Workflow
+
+```bash
+# Create content from a template
+tmpltr new invoice -o invoice.toml
 
 # Edit content
-tmpltr set content.toml quote.title "My Project"
-tmpltr set "Introduction" from last "This is the intro..."
+tmpltr set invoice.toml seller.company "Acme Inc"
 
 # Compile to PDF
-tmpltr compile content.toml -o output.pdf
+tmpltr compile invoice.toml -o invoice.pdf
+
+# Override fields at compile time with JSON
+tmpltr compile invoice.toml --data '{"buyer":{"name":"Special Client"}}' -o special.pdf
 
 # Watch for changes
-tmpltr watch content.toml -o output.pdf
+tmpltr watch invoice.toml -o invoice.pdf --open
+```
+
+### Fill from JSON (hybrid)
+
+```bash
+# Create editable TOML from JSON data
+tmpltr fill invoice -d customer.json -o invoice.toml
+
+# Edit the TOML, then compile
+vim invoice.toml
+tmpltr compile invoice.toml -o invoice.pdf
 ```
 
 ## CLI Commands
@@ -42,18 +76,24 @@ tmpltr watch content.toml -o output.pdf
 tmpltr <COMMAND> [OPTIONS]
 
 COMMANDS:
-    init       Extract content structure from template, generate TOML
-    new        Create content file from registered template
-    compile    Compile to PDF/SVG/HTML
-    get        Get block value(s) by path or title
-    set        Set block value(s)
-    blocks     List editable blocks
-    validate   Validate content against schema
-    watch      Watch file(s) and recompile on change
-    templates  List available templates
-    recent     List cached recently used documents
-    config     Manage configuration
-    completions  Generate shell completions
+    init           Extract content structure from template, generate TOML
+    new            Create content file from registered template
+    fill           Fill template with JSON data to create content file
+    pipe           Pipe JSON data through template directly to PDF
+    schema         Generate JSON schema for a template
+    compile        Compile to PDF/SVG/HTML (supports --data for JSON overrides)
+    get            Get block value(s) by path or title
+    set            Set block value(s)
+    blocks         List editable blocks
+    validate       Validate content against schema
+    watch          Watch file(s) and recompile on change
+    templates      List available templates
+    recent         List cached recently used documents
+    brands         Manage brands (logos, fonts, colors)
+    add            Add assets (logos, templates, fonts) to tmpltr directories
+    config         Manage configuration
+    new-template   Create a new template with matching content file
+    completions    Generate shell completions
 ```
 
 ### Global Options

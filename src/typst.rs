@@ -249,35 +249,34 @@ impl TypstCompiler {
 
         if !output.status.success() {
             let stderr = String::from_utf8_lossy(&output.stderr);
-            let warnings_only = stderr.lines().all(|line| {
+
+            // Check if there are any actual errors (not just warnings).
+            // Typst formats diagnostics as multi-line blocks starting with "error:" or "warning:".
+            // We look for the presence of "error:" at the start of a trimmed line to distinguish
+            // real errors from warnings (which may also cause a non-zero exit code).
+            let has_error = stderr.lines().any(|line| {
                 let lt = line.trim().to_lowercase();
-                lt.is_empty() || lt.starts_with("warning")
+                lt.starts_with("error:")
+                    || lt.starts_with("error[")
             });
 
-            if warnings_only {
-                if !stderr.trim().is_empty() {
-                    eprintln!("{}", stderr);
-                }
-            } else {
-                let has_error = stderr
+            if has_error {
+                let enhanced_message = enhance_error_message(&stderr);
+
+                let summary = stderr
                     .lines()
-                    .any(|line| line.to_lowercase().contains("error"));
-
-                if has_error {
-                    // Check for common error patterns and provide helpful guidance
-                    let enhanced_message = enhance_error_message(&stderr);
-
-                    let summary = stderr
-                        .lines()
-                        .find(|line| !line.trim().is_empty())
-                        .unwrap_or("Typst compilation failed");
-                    return Err(Error::TypstCompilation {
-                        message: format!("Typst compilation failed: {}", summary),
-                        details: Some(enhanced_message),
-                    });
-                } else if !stderr.trim().is_empty() {
-                    eprintln!("{}", stderr);
-                }
+                    .find(|line| {
+                        let lt = line.trim().to_lowercase();
+                        lt.starts_with("error:")
+                    })
+                    .unwrap_or("Typst compilation failed");
+                return Err(Error::TypstCompilation {
+                    message: format!("Typst compilation failed: {}", summary),
+                    details: Some(enhanced_message),
+                });
+            } else if !stderr.trim().is_empty() {
+                // Warnings only -- print them but don't fail
+                eprintln!("{}", stderr);
             }
         }
 

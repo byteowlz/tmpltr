@@ -564,6 +564,214 @@ impl ContentBuilder {
     }
 }
 
+/// Fill a content file from JSON data
+/// 
+/// This takes a base content structure (or creates one from a template) and fills it
+/// with values from a JSON object.
+pub fn fill_from_json(
+    template_path: impl AsRef<Path>,
+    json_data: &serde_json::Value,
+) -> Result<ContentFile> {
+    // First, create a base content file from the template
+    let template = crate::template::TemplateInfo::parse(&template_path)?;
+    let mut builder = ContentBuilder::new(&template_path.as_ref().display().to_string())
+        .template_id(&template.id);
+
+    if let Some(version) = &template.version {
+        builder = builder.template_version(version);
+    }
+
+    // Add fields from editable() calls with defaults
+    for field in &template.fields {
+        let value = field
+            .default
+            .clone()
+            .map(toml::Value::String)
+            .unwrap_or_else(|| toml::Value::String(format!("<{ }>", field.path)));
+        builder = builder.field(&field.path, value);
+    }
+
+    // Add blocks from editable-block() calls
+    for block in &template.blocks {
+        let title = block.title.clone().unwrap_or_else(|| block.path.clone());
+        let content = block.default_content.clone().unwrap_or_default();
+        let name = block.path.strip_prefix("blocks.").unwrap_or(&block.path);
+        builder = builder.block(name, title, block.format, content);
+    }
+
+    // Also add data access patterns that weren't in editable() calls
+    let template_content = fs::read_to_string(&template_path)?;
+    let data_accesses = crate::template::TemplateInfo::extract_data_access(&template_content);
+    let existing_paths: std::collections::HashSet<_> =
+        template.fields.iter().map(|f| &f.path).collect();
+
+    for access in data_accesses {
+        if access.path.starts_with("blocks.") {
+            continue; // Blocks handled separately
+        }
+        if existing_paths.contains(&access.path) {
+            continue; // Already added
+        }
+        let value = access
+            .default
+            .clone()
+            .map(toml::Value::String)
+            .unwrap_or_else(|| toml::Value::String(format!("<{}>", access.path)));
+        builder = builder.field(&access.path, value);
+    }
+
+    // Build the TOML string
+    let toml_str = builder.build()?;
+
+    // Parse it into a TOML value
+    let mut data: toml::Value = toml::from_str(&toml_str)?;
+
+    // Now merge the JSON data into the TOML structure
+    merge_json_into_toml(&mut data, json_data)?;
+
+    // Create a temporary path for the filled content
+    let temp_path = std::env::temp_dir().join(format!("tmpltr_fill_{}.toml", std::process::id()));
+
+    // Build the ContentFile manually
+    let meta = ContentMeta {
+        template: template_path.as_ref().display().to_string(),
+        resolved_template: Some(template_path.as_ref().to_path_buf()),
+        template_id: Some(template.id.clone()),
+        template_version: template.version.clone(),
+        generated_at: Some(Utc::now()),
+    };
+
+    // Create the content file
+    let mut file = ContentFile {
+        path: temp_path,
+        meta,
+        data,
+        blocks_index: HashMap::new(),
+    };
+
+    file.build_index();
+    Ok(file)
+}
+
+/// Merge JSON data into a TOML structure
+fn merge_json_into_toml(toml_data: &mut toml::Value, json_data: &serde_json::Value) -> Result<()> {
+    match json_data {
+        serde_json::Value::Object(map) => {
+            for (key, json_val) in map {
+                merge_value_at_path(toml_data, key, json_val)?;
+            }
+            Ok(())
+        }
+        _ => Err(Error::Content(
+            "JSON data must be an object at root level".to_string(),
+        )),
+    }
+}
+
+/// Merge a JSON value at a specific path in the TOML structure
+fn merge_value_at_path(
+    toml_data: &mut toml::Value,
+    path: &str,
+    json_val: &serde_json::Value,
+) -> Result<()> {
+    let parts: Vec<&str> = path.split('.').collect();
+
+    // Special handling for meta fields
+    if parts[0] == "meta" {
+        if parts.len() >= 2 {
+            if let Some(meta) = toml_data.get_mut("meta") {
+                if let Some(meta_table) = meta.as_table_mut() {
+                    let value = json_to_toml_value(json_val)?;
+                    meta_table.insert(parts[1..].join("."), value);
+                }
+            }
+        }
+        return Ok(());
+    }
+
+    // Navigate/create the path
+    let mut current = toml_data;
+
+    for (i, part) in parts.iter().enumerate() {
+        if i == parts.len() - 1 {
+            // Last part - set the value
+            let value = json_to_toml_value(json_val)?;
+
+            if let Some(table) = current.as_table_mut() {
+                table.insert(part.to_string(), value);
+            }
+            break;
+        }
+
+        // Navigate deeper
+        if let Some(table) = current.as_table_mut() {
+            current = table
+                .entry(part.to_string())
+                .or_insert_with(|| toml::Value::Table(toml::map::Map::new()));
+        } else {
+            return Err(Error::Content(format!(
+                "cannot navigate into non-table at '{}'",
+                part
+            )));
+        }
+    }
+
+    Ok(())
+}
+
+/// Convert a JSON value to a TOML value
+fn json_to_toml_value(json: &serde_json::Value) -> Result<toml::Value> {
+    match json {
+        serde_json::Value::Null => Ok(toml::Value::String("".to_string())),
+        serde_json::Value::Bool(b) => Ok(toml::Value::Boolean(*b)),
+        serde_json::Value::Number(n) => {
+            if let Some(i) = n.as_i64() {
+                Ok(toml::Value::Integer(i))
+            } else if let Some(f) = n.as_f64() {
+                Ok(toml::Value::Float(f))
+            } else {
+                Ok(toml::Value::String(n.to_string()))
+            }
+        }
+        serde_json::Value::String(s) => Ok(toml::Value::String(s.clone())),
+        serde_json::Value::Array(arr) => {
+            let values: Result<Vec<_>> = arr.iter().map(json_to_toml_value).collect();
+            Ok(toml::Value::Array(values?))
+        }
+        serde_json::Value::Object(obj) => {
+            let mut map = toml::map::Map::new();
+            for (k, v) in obj {
+                map.insert(k.clone(), json_to_toml_value(v)?);
+            }
+            Ok(toml::Value::Table(map))
+        }
+    }
+}
+
+/// Apply JSON data overrides to an existing content file
+pub fn apply_json_overrides(
+    content: &mut ContentFile,
+    json_data: &serde_json::Value,
+) -> Result<()> {
+    match json_data {
+        serde_json::Value::Object(map) => {
+            for (key, json_val) in map {
+                merge_value_at_path(&mut content.data, key, json_val)?;
+            }
+            content.build_index();
+            Ok(())
+        }
+        _ => Err(Error::Content(
+            "JSON data must be an object at root level".to_string(),
+        )),
+    }
+}
+
+/// Serialize a content file to JSON
+pub fn to_json(content: &ContentFile) -> Result<serde_json::Value> {
+    serde_json::to_value(&content.data).map_err(|e| Error::Content(e.to_string()))
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

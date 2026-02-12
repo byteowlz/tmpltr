@@ -161,25 +161,37 @@ impl TemplateInfo {
     fn extract_fields(content: &str) -> Result<Vec<EditableField>> {
         let mut fields = Vec::new();
 
-        // Match #editable("path", type: "text", default: value)
-        // This regex is simplified - a full parser would be more robust
+        // Match #editable("path", ... ) - extract the path and look for default: "value"
+        // The editable function signature is: editable(id, value, type: "text", default: none)
         let re = Regex::new(
-            r#"#editable\(\s*"([^"]+)"(?:\s*,\s*type:\s*"([^"]+)")?(?:\s*,\s*default:\s*(?:"([^"]+)"|([^\s,)]+)))?\s*\)"#
+            r#"#editable\s*\(\s*"([^"]+)"[^)]*\)"#
+        ).map_err(|e| Error::Template(format!("regex error: {}", e)))?;
+
+        let default_re = Regex::new(
+            r#"default:\s*"([^"]*)""#
+        ).map_err(|e| Error::Template(format!("regex error: {}", e)))?;
+
+        let type_re = Regex::new(
+            r#"type:\s*"([^"]*)""#
         ).map_err(|e| Error::Template(format!("regex error: {}", e)))?;
 
         for cap in re.captures_iter(content) {
+            let full_match = cap.get(0).map(|m| m.as_str()).unwrap_or_default();
             let path = cap
                 .get(1)
                 .map(|m| m.as_str().to_string())
                 .unwrap_or_default();
-            let field_type = cap
-                .get(2)
+
+            let default = default_re
+                .captures(full_match)
+                .and_then(|c| c.get(1))
+                .map(|m| m.as_str().to_string());
+
+            let field_type = type_re
+                .captures(full_match)
+                .and_then(|c| c.get(1))
                 .map(|m| m.as_str().to_string())
                 .unwrap_or_else(|| "text".to_string());
-            let default = cap
-                .get(3)
-                .or_else(|| cap.get(4))
-                .map(|m| m.as_str().to_string());
 
             fields.push(EditableField {
                 path,
@@ -416,6 +428,173 @@ impl TemplateInfo {
             "properties": properties,
             "required": required,
             "additionalProperties": true
+        })
+    }
+
+    /// Generate a comprehensive JSON schema by combining editable() fields AND data access patterns
+    ///
+    /// This produces a schema suitable for the `fill` and `pipe` commands,
+    /// covering every field the template might read via `get(data, "path")`.
+    pub fn generate_full_schema(&self) -> serde_json::Value {
+        let mut properties = serde_json::Map::new();
+
+        // Meta section (always present, but optional for JSON input since we generate it)
+        properties.insert(
+            "meta".to_string(),
+            serde_json::json!({
+                "type": "object",
+                "description": "Content file metadata (auto-generated when using fill/pipe)",
+                "properties": {
+                    "template": { "type": "string", "description": "Template file path" },
+                    "template_id": { "type": "string", "description": "Template identifier" },
+                    "template_version": { "type": "string", "description": "Template version" }
+                }
+            }),
+        );
+
+        // Collect all field paths: editable() markers + data access patterns
+        let template_content = std::fs::read_to_string(&self.path).unwrap_or_default();
+        let data_accesses = Self::extract_data_access(&template_content);
+
+        // Build a unified map of path -> default value
+        let mut all_fields: std::collections::BTreeMap<String, Option<String>> =
+            std::collections::BTreeMap::new();
+
+        for field in &self.fields {
+            all_fields.insert(field.path.clone(), field.default.clone());
+        }
+
+        for access in &data_accesses {
+            if access.path.starts_with("brand.") || access.path.starts_with("blocks.") {
+                continue; // brand fields are injected by tmpltr; blocks handled below
+            }
+            all_fields.entry(access.path.clone()).or_insert_with(|| access.default.clone());
+        }
+
+        // Group fields by top-level key and build nested properties
+        let mut groups: std::collections::BTreeMap<String, Vec<(Vec<String>, Option<String>)>> =
+            std::collections::BTreeMap::new();
+
+        for (path, default) in &all_fields {
+            let parts: Vec<String> = path.split('.').map(String::from).collect();
+            if parts.is_empty() {
+                continue;
+            }
+            groups
+                .entry(parts[0].clone())
+                .or_default()
+                .push((parts[1..].to_vec(), default.clone()));
+        }
+
+        for (group_name, fields) in &groups {
+            if group_name == "blocks" || group_name == "meta" {
+                continue;
+            }
+            let schema = Self::build_nested_schema(fields);
+            properties.insert(group_name.clone(), schema);
+        }
+
+        // Blocks section
+        let mut block_properties = serde_json::Map::new();
+
+        for block in &self.blocks {
+            let block_name = block.path.strip_prefix("blocks.").unwrap_or(&block.path);
+            block_properties.insert(
+                block_name.to_string(),
+                serde_json::json!({
+                    "type": "object",
+                    "description": block.title.clone().unwrap_or_else(|| block_name.to_string()),
+                    "properties": {
+                        "title": { "type": "string" },
+                        "format": { "type": "string", "enum": ["markdown", "typst", "plain"], "default": "markdown" },
+                        "content": { "type": "string", "description": "Block content" }
+                    }
+                }),
+            );
+        }
+
+        // Also add block entries found via data access patterns
+        for access in &data_accesses {
+            if let Some(rest) = access.path.strip_prefix("blocks.") {
+                let block_name = rest.split('.').next().unwrap_or(rest);
+                if !block_properties.contains_key(block_name) {
+                    block_properties.insert(
+                        block_name.to_string(),
+                        serde_json::json!({
+                            "type": "object",
+                            "properties": {
+                                "title": { "type": "string" },
+                                "format": { "type": "string", "enum": ["markdown", "typst", "plain"], "default": "markdown" },
+                                "content": { "type": "string" }
+                            }
+                        }),
+                    );
+                }
+            }
+        }
+
+        if !block_properties.is_empty() {
+            properties.insert(
+                "blocks".to_string(),
+                serde_json::json!({
+                    "type": "object",
+                    "description": "Content blocks",
+                    "properties": block_properties
+                }),
+            );
+        }
+
+        serde_json::json!({
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": format!("https://tmpltr.dev/schemas/{}.schema.json", self.id),
+            "title": format!("{} content", self.id),
+            "description": self.description.clone().unwrap_or_else(|| format!("JSON/TOML schema for {} template", self.id)),
+            "type": "object",
+            "properties": properties,
+            "additionalProperties": true
+        })
+    }
+
+    /// Build a nested JSON schema from a list of (remaining_parts, default) tuples
+    fn build_nested_schema(fields: &[(Vec<String>, Option<String>)]) -> serde_json::Value {
+        // Separate leaf fields from nested groups
+        let mut leaves: Vec<(String, Option<String>)> = Vec::new();
+        let mut nested: std::collections::BTreeMap<String, Vec<(Vec<String>, Option<String>)>> =
+            std::collections::BTreeMap::new();
+
+        for (parts, default) in fields {
+            if parts.is_empty() {
+                // This is a leaf that IS the group name (e.g., "invoice" = "(:")
+                // Treat as a string property at this level
+                continue;
+            } else if parts.len() == 1 {
+                leaves.push((parts[0].clone(), default.clone()));
+            } else {
+                nested
+                    .entry(parts[0].clone())
+                    .or_default()
+                    .push((parts[1..].to_vec(), default.clone()));
+            }
+        }
+
+        let mut props = serde_json::Map::new();
+
+        for (name, default) in &leaves {
+            let mut field_schema = serde_json::Map::new();
+            field_schema.insert("type".to_string(), serde_json::json!("string"));
+            if let Some(d) = default {
+                field_schema.insert("default".to_string(), serde_json::json!(d));
+            }
+            props.insert(name.clone(), serde_json::Value::Object(field_schema));
+        }
+
+        for (name, sub_fields) in &nested {
+            props.insert(name.clone(), Self::build_nested_schema(sub_fields));
+        }
+
+        serde_json::json!({
+            "type": "object",
+            "properties": props
         })
     }
 
