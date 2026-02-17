@@ -68,10 +68,10 @@ tmpltr schema invoice -o invoice.schema.json
 cat > order.json << 'EOF'
 {
   "seller": {
-    "company": "Acme Institute",
+    "company": "Acme Corp",
     "address": "Innovation Drive 1",
     "city": "Berlin",
-    "postal": "33102"
+    "postal": "10115"
   },
   "buyer": {
     "name": "TechCorp GmbH",

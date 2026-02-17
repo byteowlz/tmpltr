@@ -57,7 +57,5 @@ tempfile = "3.10"
 assert_cmd = "2.0"
 predicates = "3.1"
 
-# The profile that 'dist' will build with
-[profile.dist]
-inherits = "release"
+[profile.release]
 lto = "thin"
