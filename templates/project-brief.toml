@@ -1,0 +1,98 @@
+# Project Brief Content File
+# Usage: tmpltr compile templates/project-brief.toml -o project-brief.pdf
+
+[meta]
+template = "project-brief.typ"
+version = "1.0"
+
+[brand]
+logo-width = "4cm"
+
+[brand.colors]
+primary = "#0f172a"
+
+[brand.typography.body]
+family = "Helvetica Neue"
+
+[brand.contact]
+company = "Example Systems"
+legal-form = "Ltd"
+street = "Example Street 42"
+postal-code = "12345"
+city = "Example City"
+phone = "+00 000 0000"
+email = "contact@example-systems.test"
+website = "www.example-systems.test"
+people = [
+  { name = "Person A", title = "Project Lead" },
+  { name = "Person B", title = "Technical Lead" },
+]
+
+[project]
+title = "AI-Enabled Process Optimization"
+subtitle = "2-page project summary"
+customer = "Client Organization"
+start-date = "2026-04-01"
+duration = "9 months"
+budget = "250,000 EUR"
+sponsor = "Program Sponsor"
+manager = { name = "Person A", title = "Project Lead" }
+team = [
+  { name = "Person A", title = "Project Lead" },
+  { name = "Person B", title = "Technical Lead" },
+  { name = "Person C", title = "Data Engineer" },
+]
+
+[blocks.summary]
+content = """
+This project delivers a practical AI implementation to improve throughput,
+reduce rework, and increase process transparency across core operations.
+"""
+
+[blocks.objectives]
+content = """
+- Reduce process cycle time by 20%
+- Improve quality consistency
+- Enable data-driven decision making
+"""
+
+[blocks.scope]
+content = """
+*In scope:*
+- Process analysis and baseline measurement
+- Pilot implementation in one operational area
+- KPI dashboard and handover documentation
+
+*Out of scope:*
+- Full enterprise rollout
+- Legacy system replacement
+"""
+
+[blocks.approach]
+content = """
+== Phase 1: Discovery
+Capture current-state process flows and KPI baseline.
+
+== Phase 2: Design
+Define target workflow, data model, and solution architecture.
+
+== Phase 3: Pilot Delivery
+Build and deploy pilot, train users, and validate outcomes.
+"""
+
+[blocks.milestones]
+type = "table"
+columns = ["Milestone", "Date", "Outcome"]
+rows = [
+  ["Kickoff", "2026-04-01", "Approved plan and governance"],
+  ["Design Freeze", "2026-05-20", "Signed-off solution design"],
+  ["Pilot Go-Live", "2026-08-15", "Pilot in production"],
+  ["Project Closure", "2026-12-15", "Final report and handover"],
+]
+
+[blocks.risks]
+content = """
+- *Data quality risk:* mitigated by early profiling and validation rules
+- *Adoption risk:* mitigated by stakeholder onboarding and training
+- *Integration risk:* mitigated by staged technical testing
+"""
