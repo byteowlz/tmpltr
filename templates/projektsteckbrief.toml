@@ -1,0 +1,25 @@
+# Projektsteckbrief Content File
+
+[meta]
+template = "projektsteckbrief.typ"
+version = "1.0"
+
+[brand]
+logo-width = "4cm"
+
+[brand.fonts]
+body = "Helvetica Neue"
+
+[brand.contact]
+company = "byteowlz"
+legal-form = "UG"
+street = "Musterstrasse 42"
+postal-code = "33102"
+city = "Berlin"
+phone = "+49 30 123456-0"
+email = "hello@byteowlz.com"
+website = "www.byteowlz.com"
+people = ["Max Mustermann", "Dr. Erika Musterfrau"]
+
+[project]
+title = "KI-Projekt"
