@@ -28,6 +28,7 @@ phone = "+49 30 123456-0"
 fax = "-102"
 email = "hello@byteowlz.com"
 website = "www.byteowlz.com"
+# People: strings (backward compatible) or dicts with name and title
 people = [
   "Max Mustermann (Geschaeftsfuehrender Gesellschafter)",
   "Dr. Erika Musterfrau (Gesellschafter)",
@@ -53,6 +54,25 @@ projekt_start = "01. Januar 2026"
 laufzeit = "20 Jahren"
 verguetung = "1.000.000.000.000 Credits"
 bindefrist = "31.12.2025"
+
+# Optional: override default text (all have sensible defaults)
+# verlaengerungstext = "und der Moeglichkeit einer Verlaengerung um jeweils weitere 6 Monate"
+# verguetungstext = "zzgl. USt und Reisekosten nach Aufwand"
+# zahlungsfrist = "innerhalb von 10 Tagen netto"
+# import-export-kontrolle = true  # set to false to hide the Import-Export section
+# attachment-text = "Anlagen: A -- Aufgabenbeschreibung"
+
+# Optional: override sender people for this specific quote (defaults to brand.contact.people)
+# sender-people = [
+#   { name = "Max Mustermann", title = "M.Sc." },
+#   { name = "Dr. Erika Musterfrau", title = "Dr." },
+# ]
+
+# Optional: override sender people for this specific quote (defaults to brand.contact.people)
+# sender-people = [
+#   { name = "Max Mustermann", title = "M.Sc." },
+#   { name = "Dr. Erika Musterfrau", title = "Dr." },
+# ]
 
 [[quote.zahlungsplan]]
 datum = "01.01.2026"

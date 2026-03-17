@@ -71,6 +71,73 @@
 
 #let datum = parse-date(quote.projekt.datum)
 
+// Helper to get optional person with optional title
+#let get-person-title(person, default-title: "") = {
+  if type(person) == dict {
+    person.at("title", default: default-title)
+  } else {
+    default-title
+  }
+}
+
+#let get-person-name(person, default-index: 0) = {
+  if type(person) == str {
+    person
+  } else if type(person) == dict {
+    person.at("name", default: "")
+  } else {
+    ""
+  }
+}
+
+// Helper to render city with comma only if city exists
+#let render-city-comma(city) = {
+  if city != "" [
+    #city,
+  ]
+}
+
+// Helper to check if value is a dictionary (Typst uses dictionary type)
+#let is-dict(v) = {
+  type(v) == dictionary
+}
+
+// Helper to render a person with their title (supports dict: {name, title} or string)
+#let render-person(person) = {
+  // Check if person has a "name" key (is a dict) or is just a string
+  let title = ""
+  let name = ""
+  
+  if type(person) == dictionary {
+    name = person.name
+    if "title" in person {
+      title = person.title
+    }
+  } else {
+    name = person
+  }
+  
+  if title != "" [#title #name] else [#name]
+}
+
+// Helper to get person by index or return empty
+#let get-person-at(people, index, default: "") = {
+  if people.len() > index {
+    people.at(index)
+  } else {
+    default
+  }
+}
+
+// Helper to render a list of people (strings or dicts)
+#let render-people-list(people) = {
+  if people.len() == 0 {
+    []
+  } else {
+    people.map(p => render-person(p)).join(linebreak())
+  }
+}
+
 // Page setup
 #set page(
   paper: "a4",
@@ -137,7 +204,7 @@
   #quote.erstellt_von.personen.join(linebreak())
   
   #v(1em)
-  #company-city, #datum.display("[day]. [month repr:long] [year]")
+  #render-city-comma(company-city) #datum.display("[day]. [month repr:long] [year]")
   
   #v(1em)
   #emph[für #quote.kunde.name, #quote.kunde.plz_ort]
@@ -161,7 +228,8 @@
 
 #v(1em)
 
-// Sender info box
+// Sender info box - use brand contact with optional override from quote
+#let sender-people = quote.projekt.at("sender-people", default: company-people)
 #rect(
   width: 100%,
   stroke: 0.5pt + black,
@@ -173,12 +241,14 @@
     [
       #company-full-name\
       \
-      #company-people.join(linebreak())\
+      #if sender-people.len() > 0 [#render-people-list(sender-people)]
+      #if sender-people.len() == 0 and company-people.len() > 0 [#render-people-list(company-people)]\
       \
       #company-street\
       #company-postal-city\
       \
-      #quote.erstellt_von.personen.at(0)\
+      #if sender-people.len() > 0 [#render-person(sender-people.at(0, default: ""))]
+      #if sender-people.len() == 0 and company-people.len() > 0 [#render-person(company-people.at(0, default: ""))]\
       Telefon #company-phone#if company-fax != "" [ | Fax #company-fax]\
       #if company-email != "" [#link("mailto:" + company-email)[#company-email.replace("@", "\\@")]]\
       \
@@ -200,7 +270,7 @@
   #v(1em)
   
   #line(length: 100%, stroke: 0.5pt)
-  #company-city, #datum.display("[day]. [month repr:long] [year]")
+  #render-city-comma(company-city) #datum.display("[day]. [month repr:long] [year]")
   #line(length: 100%, stroke: 0.5pt)
 ]
 
@@ -223,15 +293,18 @@ Durchführung des o.g. Vorhabens gemäß beigefügter Aufgabenbeschreibung (Anla
 
 #heading(level: 1)[Vorgesehene Bearbeitungsdauer, Termine]
 
-Geplanter Starttermin des vorliegenden Projektvorhabens ist der #quote.projekt.projekt_start mit einer initialen Laufzeit von #quote.projekt.laufzeit und der Möglichkeit einer Verlängerung um jeweils weitere 6 Monate.
+#let verlaengerungstext = quote.projekt.at("verlaengerungstext", default: "und der Möglichkeit einer Verlängerung um jeweils weitere 6 Monate")
+Geplanter Starttermin des vorliegenden Projektvorhabens ist der #quote.projekt.projekt_start mit einer initialen Laufzeit von #quote.projekt.laufzeit #verlaengerungstext.
 
 #heading(level: 1)[Vergütung]
 
-Wir vereinbaren auf der Grundlage der in Anlage A beschriebenen Aufgaben und Nebenbedingungen eine feste Vergütung von #quote.projekt.verguetung zzgl. USt und Reisekosten nach Aufwand.
+#let vergütungstext = quote.projekt.at("verguetungstext", default: "zzgl. USt und Reisekosten nach Aufwand")
+Wir vereinbaren auf der Grundlage der in Anlage A beschriebenen Aufgaben und Nebenbedingungen eine feste Vergütung von #quote.projekt.verguetung #vergütungstext.
 
 #heading(level: 1)[Zahlungsplan]
 
-Die Vergütung zzgl. USt erfolgt nach folgendem Zahlungsplan und ist innerhalb von 10 Tagen netto nach Teilzahlungsdatum fällig.
+#let Zahlungsfrist = quote.projekt.at("zahlungsfrist", default: "innerhalb von 10 Tagen netto")
+Die Vergütung zzgl. USt erfolgt nach folgendem Zahlungsplan und ist #Zahlungsfrist nach Teilzahlungsdatum fällig.
 
 #table(
   columns: (1fr, 1fr),
@@ -249,11 +322,13 @@ Alle Zahlungen sind abzugs- und spesenfrei auf das in der Rechnung bezeichnete K
 
 #heading(level: 1)[Sonstiges]
 
-#heading(level: 2)[Import- und Exportkontrolle]
+#if quote.projekt.at("import-export-kontrolle", default: true) [
+  #heading(level: 2)[Import- und Exportkontrolle]
 
-Die Vertragspartner verpflichten sich zur Einhaltung aller anwendbaren nationalen, europäischen, ausländischen und internationalen Vorschriften des Außenwirtschaftsrechts einschließlich Embargos (und/oder sonstigen Sanktionen).
+  Die Vertragspartner verpflichten sich zur Einhaltung aller anwendbaren nationalen, europäischen, ausländischen und internationalen Vorschriften des Außenwirtschaftsrechts einschließlich Embargos (und/oder sonstigen Sanktionen).
 
-Sollte die Leistungserbringung durch #company-name ausfallen oder sich verzögern und beruht dies auf einem außenwirtschaftsrechtlichen Verbot, auf der Nichterteilung einer erforderlichen außenwirtschaftsrechtlichen Genehmigung oder auf der Verzögerung des außenwirtschaftsrechtlichen behördlichen Genehmigungsverfahrens, ist eine Schadensersatzpflicht von #company-name ausgeschlossen.
+  Sollte die Leistungserbringung durch #company-name ausfallen oder sich verzögern und beruht dies auf einem außenwirtschaftsrechtlichen Verbot, auf der Nichterteilung einer erforderlichen außenwirtschaftsrechtlichen Genehmigung oder auf der Verzögerung des außenwirtschaftsrechtlichen behördlichen Genehmigungsverfahrens, ist eine Schadensersatzpflicht von #company-name ausgeschlossen.
+]
 
 #heading(level: 1)[Angebotsbestandteile]
 
@@ -272,10 +347,10 @@ Mit freundlichen Grüßen
 #company-full-name
 
 #v(2em)
-M.Sc. #quote.erstellt_von.personen.at(0) #h(3cm) M.Sc. #quote.erstellt_von.personen.at(1)
+#if sender-people.len() > 0 [#render-person(sender-people.at(0))]#h(3cm)#if sender-people.len() > 1 [#render-person(sender-people.at(1))]
 
 #v(1em)
-Anlagen: A -- Aufgabenbeschreibung
+#if quote.projekt.at("attachment-text", default: "") != "" [#quote.projekt.attachment-text] else [Anlagen: A -- Aufgabenbeschreibung]
 
 #pagebreak()
 
