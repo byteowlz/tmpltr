@@ -175,7 +175,7 @@ jobs:
           license=('MIT')
           depends=('typst')
           provides=('tmpltr')
-          conflicts=('tmpltr')
+          conflicts=('tmpltr' 'byteowlz-tmpltr')
           source=("tmpltr-${pkgver}.tar.gz::https://github.com/byteowlz/tmpltr/releases/download/v${pkgver}/tmpltr-v${pkgver}-x86_64-unknown-linux-gnu.tar.gz")
           sha256sums=('SHA256_PLACEHOLDER')
 
@@ -202,7 +202,7 @@ jobs:
           commit_message: "Update to ${{ env.RELEASE_TAG }}"
 
   publish-aur-source:
-    name: Publish to AUR (tmpltr)
+    name: Publish to AUR (byteowlz-tmpltr)
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -210,7 +210,7 @@ jobs:
         with:
           ref: ${{ env.RELEASE_TAG }}
 
-      - name: Generate PKGBUILD for tmpltr
+      - name: Generate PKGBUILD for byteowlz-tmpltr
         run: |
           set -euo pipefail
           VERSION="${{ env.RELEASE_TAG }}"
@@ -218,7 +218,7 @@ jobs:
 
           cat > PKGBUILD <<'PKGEOF'
           # Maintainer: Tommy Falkowski <hello@byteowlz.com>
-          pkgname=tmpltr
+          pkgname=byteowlz-tmpltr
           pkgver=VERSION_PLACEHOLDER
           pkgrel=1
           pkgdesc="Template-based document generation CLI"
@@ -227,18 +227,18 @@ jobs:
           license=('MIT')
           depends=('typst')
           provides=('tmpltr')
-          conflicts=('tmpltr-bin')
+          conflicts=('tmpltr' 'tmpltr-bin')
           makedepends=('rust' 'cargo')
-          source=("${pkgname}-${pkgver}.tar.gz::https://github.com/byteowlz/tmpltr/archive/v${pkgver}.tar.gz")
+          source=("tmpltr-${pkgver}.tar.gz::https://github.com/byteowlz/tmpltr/archive/v${pkgver}.tar.gz")
           sha256sums=('SKIP')
 
           build() {
-              cd "${pkgname}-${pkgver}"
+              cd "tmpltr-${pkgver}"
               cargo build --release --locked
           }
 
           package() {
-              cd "${pkgname}-${pkgver}"
+              cd "tmpltr-${pkgver}"
               install -Dm755 target/release/tmpltr "${pkgdir}/usr/bin/tmpltr"
               install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
           }
@@ -250,10 +250,10 @@ jobs:
           echo "=== Generated PKGBUILD ==="
           cat PKGBUILD
 
-      - name: Publish tmpltr to AUR
+      - name: Publish byteowlz-tmpltr to AUR
         uses: KSXGitHub/github-actions-deploy-aur@v3.0.1
         with:
-          pkgname: tmpltr
+          pkgname: byteowlz-tmpltr
           pkgbuild: ./PKGBUILD
           commit_username: byteowlz
           commit_email: ${{ secrets.AUR_EMAIL }}
