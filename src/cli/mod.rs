@@ -191,7 +191,7 @@ pub struct CompileArgs {
     #[arg(short, long, value_name = "PATH")]
     pub output: Option<PathBuf>,
 
-    /// Output format (pdf, svg, html)
+    /// Output format (pdf, svg, html, typ)
     #[arg(long, value_name = "FORMAT")]
     pub format: Option<String>,
 
@@ -291,7 +291,7 @@ pub struct WatchArgs {
     #[arg(short, long, value_name = "PATH")]
     pub output: Option<PathBuf>,
 
-    /// Output format (pdf, svg, html)
+    /// Output format (pdf, svg, html, typ)
     #[arg(long, value_name = "FORMAT")]
     pub format: Option<String>,
 
@@ -578,7 +578,7 @@ pub struct PipeArgs {
     #[arg(short, long, value_name = "PATH")]
     pub output: Option<PathBuf>,
 
-    /// Output format (pdf, svg, html)
+    /// Output format (pdf, svg, html, typ)
     #[arg(long, value_name = "FORMAT", default_value = "pdf")]
     pub format: String,
 

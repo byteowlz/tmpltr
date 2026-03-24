@@ -323,6 +323,9 @@ pub fn handle_compile(ctx: &mut Context, args: CompileArgs) -> Result<()> {
         crate::content::apply_json_overrides(&mut content, &json_data)?;
     }
 
+    // Resolve template by ID if the relative path doesn't exist
+    resolve_template_path(&mut content, ctx);
+
     // Update cache
     ctx.cache.update(&content)?;
 
@@ -397,14 +400,27 @@ pub fn handle_compile(ctx: &mut Context, args: CompileArgs) -> Result<()> {
             return Ok(());
         }
 
-        let result = compiler.compile(&content, &options)?;
+        // Route to export_typ for .typ output, otherwise normal compile
+        let result = if options.format == Some(OutputFormat::Typ)
+            || OutputFormat::from_path(&options.output) == Some(OutputFormat::Typ)
+        {
+            compiler.export_typ(&content, &options)?
+        } else {
+            compiler.compile(&content, &options)?
+        };
 
         if ctx.common.json {
             let json = serde_json::to_string_pretty(&result)?;
             println!("{}", json);
         } else {
             match result.output {
-                Some(ref path) => println!("Compiled to {}", path.display()),
+                Some(ref path) => {
+                    if result.format == "typ" {
+                        println!("Exported to {}", path.display());
+                    } else {
+                        println!("Compiled to {}", path.display());
+                    }
+                }
                 None => {
                     if let Some(ref pages) = result.pages {
                         println!("Compiled {} pages", pages.len());
@@ -417,7 +433,86 @@ pub fn handle_compile(ctx: &mut Context, args: CompileArgs) -> Result<()> {
     }
 }
 
+/// Convert a TOML value to a serde_json value.
+fn toml_value_to_json(value: &toml::Value) -> serde_json::Value {
+    match value {
+        toml::Value::String(s) => serde_json::Value::String(s.clone()),
+        toml::Value::Integer(i) => serde_json::json!(i),
+        toml::Value::Float(f) => serde_json::json!(f),
+        toml::Value::Boolean(b) => serde_json::Value::Bool(*b),
+        toml::Value::Array(arr) => {
+            serde_json::Value::Array(arr.iter().map(toml_value_to_json).collect())
+        }
+        toml::Value::Table(tbl) => {
+            let map: serde_json::Map<String, serde_json::Value> = tbl
+                .iter()
+                .map(|(k, v)| (k.clone(), toml_value_to_json(v)))
+                .collect();
+            serde_json::Value::Object(map)
+        }
+        toml::Value::Datetime(dt) => serde_json::Value::String(dt.to_string()),
+    }
+}
+
 /// Load brand data for compilation
+/// If the resolved template path doesn't exist, try to find it by template_id
+/// in the configured templates directory.
+fn resolve_template_path(content: &mut ContentFile, ctx: &Context) {
+    // Check if the current resolved path exists
+    let needs_resolve = match &content.meta.resolved_template {
+        Some(path) => !path.exists(),
+        None => true,
+    };
+
+    if !needs_resolve {
+        return;
+    }
+
+    // Search paths: local ./templates/ first, then configured templates_dir
+    let search_dirs = [
+        std::path::PathBuf::from("./templates"),
+        ctx.paths.templates_dir.clone(),
+    ];
+
+    // Try to find by template_id
+    if let Some(ref id) = content.meta.template_id {
+        for dir in &search_dirs {
+            let candidate = dir.join(format!("{}.typ", id));
+            if candidate.exists() {
+                log::debug!(
+                    "Resolved template '{}' from {}: {}",
+                    id,
+                    dir.display(),
+                    candidate.display()
+                );
+                content.meta.resolved_template = Some(candidate);
+                return;
+            }
+        }
+    }
+
+    // Try the raw template filename in search paths
+    let template_name = std::path::Path::new(&content.meta.template)
+        .file_name()
+        .map(|n| n.to_string_lossy().to_string());
+
+    if let Some(name) = template_name {
+        for dir in &search_dirs {
+            let candidate = dir.join(&name);
+            if candidate.exists() {
+                log::debug!(
+                    "Resolved template '{}' from {}: {}",
+                    name,
+                    dir.display(),
+                    candidate.display()
+                );
+                content.meta.resolved_template = Some(candidate);
+                return;
+            }
+        }
+    }
+}
+
 fn load_brand_for_compile(
     ctx: &Context,
     brand_id: Option<&str>,
@@ -490,13 +585,29 @@ fn load_brand_for_compile(
             "heading": brand.typography.heading.as_ref().map(|f| &f.family),
             "mono": brand.typography.mono.as_ref().map(|f| &f.family)
         },
-        "contact": brand.contact.as_ref().map(|c| serde_json::json!({
-            "company": c.company.as_ref().and_then(|t| t.resolve(None, brand.default_language.as_deref())),
-            "address": c.address.as_ref().and_then(|t| t.resolve(None, brand.default_language.as_deref())),
-            "phone": c.phone,
-            "email": c.email,
-            "website": c.website
-        })),
+        "typography": {
+            "body": brand.typography.body.as_ref().map(|f| serde_json::json!({"family": f.family})),
+            "heading": brand.typography.heading.as_ref().map(|f| serde_json::json!({"family": f.family})),
+            "mono": brand.typography.mono.as_ref().map(|f| serde_json::json!({"family": f.family}))
+        },
+        "contact": brand.contact.as_ref().map(|c| {
+            let mut contact = serde_json::json!({
+                "company": c.company.as_ref().and_then(|t| t.resolve(None, brand.default_language.as_deref())),
+                "address": c.address.as_ref().and_then(|t| t.resolve(None, brand.default_language.as_deref())),
+                "phone": c.phone,
+                "email": c.email,
+                "website": c.website
+            });
+            // Include extra fields (street, postal-code, city, legal-form, people, etc.)
+            if let Some(obj) = contact.as_object_mut() {
+                for (key, value) in &c.extra {
+                    if !obj.contains_key(key) {
+                        obj.insert(key.clone(), toml_value_to_json(value));
+                    }
+                }
+            }
+            contact
+        }),
         "root": brand.source.root_dir.to_string_lossy()
     });
 

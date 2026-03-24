@@ -3,6 +3,7 @@
 //! Handles invoking the Typst compiler with proper arguments and error handling.
 
 use std::env;
+use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 
@@ -20,6 +21,8 @@ pub enum OutputFormat {
     Pdf,
     Svg,
     Html,
+    /// Self-contained .typ file with data inlined and library embedded
+    Typ,
 }
 
 impl OutputFormat {
@@ -29,6 +32,7 @@ impl OutputFormat {
             "pdf" => Some(Self::Pdf),
             "svg" => Some(Self::Svg),
             "html" => Some(Self::Html),
+            "typ" | "typst" => Some(Self::Typ),
             _ => None,
         }
     }
@@ -40,12 +44,13 @@ impl OutputFormat {
             .and_then(Self::from_str)
     }
 
-    /// Get Typst format argument
+    /// Get Typst format argument (only for formats that typst compile supports)
     pub fn typst_format(&self) -> &'static str {
         match self {
             Self::Pdf => "pdf",
             Self::Svg => "svg",
             Self::Html => "html",
+            Self::Typ => "pdf", // not used directly, but avoids panic
         }
     }
 }
@@ -146,6 +151,190 @@ impl TypstCompiler {
             binary,
             font_paths,
             package_path,
+        })
+    }
+
+    /// Export a self-contained .typ file with data and library inlined.
+    /// The resulting file can be opened directly in the Typst online editor.
+    pub fn export_typ(
+        &self,
+        content: &ContentFile,
+        options: &CompileOptions,
+    ) -> Result<CompileResult> {
+        let data = self.prepare_data(content, options.brand_data.as_ref())?;
+        let data_json = serde_json::to_string_pretty(&data)?;
+
+        // Read the template source
+        let template_path = content
+            .meta
+            .resolved_template
+            .as_ref()
+            .map(|p| p.as_path())
+            .unwrap_or(Path::new(&content.meta.template));
+
+        let template_source = fs::read_to_string(template_path).map_err(|e: std::io::Error| {
+            Error::Io(std::io::Error::new(
+                e.kind(),
+                format!("reading template {}: {}", template_path.display(), e),
+            ))
+        })?;
+
+        // Read the tmpltr-lib source (entrypoint is lib.typ)
+        let lib_path = self.package_path.join("local/tmpltr-lib/1.0.0/lib.typ");
+        let lib_source = fs::read_to_string(&lib_path).map_err(|e: std::io::Error| {
+            Error::Io(std::io::Error::new(
+                e.kind(),
+                format!("reading tmpltr-lib {}: {}", lib_path.display(), e),
+            ))
+        })?;
+
+        // Collect and inline image assets referenced in the data
+        let image_paths = collect_image_paths(&data);
+        let mut inlined_images: Vec<(String, String, String)> = Vec::new(); // (original_path, var_name, content)
+
+        for (i, path_str) in image_paths.iter().enumerate() {
+            let img_path = Path::new(path_str);
+            if img_path.exists() {
+                let var_name = format!("_tmpltr_asset_{}", i);
+                match fs::read_to_string(img_path) {
+                    Ok(content) => {
+                        inlined_images.push((path_str.clone(), var_name, content));
+                    }
+                    Err(e) => {
+                        log::warn!("Could not inline image {}: {}", path_str, e);
+                    }
+                }
+            }
+        }
+
+        // Replace image paths in data JSON with placeholder markers
+        let mut data_json_patched = data_json.clone();
+        for (original_path, var_name, _) in &inlined_images {
+            data_json_patched =
+                data_json_patched.replace(original_path, &format!("__INLINE:{}__", var_name));
+        }
+
+        // Build the self-contained .typ file
+        let mut output = String::new();
+
+        // Header comment
+        output.push_str("// Self-contained Typst file exported by tmpltr\n");
+        output.push_str("// This file can be used directly in the Typst online editor.\n");
+        output.push_str("// All assets (images, data, library) are embedded inline.\n");
+        output.push_str("\n");
+
+        // Inline image assets as raw string variables
+        if !inlined_images.is_empty() {
+            output.push_str("// ── Inlined image assets ──\n");
+            for (original_path, var_name, content) in &inlined_images {
+                output.push_str(&format!("// Source: {}\n", original_path));
+                // Use raw block syntax to avoid escaping issues
+                output.push_str(&format!(
+                    "#let {} = bytes(\"{}\")\n\n",
+                    var_name,
+                    content
+                        .replace('\\', "\\\\")
+                        .replace('"', "\\\"")
+                        .replace('\n', "\\n")
+                ));
+            }
+            output.push('\n');
+        }
+
+        // Inline the data as a JSON string parsed at the top
+        output.push_str("// ── Inlined data ──\n");
+        output.push_str("#let _tmpltr_inline_data = json(bytes(\"");
+        // Escape the JSON for embedding in a Typst string
+        let escaped_json = data_json_patched
+            .replace('\\', "\\\\")
+            .replace('"', "\\\"")
+            .replace('\n', "\\n");
+        output.push_str(&escaped_json);
+        output.push_str("\"))\n\n");
+
+        // If we have inlined images, patch the data dict to replace marker strings with bytes
+        if !inlined_images.is_empty() {
+            output.push_str("// ── Patch inlined assets into data ──\n");
+            output.push_str("#let _patch-assets(data) = {\n");
+            output.push_str("  let d = data\n");
+            // Patch logo paths
+            output.push_str("  if \"brand\" in d and \"logos\" in d.brand {\n");
+            output.push_str("    let logos = d.brand.logos\n");
+            for (_, var_name, _) in &inlined_images {
+                let marker = format!("__INLINE:{}__", var_name);
+                output.push_str(&format!(
+                    "    for (key, val) in logos {{ if val == \"{}\" {{ logos.insert(key, \"{}\") }} }}\n",
+                    marker, marker
+                ));
+            }
+            output.push_str("    d.brand.logos = logos\n");
+            output.push_str("  }\n");
+            // Patch top-level logo field
+            output.push_str("  if \"brand\" in d and \"logo\" in d.brand {\n");
+            for (_, var_name, _) in &inlined_images {
+                let marker = format!("__INLINE:{}__", var_name);
+                output.push_str(&format!(
+                    "    if d.brand.logo == \"{}\" {{ d.brand.logo = \"{}\" }}\n",
+                    marker, marker
+                ));
+            }
+            output.push_str("  }\n");
+            output.push_str("  d\n");
+            output.push_str("}\n");
+            output.push_str("#let _tmpltr_inline_data = _patch-assets(_tmpltr_inline_data)\n\n");
+
+            // Override image() to intercept inlined asset markers
+            output.push_str("// ── Image wrapper for inlined assets ──\n");
+            output.push_str("#let _original_image = image\n");
+            output.push_str("#let image(source, ..args) = {\n");
+            for (_, var_name, _) in &inlined_images {
+                let marker = format!("__INLINE:{}__", var_name);
+                output.push_str(&format!(
+                    "  if type(source) == str and source == \"{}\" {{ return _original_image({}, ..args) }}\n",
+                    marker, var_name
+                ));
+            }
+            output.push_str("  _original_image(source, ..args)\n");
+            output.push_str("}\n\n");
+        }
+
+        // Inline the library, replacing tmpltr-data() to return inlined data
+        output.push_str("// ── Inlined tmpltr-lib ──\n");
+        let modified_lib = lib_source.replace(
+            "let raw = sys.inputs.at(\"data\", default: \"{}\")\n  // Modern Typst: pass bytes directly to json() instead of using json.decode()\n  json(bytes(raw))",
+            "_tmpltr_inline_data",
+        );
+        output.push_str(&modified_lib);
+        output.push_str("\n\n");
+
+        // Inline the template, removing the import line
+        output.push_str("// ── Template ──\n");
+        for line in template_source.lines() {
+            let line_str: &str = line;
+            if line_str.starts_with("#import \"@local/tmpltr-lib") {
+                // Replace import with a comment — functions are already inlined above
+                output.push_str("// (import replaced by inlined library above)\n");
+            } else {
+                output.push_str(line_str);
+                output.push('\n');
+            }
+        }
+
+        // Write the output
+        let output_path = &options.output;
+        fs::write(output_path, &output).map_err(|e: std::io::Error| {
+            Error::Io(std::io::Error::new(
+                e.kind(),
+                format!("writing {}: {}", output_path.display(), e),
+            ))
+        })?;
+
+        Ok(CompileResult {
+            status: "exported".to_string(),
+            format: "typ".to_string(),
+            output: Some(output_path.clone()),
+            pages: None,
+            positions: None,
         })
     }
 
@@ -319,6 +508,11 @@ impl TypstCompiler {
                         },
                     }
                 }
+                OutputFormat::Typ => {
+                    // This branch should not be reached — Typ is handled
+                    // by export_typ() before calling compile().
+                    unreachable!("Typ format should be handled by export_typ()")
+                }
             }
         };
 
@@ -446,6 +640,39 @@ fn which_typst() -> Result<PathBuf> {
                 .to_string(),
         )
     })
+}
+
+/// Collect all image/asset file paths from the data JSON (logo paths, etc.)
+fn collect_image_paths(data: &serde_json::Value) -> Vec<String> {
+    let mut paths = Vec::new();
+
+    // Collect from brand.logos.*
+    if let Some(logos) = data
+        .get("brand")
+        .and_then(|b| b.get("logos"))
+        .and_then(|l| l.as_object())
+    {
+        for val in logos.values() {
+            if let Some(s) = val.as_str() {
+                if !s.is_empty() {
+                    paths.push(s.to_string());
+                }
+            }
+        }
+    }
+
+    // Collect from brand.logo (top-level shortcut)
+    if let Some(logo) = data
+        .get("brand")
+        .and_then(|b| b.get("logo"))
+        .and_then(|l| l.as_str())
+    {
+        if !logo.is_empty() && !paths.contains(&logo.to_string()) {
+            paths.push(logo.to_string());
+        }
+    }
+
+    paths
 }
 
 fn prepare_tmpltr_package() -> Result<PathBuf> {
