@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag to release (e.g., v0.3.0)'
+        description: 'Tag to release (e.g., v0.1.0)'
         required: true
         type: string
 
@@ -165,7 +165,7 @@ jobs:
           fi
 
           cat > PKGBUILD <<'PKGEOF'
-          # Maintainer: Max Mustermann <hello@byteowlz.com>
+          # Maintainer: Tommy Falkowski <hello@byteowlz.com>
           pkgname=tmpltr-bin
           pkgver=VERSION_PLACEHOLDER
           pkgrel=1
@@ -217,7 +217,7 @@ jobs:
           VERSION="${VERSION#v}"
 
           cat > PKGBUILD <<'PKGEOF'
-          # Maintainer: Max Mustermann <hello@byteowlz.com>
+          # Maintainer: Tommy Falkowski <hello@byteowlz.com>
           pkgname=tmpltr
           pkgver=VERSION_PLACEHOLDER
           pkgrel=1
