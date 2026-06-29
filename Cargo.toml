@@ -14,7 +14,6 @@ clap_complete = "4.5"
 
 # Configuration
 config = { version = "0.15", features = ["toml"] }
-dirs = "5.0"
 shellexpand = "3.1"
 
 # Serialization
