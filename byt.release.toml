@@ -1,0 +1,25 @@
+# Release config consumed by `byt release` (ADR-0021).
+# The reusable workflow builds linux-gnu in the byt container (glibc floor) and
+# *-apple-darwin natively on a macOS runner, then combines + publishes.
+[release]
+name = "tmpltr"
+lang = "rust"
+bins = ["tmpltr"]
+targets = [
+    "x86_64-unknown-linux-gnu",
+    "aarch64-unknown-linux-gnu",
+    "x86_64-apple-darwin",
+    "aarch64-apple-darwin",
+]
+
+[release.homebrew]
+formula = "tmpltr"
+
+[release.aur]
+pkgname = "tmpltr-bin"
+pkgdesc = "Template-based document generation CLI"
+license = "MIT"
+url = "https://github.com/byteowlz/tmpltr"
+provides = ["tmpltr"]
+conflicts = ["tmpltr", "byteowlz-tmpltr"]
+depends = ["typst"]
