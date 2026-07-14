@@ -1,5 +1,5 @@
 # tmpltr Configuration File
-"$schema" = "https://raw.githubusercontent.com/byteowlz/schemas/refs/heads/main/tmpltr/tmpltr.config.schema.json"
+#:schema https://raw.githubusercontent.com/byteowlz/schemas/refs/heads/main/tmpltr/tmpltr.config.schema.json
 # Copy this file to $XDG_CONFIG_HOME/tmpltr/config.toml and adjust as needed.
 #
 # $schema = "./config.schema.json"

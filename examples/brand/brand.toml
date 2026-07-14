@@ -1,5 +1,5 @@
 # Example brand configuration
-"$schema" = "./brand.schema.json"
+#:schema ./brand.schema.json
 id = "demo-brand"
 default_language = "en"
 languages = ["en", "de"]
