@@ -1,0 +1,24 @@
+
+[party_a]
+company = "Helvion Analytics GmbH"
+address = "Rosenthaler Strasse 42, 10178 Berlin, Germany"
+represented_by = "Dr. Miriam Schaefer, Managing Director"
+
+[party_b]
+company = "Corvid Materials Ltd"
+address = "2 Priory Court, Cambridge CB2 1TN, United Kingdom"
+represented_by = "James J. Whitfield, Chief Executive Officer"
+
+[nda]
+purpose = "the evaluation of a potential joint development of sensor coatings for industrial gas analysis equipment"
+effective_date = "August 1, 2026"
+term_years = 3
+survival_years = 5
+governing_law = "the laws of the Federal Republic of Germany"
+jurisdiction = "the courts of Berlin, Germany"
+
+[signatures]
+a_name = "Dr. Miriam Schaefer"
+a_date = "July 28, 2026"
+b_name = "James J. Whitfield"
+b_date = "July 30, 2026"

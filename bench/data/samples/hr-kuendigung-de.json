@@ -1,0 +1,23 @@
+{
+  "arbeitgeber": {
+    "firma": "Steinbach & Cie. Handelsgesellschaft mbH",
+    "strasse": "Kaiserswerther Straße 89",
+    "plz_ort": "40476 Düsseldorf",
+    "vertreten_durch": "Ralf Steinbach, Geschäftsführer"
+  },
+  "arbeitnehmer": {
+    "name": "Herrn Tobias Wenzel",
+    "strasse": "Grafenberger Allee 214",
+    "plz_ort": "40237 Düsseldorf"
+  },
+  "kuendigung": {
+    "datum": "18.07.2026",
+    "eintrittsdatum": "15.04.2021",
+    "beendigungsdatum": "30.09.2026",
+    "frist": "zwei Monate zum Monatsende (§ 622 Abs. 2 Nr. 2 BGB)",
+    "art": "ordentliche, fristgerechte Kündigung aus betriebsbedingten Gründen",
+    "freistellung": "unter Fortzahlung der Vergütung und unter Anrechnung auf Resturlaub",
+    "resturlaub_tage": 11,
+    "zeugnis_zusage": "Ein wohlwollendes qualifiziertes Arbeitszeugnis wird Ihnen unaufgefordert zugesandt."
+  }
+}

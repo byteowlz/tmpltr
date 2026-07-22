@@ -1,0 +1,34 @@
+{
+  "controller": {
+    "company": "Northwind Analytics B.V.",
+    "address": "Herengracht 412, 1017 BX Amsterdam, Netherlands",
+    "dpo_email": "dpo@northwind-analytics.eu"
+  },
+  "data_subject": {
+    "name": "Claire Vandenberghe",
+    "email": "c.vandenberghe@proximail.be",
+    "request_date": "22 June 2026"
+  },
+  "response": {
+    "date": "16 July 2026",
+    "categories": [
+      "Identity data: name, date of birth, account username",
+      "Contact data: email address, billing address, phone number",
+      "Transaction data: 14 invoices between 03/2024 and 05/2026",
+      "Technical data: login timestamps, IP addresses (last 12 months)",
+      "Support data: 3 helpdesk tickets and related correspondence"
+    ],
+    "purposes": [
+      "Performance of the subscription contract (Art. 6(1)(b) GDPR)",
+      "Invoicing and tax compliance (Art. 6(1)(c) GDPR)",
+      "Fraud prevention and service security (Art. 6(1)(f) GDPR)"
+    ],
+    "recipients": [
+      "Stripe Payments Europe Ltd. (payment processing, Ireland)",
+      "AWS EMEA SARL (hosting, eu-central-1, Germany)",
+      "Exact Online (accounting software, Netherlands)"
+    ],
+    "retention": "Contract and identity data are kept for the duration of the contract plus 7 years (Dutch fiscal retention law); technical logs are deleted after 12 months.",
+    "rights_note": "You may request rectification or erasure, restrict or object to processing, and lodge a complaint with the Autoriteit Persoonsgegevens or your local supervisory authority."
+  }
+}

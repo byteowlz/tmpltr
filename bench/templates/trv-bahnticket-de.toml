@@ -1,0 +1,35 @@
+gueltigkeit = "Gültig nur am 02.09.2026 in den angegebenen Zügen (Zugbindung). Fahrkarte gilt in Verbindung mit einem amtlichen Lichtbildausweis."
+
+[bahn]
+unternehmen = "Norddeutsche Eisenbahn AG"
+
+[ticket]
+auftragsnummer = "NB7K42PD"
+datum = "18.08.2026"
+klasse = "2"
+preis = 87.9
+zahlart = "Lastschrift"
+
+[reisender]
+name = "Annika Sommer"
+bahncard = "BahnCard 25 (2. Kl.)"
+
+[[verbindung]]
+zug = "NE 774"
+von = "Hamburg Hbf"
+nach = "Hannover Hbf"
+abfahrt = "02.09.2026 09:36"
+ankunft = "02.09.2026 10:52"
+gleis_ab = "12"
+wagen = "23"
+platz = "64, Fenster"
+
+[[verbindung]]
+zug = "NE 1201"
+von = "Hannover Hbf"
+nach = "Frankfurt (Main) Hbf"
+abfahrt = "02.09.2026 11:31"
+ankunft = "02.09.2026 13:53"
+gleis_ab = "7"
+wagen = "7"
+platz = "81, Gang"

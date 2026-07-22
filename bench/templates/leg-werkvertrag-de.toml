@@ -1,0 +1,24 @@
+
+[auftraggeber]
+firma = "Brandes Immobilienverwaltung GmbH"
+strasse = "Kaiserstrasse 114"
+plz_ort = "76133 Karlsruhe"
+vertreten_durch = "Herrn Ulrich Brandes, Geschaeftsfuehrer"
+
+[auftragnehmer]
+firma = "Tischlerei Moosbach GmbH & Co. KG"
+strasse = "Gewerbering 8"
+plz_ort = "76275 Ettlingen"
+vertreten_durch = "Frau Katrin Moosbach, Geschaeftsfuehrerin"
+
+[vertrag]
+leistungsbeschreibung = "Anfertigung und Einbau von 14 Wohnungseingangstueren (Eiche massiv, Klimaklasse III, Schallschutzklasse 2) einschliesslich Zargen, Beschlaegen und Demontage sowie Entsorgung der Alttueren im Objekt Kaiserstrasse 114, 76133 Karlsruhe, gemaess Leistungsverzeichnis LV-2026-031 vom 02.06.2026."
+verguetung = 58310.0
+zahlungsplan = "30 % bei Auftragsbestaetigung, 40 % nach Lieferung der Tueren, 30 % nach mangelfreier Abnahme; Zahlungsziel jeweils 14 Tage netto."
+fertigstellung = "30.10.2026"
+abnahme = "Foermliche Abnahme mit gemeinsamem Begehungstermin und schriftlichem Abnahmeprotokoll innerhalb von 10 Werktagen nach Fertigstellungsanzeige."
+gewaehrleistung_monate = 60
+
+[unterschrift]
+ort = "Karlsruhe"
+datum = "24.07.2026"

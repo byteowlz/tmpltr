@@ -1,0 +1,40 @@
+
+[clinic]
+name = "Riverview Medical Centre"
+department = "General Practice"
+address = "42 High Street, Richmond, London, TW10 6TF"
+phone = "+44 20 8842 1122"
+
+[patient]
+name = "Eleanor Margaret Vance"
+address = "15 Oak Lane, Richmond, London, TW10 6RB"
+dob = "1978-05-14"
+nhs_or_id = "485 221 9088"
+
+[letter]
+date = "2023-11-14"
+salutation = "Dear Ms. Vance,"
+summary = "It was good to see you today to discuss your recent blood test results and your ongoing concerns regarding fatigue and blood pressure management."
+findings_plain = "Your recent blood tests show that your cholesterol levels are slightly higher than we would like to see, and your blood pressure reading today was 145/92, which is a little elevated. However, your kidney function and blood sugar levels are all within the normal range, which is very encouraging."
+plan = "We will focus on a heart-healthy diet, specifically reducing salt and saturated fats. I also recommend aiming for 30 minutes of brisk walking most days of the week. We will monitor your progress through a repeat blood test and blood pressure check in three months."
+safety_netting = "If you experience any unusual swelling in your ankles, persistent headaches, or sudden changes in your vision, please contact the surgery immediately or seek urgent medical advice."
+followup_date = "2024-02-15"
+
+[[letter.medication_changes]]
+name = "Amlodipine 5mg"
+change = "Increase dosage from 2.5mg to 5mg once daily"
+reason = "To better control your blood pressure readings."
+
+[[letter.medication_changes]]
+name = "Atorvastatin 10mg"
+change = "Start new daily prescription"
+reason = "To help lower your elevated cholesterol levels."
+
+[[letter.medication_changes]]
+name = "Multivitamin"
+change = "Continue as normal"
+reason = "No changes required to your current supplement routine."
+
+[clinician]
+name = "Dr. Julian Sterling"
+role = "Senior General Practitioner"

@@ -1,0 +1,121 @@
+{
+  "manufacturer": {
+    "name": "Silicon Dynamics Corp",
+    "website": "https://www.silicondynamics-semi.com"
+  },
+  "part": {
+    "number": "SD-4502-N",
+    "title": "High-Precision Low-Noise Operational Amplifier",
+    "package": "SOT-23-5",
+    "status": "Active",
+    "rev": "C",
+    "date": "2023-11-14"
+  },
+  "features": [
+    "Ultra-low input bias current (1 pA typical)",
+    "Rail-to-rail input and output",
+    "High gain-bandwidth product of 10 MHz",
+    "Low supply current (850 µA)",
+    "Stable for capacitive loads up to 100 pF"
+  ],
+  "applications": [
+    "Precision sensor signal conditioning",
+    "Battery-powered portable instrumentation",
+    "Active filter implementations",
+    "Data acquisition systems"
+  ],
+  "abs_max": [
+    {
+      "parameter": "Supply Voltage",
+      "symbol": "Vcc",
+      "min": -5.5,
+      "max": 18.0,
+      "unit": "V"
+    },
+    {
+      "parameter": "Input Voltage Range",
+      "symbol": "Vin",
+      "min": -5.5,
+      "max": 18.0,
+      "unit": "V"
+    },
+    {
+      "parameter": "Continuous Output Current",
+      "symbol": "Iout",
+      "min": -25.0,
+      "max": 25.0,
+      "unit": "mA"
+    },
+    {
+      "parameter": "Storage Temperature",
+      "symbol": "Tstg",
+      "min": -65.0,
+      "max": 150.0,
+      "unit": "°C"
+    }
+  ],
+  "characteristics": [
+    {
+      "parameter": "Input Offset Voltage",
+      "symbol": "Vos",
+      "condition": "Vcc = 5V, Ta = 25°C",
+      "min": -0.05,
+      "typ": 0.15,
+      "max": 0.50,
+      "unit": "mV"
+    },
+    {
+      "parameter": "Open-Loop Gain",
+      "symbol": "Aol",
+      "condition": "f = 1 kHz",
+      "min": 105,
+      "typ": 112,
+      "max": null,
+      "unit": "dB"
+    },
+    {
+      "parameter": "Total Harmonic Distortion",
+      "symbol": "THD",
+      "condition": "Av = 20 dB, f = 1 kHz",
+      "min": null,
+      "typ": 0.002,
+      "max": 0.005,
+      "unit": "%"
+    },
+    {
+      "parameter": "Slew Rate",
+      "symbol": "SR",
+      "condition": "Vcc = 5V",
+      "min": 2.5,
+      "typ": 3.2,
+      "max": 4.0,
+      "unit": "V/µs"
+    },
+    {
+      "parameter": "Common-Mode Rejection Ratio",
+      "symbol": "CMRR",
+      "condition": "f = 60 Hz",
+      "min": 110,
+      "typ": 120,
+      "max": null,
+      "unit": "dB"
+    }
+  ],
+  "ordering": [
+    {
+      "code": "SD4502N-T1",
+      "temp_range": "-40 to +85°C",
+      "packing": "Tape & Reel (3000 pcs)"
+    },
+    {
+      "code": "SD4502N-T2",
+      "temp_range": "-40 to +85°C",
+      "packing": "Tape & Reel (10000 pcs)"
+    },
+    {
+      "code": "SD4502N-BULK",
+      "temp_range": "-40 to +85°C",
+      "packing": "Bulk Tube"
+    }
+  ]
+}

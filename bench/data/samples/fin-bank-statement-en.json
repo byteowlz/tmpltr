@@ -1,0 +1,32 @@
+{
+  "bank": {
+    "name": "Harrowgate & Finch Bank plc",
+    "address": "22 Lombard Street, London EC3V 9AN",
+    "bic": "HFBKGB2LXXX"
+  },
+  "account": {
+    "holder": "Daniel P. Whitcombe",
+    "iban": "GB84 HFBK 4022 5531 8834 27",
+    "number": "40225531883427",
+    "period": "1 June 2026 - 30 June 2026",
+    "statement_no": "2026/06"
+  },
+  "balances": {
+    "opening": 4318.62,
+    "closing": 5398.13
+  },
+  "transactions": [
+    {"date": "02 Jun", "value_date": "02 Jun", "description": "Faster Payment - Salary June", "counterparty": "Calder & Rowe LLP", "amount": 3450.0},
+    {"date": "03 Jun", "value_date": "03 Jun", "description": "Direct Debit - Rent", "counterparty": "Kingsmead Estates Ltd", "amount": -1495.0},
+    {"date": "05 Jun", "value_date": "05 Jun", "description": "Direct Debit - Energy", "counterparty": "Northern Grid Energy", "amount": -112.4},
+    {"date": "09 Jun", "value_date": "09 Jun", "description": "Card purchase - groceries", "counterparty": "Sainsbury's Holborn", "amount": -86.73},
+    {"date": "12 Jun", "value_date": "12 Jun", "description": "Standing Order - ISA transfer", "counterparty": "Harrowgate & Finch ISA", "amount": -400.0},
+    {"date": "16 Jun", "value_date": "16 Jun", "description": "Card purchase - rail ticket", "counterparty": "LNER", "amount": -74.5},
+    {"date": "19 Jun", "value_date": "19 Jun", "description": "Faster Payment received", "counterparty": "M. Whitcombe", "amount": 120.0},
+    {"date": "23 Jun", "value_date": "23 Jun", "description": "Direct Debit - Mobile", "counterparty": "AirWave Mobile UK", "amount": -28.0},
+    {"date": "26 Jun", "value_date": "26 Jun", "description": "Card purchase - restaurant", "counterparty": "Osteria Fiorella", "amount": -94.2},
+    {"date": "29 Jun", "value_date": "30 Jun", "description": "Direct Debit - Council Tax", "counterparty": "Camden Borough Council", "amount": -180.66},
+    {"date": "30 Jun", "value_date": "30 Jun", "description": "Card purchase - pharmacy", "counterparty": "Boots 2214", "amount": -22.0},
+    {"date": "30 Jun", "value_date": "30 Jun", "description": "Interest paid", "counterparty": "Harrowgate & Finch Bank", "amount": 3.0}
+  ]
+}

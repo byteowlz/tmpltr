@@ -1,0 +1,26 @@
+{
+  "vendor": {
+    "company": "Helios Networking Systems B.V.",
+    "address": "Databankweg 12, 3821 AL Amersfoort, Netherlands",
+    "rma_email": "returns@heliosnet.eu"
+  },
+  "customer": {
+    "name": "Priya Raman",
+    "company": "Corvid IT Services Ltd",
+    "email": "p.raman@corvid-it.co.uk",
+    "order_no": "SO-2026-20458"
+  },
+  "rma": {
+    "number": "RMA-26-01922",
+    "issue_date": "2026-07-08",
+    "valid_until": "2026-08-07",
+    "return_reason": "DOA — unit fails POST, fan spins then power LED blinks 4x; verified by remote diagnostics session on 2026-07-07",
+    "resolution": "Advance replacement",
+    "restocking_fee_pct": 0,
+    "ship_to": "Helios Returns Centre, Dock 4, Logistiekboulevard 9, 5928 SC Venlo, Netherlands"
+  },
+  "items": [
+    {"sku": "HN-SW4828-P", "description": "48-port PoE+ managed switch, 740 W", "qty": 1, "serial": "HNS48-2605-118842", "condition": "Dead on arrival"},
+    {"sku": "HN-PSU-740", "description": "Hot-swap PSU module 740 W", "qty": 1, "serial": "HPS74-2605-034410", "condition": "Untested — shipped with unit"}
+  ]
+}

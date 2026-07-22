@@ -1,0 +1,48 @@
+
+[company]
+name = "Aerospace Dynamics Corp"
+department = "Precision Engineering Division"
+
+[drawing]
+number = "AD-7742-B-01"
+title = "Main Landing Gear Support Bracket"
+scale = "1:2"
+sheet = 1
+of_sheets = 3
+size = "A1"
+projection = "Third Angle"
+material = "Aluminum Alloy 7075-T6"
+finish = "Anodized, Clear per MIL-A-8625"
+general_tolerance = "ISO 2768-m"
+
+[approvals]
+drawn_by = "Elena Rodriguez"
+drawn_date = "2023-11-14"
+checked_by = "Marcus Thorne"
+checked_date = "2023-11-16"
+approved_by = "Sarah Jenkins"
+approved_date = "2023-11-17"
+
+[[revisions]]
+rev = "A"
+date = "2023-11-14"
+description = "Initial Release for Prototype"
+by = "E. Rodriguez"
+
+[[revisions]]
+rev = "B"
+date = "2024-02-05"
+description = "Increased fillet radius on mounting flange"
+by = "M. Thorne"
+
+[[revisions]]
+rev = "C"
+date = "2024-05-22"
+description = "Updated material specification to 7075-T6"
+by = "E. Rodriguez"
+
+[[revisions]]
+rev = "D"
+date = "2024-08-10"
+description = "Added surface roughness requirements to bores"
+by = "S. Jenkins"

@@ -1,0 +1,36 @@
+{
+  "manufacturer": {
+    "name": "Aurora Home Appliances Inc.",
+    "address": "1550 Lakeview Industrial Dr, Rochester, NY 14624, USA",
+    "support_email": "warranty@aurora-appliances.com",
+    "hotline": "1-800-555-0136"
+  },
+  "product": {
+    "name": "AuroraBrew Automatic Espresso Machine",
+    "model": "AB-X500 (Brushed Steel)",
+    "serial": "AX5-2026-0341877",
+    "purchase_date": "June 28, 2026",
+    "dealer": "Hartman's Kitchen & Home, 412 Main St, Ithaca, NY"
+  },
+  "warranty": {
+    "months": 24,
+    "coverage": [
+      "Defects in materials and workmanship under normal household use",
+      "Brew unit, pump, grinder and heating element",
+      "Electronic control board and display",
+      "Repair or replacement parts and labor at authorized service centers"
+    ],
+    "exclusions": [
+      "Damage caused by scale build-up where descaling was neglected",
+      "Commercial or rental use of the appliance",
+      "Wear parts: water filter, sealing rings, drip tray",
+      "Unauthorized repair or modification",
+      "Cosmetic damage that does not affect function"
+    ],
+    "claim_procedure": "To make a claim, contact our support hotline or email with your certificate number, serial number and a copy of the purchase receipt. If a defect is confirmed, you will receive a prepaid shipping label to send the appliance to the nearest authorized service center. Repairs are typically completed within 10 business days."
+  },
+  "registration": {
+    "date": "July 03, 2026",
+    "certificate_no": "WC-2026-118455"
+  }
+}

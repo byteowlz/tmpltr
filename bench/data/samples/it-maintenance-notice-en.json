@@ -1,0 +1,22 @@
+{
+  "provider": {
+    "company": "Nimbustack Inc.",
+    "status_page": "status.nimbustack.io"
+  },
+  "notice": {
+    "id": "MW-2026-0142",
+    "date": "2026-07-10",
+    "window_start": "2026-07-19 22:00",
+    "window_end": "2026-07-20 02:00",
+    "timezone": "UTC",
+    "affected_services": [
+      "REST API (api.nimbustack.io)",
+      "Webhook delivery",
+      "Admin dashboard",
+      "Scheduled exports"
+    ],
+    "impact": "During the window the REST API will return HTTP 503 for up to two periods of approximately 15 minutes each while the primary database cluster is upgraded to PostgreSQL 17 and failover is exercised. Webhook deliveries will be queued and replayed automatically after the window; no events will be lost. The admin dashboard will be read-only for the full window. Scheduled exports that would start inside the window are deferred until 02:30 UTC.",
+    "workaround": "Clients using SDK v4.2+ with default retry policy (exponential backoff, honoring Retry-After) require no changes. For time-critical ingestion, buffer events locally and flush after 02:30 UTC.",
+    "contact": "maintenance@nimbustack.io"
+  }
+}

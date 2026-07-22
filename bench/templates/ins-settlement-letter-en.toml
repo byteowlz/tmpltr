@@ -1,0 +1,21 @@
+
+[insurer]
+name = "Meridian Shield Insurance Group"
+address = "Claims Operations, PO Box 4410, Melbourne VIC 3001"
+claims_contact = "Priya Natarajan, Senior Claims Assessor — claims@meridianshield.com.au, 1300 662 041"
+
+[claimant]
+name = "Ms Harriet Lindqvist"
+address = "8/224 Beaconsfield Parade, Middle Park VIC 3206"
+policy_no = "MS-HOME-3320745"
+
+[settlement]
+claim_no = "CLM-2026-118834"
+incident_date = "2026-06-18"
+claimed = 9480.0
+covered = 8930.0
+deductible = 500.0
+payout = 8430.0
+payment_date = "2026-07-24"
+iban_last4 = "6612"
+rationale = "Storm damage to the roof, ceiling and carpets is covered under Section 2 (Insured Events — Storm) of your policy. The claimed amount of $550.00 for the garden pergola was declined, as free-standing structures not attached to the home are excluded under Section 4.3. Your policy excess of $500.00 has been deducted from the assessed amount."

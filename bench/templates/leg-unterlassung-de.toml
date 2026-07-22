@@ -1,0 +1,23 @@
+
+[kanzlei]
+name = "Rechtsanwaelte Dr. Severin & Kollegen PartG mbB"
+strasse = "Maximilianstrasse 28"
+plz_ort = "80539 Muenchen"
+telefon = "+49 89 2422 780-0"
+az = "1447/26-SEV/kb"
+
+[mandant]
+firma = "NaturKraft Kosmetik GmbH"
+
+[gegner]
+firma = "BelloDerm Handels-UG (haftungsbeschraenkt)"
+strasse = "Industriering 14"
+plz_ort = "86159 Augsburg"
+
+[abmahnung]
+verstoss = "Bewerbung der Creme \"DermaPur Repair\" mit der Aussage \"klinisch bewiesene Faltenreduktion um 62 % in 14 Tagen\" auf www.belloderm-shop.de, ohne dass hierfuer eine wissenschaftlich hinreichend gesicherte Studie vorliegt"
+rechtsgrundlage = "§§ 3, 5 Abs. 1 UWG (irrefuehrende geschaeftliche Handlung), Art. 20 der VO (EG) Nr. 1223/2009 i.V.m. VO (EU) Nr. 655/2013"
+frist = "31.07.2026, 12:00 Uhr"
+vertragsstrafe = "5.100,00 EUR fuer jeden Fall der Zuwiderhandlung"
+streitwert = "50.000,00 EUR"
+gebuehren = "1.973,90 EUR (1,3 Geschaeftsgebuehr Nr. 2300 VV RVG zzgl. Auslagenpauschale, ohne USt.)"

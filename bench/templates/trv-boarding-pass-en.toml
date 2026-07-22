@@ -1,0 +1,25 @@
+barcode_ref = "M1SOMMER/ANNIKA X4KQ9T HAMMADAU 1423 257Y014A0037 100"
+
+[airline]
+name = "Aurelia Airways"
+code = "AU"
+
+[passenger]
+name = "SOMMER/ANNIKA MRS"
+frequent_flyer = "AU 8842 1907"
+status = "Silver"
+
+[flight]
+number = "AU 1423"
+date = "14 SEP 2026"
+from_code = "HAM"
+from_city = "Hamburg"
+to_code = "MAD"
+to_city = "Madrid"
+boarding_time = "06:55"
+departure_time = "07:35"
+gate = "A14"
+seat = "14A"
+zone = "2"
+class = "Economy (T)"
+sequence = "037"

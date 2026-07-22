@@ -1,0 +1,61 @@
+rechtsbehelf = "Gegen diesen Bescheid können Sie innerhalb eines Monats nach Bekanntgabe Einspruch einlegen. Der Einspruch ist beim oben bezeichneten Finanzamt schriftlich einzureichen oder zur Niederschrift zu erklären. Durch die Einlegung eines Einspruchs wird die Vollziehung des Bescheids nicht gehemmt (§ 361 AO)."
+
+[finanzamt]
+name = "Finanzamt Paderborn"
+strasse = "Bahnhofstraße 26"
+plz_ort = "33102 Paderborn"
+telefon = "05251 892-0"
+
+[steuerpflichtiger]
+name = "Herrn Matthias Brügge"
+strasse = "Detmolder Weg 41"
+plz_ort = "33098 Paderborn"
+steuernr = "339/5142/0871"
+idnr = "48 573 209 114"
+
+[bescheid]
+jahr = "2025"
+datum = "10.07.2026"
+erstattung_nachzahlung = -1353.5
+zahlungsfrist = "13.08.2026"
+iban_letzte4 = "7702"
+
+[[bescheid.festsetzung]]
+position = "Einkommensteuer"
+betrag = 11824.0
+
+[[bescheid.festsetzung]]
+position = "Solidaritätszuschlag"
+betrag = 0.0
+
+[[bescheid.festsetzung]]
+position = "Bereits gezahlt (Lohnsteuer / Vorauszahlungen)"
+betrag = -13106.0
+
+[[bescheid.festsetzung]]
+position = "Bereits gezahlter Solidaritätszuschlag"
+betrag = -71.5
+
+[[bescheid.einkuenfte]]
+art = "Einkünfte aus nichtselbständiger Arbeit"
+betrag = 58240.0
+
+[[bescheid.einkuenfte]]
+art = "Einkünfte aus Kapitalvermögen"
+betrag = 412.0
+
+[[bescheid.einkuenfte]]
+art = "Einkünfte aus Vermietung und Verpachtung"
+betrag = 3180.0
+
+[[bescheid.einkuenfte]]
+art = "Summe der Einkünfte"
+betrag = 61832.0
+
+[[bescheid.einkuenfte]]
+art = "Sonderausgaben und Vorsorgeaufwendungen"
+betrag = -9614.0
+
+[[bescheid.einkuenfte]]
+art = "Zu versteuerndes Einkommen"
+betrag = 52218.0

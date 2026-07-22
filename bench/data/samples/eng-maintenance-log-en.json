@@ -1,0 +1,75 @@
+{
+  "site": {
+    "company": "Apex Precision Manufacturing",
+    "plant": "Southwest Assembly Hub",
+    "location": "Phoenix, AZ, USA"
+  },
+  "equipment": {
+    "name": "5-Axis CNC Milling Center",
+    "manufacturer": "HyperMach Industrial",
+    "model": "HM-X500-PRO",
+    "serial": "SN-99284-XF",
+    "install_date": "2022-03-15",
+    "operating_hours": 4280.5
+  },
+  "schedule": [
+    {
+      "task": "Spindle Lubrication & Filter Check",
+      "interval": "500 hours",
+      "last_done": "2023-11-10",
+      "next_due": "2024-02-15"
+    },
+    {
+      "task": "Coolant System Flush & pH Test",
+      "interval": "1000 hours",
+      "last_done": "2023-08-05",
+      "next_due": "2024-03-20"
+    },
+    {
+      "task": "Axis Ball Screw Inspection",
+      "interval": "5000 hours",
+      "last_done": "2022-04-01",
+      "next_due": "2026-04-01"
+    },
+    {
+      "task": "Electrical Cabinet Thermal Scan",
+      "interval": "6 months",
+      "last_done": "2023-12-01",
+      "next_due": "2024-06-01"
+    }
+  ],
+  "entries": [
+    {
+      "date": "2023-08-05",
+      "technician": "Marcus Thorne",
+      "type": "Preventative",
+      "work_done": "Full coolant replacement and concentration calibration.",
+      "parts_used": "20L Synthetic Coolant Concentrate, 2x Micron Filters",
+      "downtime_h": 3.5
+    },
+    {
+      "date": "2023-11-10",
+      "technician": "Elena Rodriguez",
+      "type": "Preventative",
+      "work_done": "Standard 500h interval service; lubricated all linear guides.",
+      "parts_used": "High-temp Lithium Grease, Spindle Oil Grade 68",
+      "downtime_h": 2.0
+    },
+    {
+      "date": "2024-01-12",
+      "technician": "Marcus Thorne",
+      "type": "Corrective",
+      "work_done": "Replaced faulty hydraulic pressure sensor causing erratic tool clamping.",
+      "parts_used": "Hydraulic Sensor HP-90, O-ring Kit",
+      "downtime_h": 5.0
+    },
+    {
+      "date": "2024-02-18",
+      "technician": "Elena Rodriguez",
+      "type": "Preventative",
+      "work_done": "Spindle lubrication and air filtration unit replacement.",
+      "parts_used": "HEPA Air Filter Unit A1",
+      "downtime_h": 1.5
+    }
+  ]
+}

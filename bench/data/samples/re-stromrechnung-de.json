@@ -1,0 +1,42 @@
+{
+  "versorger": {
+    "name": "Stadtwerke Halversen GmbH",
+    "strasse": "Am Kraftwerk 12",
+    "plz_ort": "58734 Halversen",
+    "hotline": "02372 940-500",
+    "ustid": "DE 214 883 907"
+  },
+  "kunde": {
+    "name": "Herr Jonas Wiedemann",
+    "strasse": "Birkenweg 8",
+    "plz_ort": "58734 Halversen",
+    "kundennr": "10448732",
+    "zaehlernr": "1EMH0043218812",
+    "vertragskonto": "VK 7002 4451"
+  },
+  "abrechnung": {
+    "nummer": "JR-2026-448120",
+    "datum": "10.07.2026",
+    "zeitraum": "01.07.2025 - 30.06.2026",
+    "faelligkeit": "31.07.2026"
+  },
+  "verbrauch": {
+    "zaehlerstand_alt": 18452,
+    "zaehlerstand_neu": 21237,
+    "kwh": 2785,
+    "arbeitspreis_ct": 32.84,
+    "grundpreis_jahr": 142.80
+  },
+  "posten": [
+    {"bezeichnung": "Arbeitspreis: 2.785 kWh x 32,84 ct/kWh", "betrag": 914.59},
+    {"bezeichnung": "Grundpreis: 12 Monate x 11,90 EUR", "betrag": 142.80},
+    {"bezeichnung": "Umsatzsteuer 19 % auf 1.057,39 EUR", "betrag": 200.90}
+  ],
+  "ergebnis": {
+    "gezahlte_abschlaege": 1344.00,
+    "rechnungsbetrag": 1258.29,
+    "guthaben_nachzahlung": -85.71,
+    "neuer_abschlag": 105.00,
+    "iban_letzte4": "4417"
+  }
+}

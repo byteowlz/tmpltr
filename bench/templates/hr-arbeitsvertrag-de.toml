@@ -1,0 +1,27 @@
+
+[arbeitgeber]
+firma = "Falkenberg Maschinenbau GmbH"
+strasse = "Industriestraße 42"
+plz_ort = "33602 Bielefeld"
+vertreten_durch = "Dr. Henning Falkenberg, Geschäftsführer"
+
+[arbeitnehmer]
+name = "Miriam Schuster"
+strasse = "Ravensberger Weg 15"
+plz_ort = "33604 Bielefeld"
+geburtsdatum = "22.09.1994"
+
+[vertrag]
+position = "Konstruktionsingenieurin"
+abteilung = "Entwicklung Sondermaschinen"
+beginn = "01.10.2026"
+brutto_monatsgehalt = 5450
+wochenstunden = 38.5
+urlaubstage = 30
+probezeit_monate = 6
+kuendigungsfrist_wochen = 4
+arbeitsort = "Bielefeld"
+
+[unterschrift]
+ort = "Bielefeld"
+datum = "18.07.2026"

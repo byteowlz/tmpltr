@@ -1,0 +1,29 @@
+{
+  "center": {
+    "name": "Lakeshore Diagnostic Imaging",
+    "address": "1220 N Clark Street, Suite 300, Chicago, IL 60610",
+    "phone": "(312) 555-7710"
+  },
+  "patient": {
+    "name": "Daniel T. Kowalczyk",
+    "dob": "05/02/1971",
+    "id": "LDI-2088417"
+  },
+  "study": {
+    "modality": "MRI",
+    "region": "Lumbar spine without contrast",
+    "date": "07/15/2026",
+    "referring": "Sandra Whitfield, MD (Orthopedic Associates of Chicago)",
+    "indication": "Chronic low back pain with left L5 radiculopathy, 8 weeks, refractory to conservative therapy.",
+    "technique": "Multiplanar multisequence MRI of the lumbar spine on a 3T system: sagittal T1, T2 and STIR; axial T1 and T2 from L2 through S1. No intravenous contrast administered."
+  },
+  "report": {
+    "findings": "Vertebral body heights and alignment are maintained. Bone marrow signal is normal without suspicious lesion. Conus medullaris terminates at L1 and is normal in signal. L2-L3 and L3-L4: mild disc desiccation without significant bulge or canal narrowing. L4-L5: broad-based posterior disc bulge with superimposed left paracentral protrusion contacting and posteriorly displacing the descending left L5 nerve root; moderate left lateral recess narrowing; mild facet arthropathy and ligamentum flavum thickening; spinal canal mildly narrowed (AP diameter 10 mm). L5-S1: small central protrusion without nerve root contact; neural foramina patent. No paraspinal mass. Visualized sacroiliac joints are unremarkable.",
+    "impression": "1. Left paracentral disc protrusion at L4-L5 contacting the descending left L5 nerve root, with moderate left lateral recess stenosis - correlates with the clinical radiculopathy. 2. Mild degenerative disc disease at the remaining lumbar levels without high-grade stenosis. 3. No fracture, marrow-replacing lesion, or cord abnormality.",
+    "recommendation": "Correlation with symptom severity is advised. If symptoms persist, targeted left L5 transforaminal epidural steroid injection may be considered; surgical consultation if progressive neurologic deficit develops."
+  },
+  "radiologist": {
+    "name": "Elena V. Marchetti, MD - Diplomate, American Board of Radiology",
+    "signed_date": "07/15/2026, 16:42 CDT"
+  }
+}

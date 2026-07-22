@@ -1,0 +1,59 @@
+
+[firma]
+name = "Müller Präzisionstechnik GmbH"
+strasse = "Industriestraße 42"
+plz_ort = "82178 Puchheim"
+bereich = "Qualitätssicherung / Fertigung"
+
+[pruefling]
+bezeichnung = "Hydraulikzylinder Typ H-200"
+zeichnungsnr = "DWG-2023-089-B"
+auftragsnr = "AUF-99281-X"
+charge = "LOT-2024-05-A"
+werkstoff = "S355J2 Stahl"
+
+[protokoll]
+nummer = "PP-2024-0512-01"
+datum = "2024-05-15"
+pruefer = "Andreas Schmidt"
+pruefmittel = ["Digitaler Messschieber Mitutoyo 200mm", "Mikrometer 0-25mm", "Drehmomentschlüssel calibrated 50Nm"]
+
+[ergebnis]
+entscheid = "Bestanden"
+bemerkung = "Alle Messwerte liegen innerhalb der spezifizierten Toleranzgrenzen. Keine Oberflächenfehler erkennbar."
+unterschrift_datum = "Andreas Schmidt, 15.05.2024"
+
+[[messungen]]
+merkmal = "Außendurchmesser Kolbenstange"
+sollwert = 45.0
+toleranz = "±0.02"
+istwert = 45.01
+bewertung = "OK"
+
+[[messungen]]
+merkmal = "Gesamtlänge (ausgefahren)"
+sollwert = 850.0
+toleranz = "±0.50"
+istwert = 850.12
+bewertung = "OK"
+
+[[messungen]]
+merkmal = "Gewindedurchmesser M24"
+sollwert = 24.0
+toleranz = "±0.15"
+istwert = 23.92
+bewertung = "OK"
+
+[[messungen]]
+merkmal = "Dichtungsflächen-Rauheit (Ra)"
+sollwert = 0.8
+toleranz = "max."
+istwert = 0.65
+bewertung = "OK"
+
+[[messungen]]
+merkmal = "Anzugsdrehmoment Endkappe"
+sollwert = 45.0
+toleranz = "±2.00"
+istwert = 46.2
+bewertung = "OK"

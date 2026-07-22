@@ -1,0 +1,26 @@
+{
+  "company": {
+    "name": "Helios Battery Systems, Inc.",
+    "state": "Delaware",
+    "formation_date": "May 19, 2026",
+    "registered_agent": "Corporation Service Company",
+    "agent_address": "251 Little Falls Drive, Wilmington, DE 19808"
+  },
+  "shares": {
+    "authorized": "12,000,000",
+    "par_value": "$0.0001",
+    "classes": [
+      "10,000,000 shares of Common Stock",
+      "2,000,000 shares of Series Seed Preferred Stock"
+    ]
+  },
+  "directors": [
+    { "name": "Priya S. Raghunathan", "address": "884 Castro Street, Mountain View, CA 94041" },
+    { "name": "Daniel M. Okafor", "address": "77 Beale Street, Apt 1902, San Francisco, CA 94105" },
+    { "name": "Elena V. Marsh", "address": "410 Lakeview Terrace, Austin, TX 78703" }
+  ],
+  "incorporator": {
+    "name": "Whitcombe & Hale LLP, by Jordan A. Whitcombe",
+    "signed_date": "May 19, 2026"
+  }
+}

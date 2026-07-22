@@ -1,0 +1,22 @@
+{
+  "authority": {
+    "name": "State of Meridian Department of Revenue",
+    "address": "P.O. Box 47820, Capitol Station, Meridian City, ME 40210"
+  },
+  "taxpayer": {
+    "name": "Rachel A. Donnelly",
+    "address": "1152 Birchwood Lane, Apt 4B, Fairmont, ME 40218",
+    "tin": "***-**-6741"
+  },
+  "summary": {
+    "year": "2025",
+    "filing_status": "Single",
+    "total_income": 84620.0,
+    "adjustments": 6250.0,
+    "taxable_income": 63720.0,
+    "tax_withheld": 11480.0,
+    "tax_due": 10894.0,
+    "refund": 586.0,
+    "payment_deadline": "April 15, 2026"
+  }
+}

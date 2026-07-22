@@ -1,0 +1,31 @@
+{
+  "versicherer": {
+    "name": "Rheinland Assekuranz AG",
+    "strasse": "Kaiser-Wilhelm-Ring 27-29",
+    "plz_ort": "50672 Köln",
+    "telefon": "+49 221 578 44-0"
+  },
+  "versicherungsnehmer": {
+    "name": "Herr Matthias Grundner",
+    "strasse": "Eichendorffstraße 14",
+    "plz_ort": "53173 Bonn",
+    "geburtsdatum": "12.03.1979"
+  },
+  "vertrag": {
+    "nummer": "RA-7-4482913-06",
+    "sparte": "Wohngebäudeversicherung",
+    "tarif": "WohnKomfort Plus 2026",
+    "beginn": "01.09.2026",
+    "ablauf": "01.09.2027",
+    "zahlweise": "jährlich per SEPA-Lastschrift"
+  },
+  "leistungen": [
+    {"baustein": "Feuer, Blitzschlag, Explosion", "summe": "Gleitender Neuwert", "selbstbehalt": "0 €", "beitrag": 214.6},
+    {"baustein": "Leitungswasser", "summe": "Gleitender Neuwert", "selbstbehalt": "250 €", "beitrag": 168.3},
+    {"baustein": "Sturm und Hagel", "summe": "Gleitender Neuwert", "selbstbehalt": "250 €", "beitrag": 142.9},
+    {"baustein": "Elementarschäden (Zürs-Zone 2)", "summe": "Gleitender Neuwert", "selbstbehalt": "500 €", "beitrag": 96.4},
+    {"baustein": "Glasbruch Gebäudeverglasung", "summe": "bis 15.000 €", "selbstbehalt": "0 €", "beitrag": 38.7},
+    {"baustein": "Photovoltaik-Anlage 9,8 kWp", "summe": "22.000 €", "selbstbehalt": "150 €", "beitrag": 54.2}
+  ],
+  "gesamtbeitrag": 715.1
+}

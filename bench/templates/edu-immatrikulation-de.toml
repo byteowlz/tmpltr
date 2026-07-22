@@ -1,0 +1,21 @@
+
+[hochschule]
+name = "Hochschule für angewandte Wissenschaften Falkenberg"
+strasse = "Campusallee 10"
+plz_ort = "39240 Falkenberg"
+
+[student]
+name = "Jonas Petersen"
+geburtsdatum = "02.11.2001"
+matrikelnr = "2168403"
+
+[studium]
+studiengang = "Maschinenbau"
+abschluss = "Bachelor of Engineering (B.Eng.)"
+fachsemester = 6
+hochschulsemester = 6
+semester = "Sommersemester 2026 (01.03.2026 – 31.08.2026)"
+semesterbeitrag_bezahlt = "ja (127,90 €)"
+
+[ausstellung]
+datum = "02.03.2026"

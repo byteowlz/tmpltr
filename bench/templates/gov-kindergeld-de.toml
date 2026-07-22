@@ -1,0 +1,43 @@
+rechtsbehelf = "Gegen diesen Bescheid kann innerhalb eines Monats nach Bekanntgabe schriftlich oder zur Niederschrift bei der Familienkasse Widerspruch erhoben werden."
+
+[familienkasse]
+name = "Familienkasse Deutschland"
+strasse = "Hans-Böckler-Straße 2"
+plz_ort = "53121 Bonn"
+kindergeldnr = "12/345/67890"
+
+[berechtigter]
+name = "Maximilian Schmidt"
+strasse = "Birkenweg 14"
+plz_ort = "80331 München"
+steuer_id = "12 345 678 901"
+
+[bescheid]
+datum = "2024-02-15"
+gesamtbetrag = 1000.0
+zahlbeginn = "2024-01-01"
+iban_letzte4 = "4492"
+
+[[kinder]]
+name = "Lukas Schmidt"
+geburtsdatum = "2015-05-12"
+steuer_id = "98 765 432 109"
+betrag = 250.0
+
+[[kinder]]
+name = "Emma Schmidt"
+geburtsdatum = "2018-11-20"
+steuer_id = "87 654 321 098"
+betrag = 250.0
+
+[[kinder]]
+name = "Felix Schmidt"
+geburtsdatum = "2021-03-04"
+steuer_id = "76 543 210 987"
+betrag = 250.0
+
+[[kinder]]
+name = "Sophie Schmidt"
+geburtsdatum = "2023-08-15"
+steuer_id = "65 432 109 876"
+betrag = 250.0

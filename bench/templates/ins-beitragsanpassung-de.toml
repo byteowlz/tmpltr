@@ -1,0 +1,20 @@
+
+[versicherer]
+name = "Concordia Privata Krankenversicherung AG"
+strasse = "Theodor-Heuss-Allee 84"
+plz_ort = "60486 Frankfurt am Main"
+
+[versicherungsnehmer]
+name = "Frau Dr. Annette Rombach"
+strasse = "Schwarzwaldstraße 112"
+plz_ort = "79102 Freiburg im Breisgau"
+versicherungsnr = "CP-40-8827134"
+
+[anpassung]
+tarif = "VollMed Comfort 2 (Selbstbehalt 480 €)"
+alter_beitrag = 612.4
+neuer_beitrag = 668.9
+gueltig_ab = "01.01.2027"
+gruende = "Die gesetzlich vorgeschriebene jährliche Überprüfung hat ergeben, dass die tatsächlichen Leistungsausgaben in Ihrem Tarif die kalkulierten Ausgaben um mehr als 10 % übersteigen. Ursächlich sind vor allem gestiegene Kosten für stationäre Behandlungen und Arzneimittel sowie die gestiegene Lebenserwartung. Die Anpassung wurde von einem unabhängigen Treuhänder geprüft und genehmigt (§ 203 VVG, § 155 VAG)."
+widerspruchsfrist = "30.11.2026"
+optionen = ["Wechsel in den Tarif VollMed Comfort 3 mit 960 € Selbstbehalt (Monatsbeitrag ca. 597 €)", "Vereinbarung eines Beitragsentlastungstarifs zur Reduzierung des Beitrags im Alter", "Wechsel in den brancheneinheitlichen Standardtarif nach § 257 Abs. 2a SGB V (bei Erfüllung der Voraussetzungen)", "Persönliche Tarifberatung unter 069 7107-4400 (Mo.-Fr. 8-18 Uhr)"]

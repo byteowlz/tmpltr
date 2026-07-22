@@ -1,0 +1,116 @@
+
+[conference]
+name = "EuroData Summit 2026"
+dates = "5–6 October 2026"
+venue = "Centro de Congressos do Tejo"
+city = "Lisbon, Portugal"
+organizer = "EuroData Alliance e.V."
+
+[registration]
+name = "Dr. Annika Sommer"
+ticket_type = "Full Conference Pass"
+badge_no = "EDS26-0417"
+
+[[days]]
+date = "Monday, 5 October 2026"
+
+[[sessions]]
+time = "08:30 – 09:15"
+title = "Registration & welcome coffee"
+speaker = "—"
+room = "Foyer A"
+track = "General"
+
+[[sessions]]
+time = "09:15 – 10:00"
+title = "Opening keynote: Data sovereignty in practice"
+speaker = "Dr. Helena Vasquez"
+room = "Auditorium 1"
+track = "Keynote"
+
+[[sessions]]
+time = "10:15 – 11:00"
+title = "Streaming pipelines beyond the lakehouse"
+speaker = "Marco Antunes"
+room = "Room 2.04"
+track = "Engineering"
+
+[[sessions]]
+time = "11:15 – 12:00"
+title = "GDPR-safe synthetic data generation"
+speaker = "Prof. Ingrid Bauer"
+room = "Room 2.06"
+track = "Privacy"
+
+[[sessions]]
+time = "12:00 – 13:30"
+title = "Lunch break & exhibition"
+speaker = "—"
+room = "Hall B"
+track = "General"
+
+[[sessions]]
+time = "13:30 – 14:15"
+title = "Vector search at billion-document scale"
+speaker = "Yuki Tanaka"
+room = "Auditorium 1"
+track = "Engineering"
+
+[[sessions]]
+time = "14:30 – 15:15"
+title = "Panel: Regulating foundation models"
+speaker = "Vasquez · Okafor · Lindqvist"
+room = "Auditorium 1"
+track = "Policy"
+
+[[sessions]]
+time = "17:00 – 19:00"
+title = "Evening reception at Padrão dos Descobrimentos"
+speaker = "—"
+room = "Offsite"
+track = "Social"
+
+[[days]]
+date = "Tuesday, 6 October 2026"
+
+[[sessions]]
+time = "09:00 – 09:45"
+title = "Keynote: The post-warehouse decade"
+speaker = "Chidi Okafor"
+room = "Auditorium 1"
+track = "Keynote"
+
+[[sessions]]
+time = "10:00 – 10:45"
+title = "Cost-aware query optimisation in the cloud"
+speaker = "Sofia Lindqvist"
+room = "Room 2.04"
+track = "Engineering"
+
+[[sessions]]
+time = "11:00 – 11:45"
+title = "Workshop: Hands-on differential privacy"
+speaker = "Prof. Ingrid Bauer"
+room = "Lab 1.12"
+track = "Privacy"
+
+[[sessions]]
+time = "12:00 – 13:00"
+title = "Lightning talks (8 × 6 min)"
+speaker = "Community speakers"
+room = "Auditorium 2"
+track = "Community"
+
+[[sessions]]
+time = "13:00 – 14:00"
+title = "Lunch break"
+speaker = "—"
+room = "Hall B"
+track = "General"
+
+[[sessions]]
+time = "14:00 – 14:45"
+title = "Closing keynote & awards"
+speaker = "Dr. Helena Vasquez"
+room = "Auditorium 1"
+track = "Keynote"

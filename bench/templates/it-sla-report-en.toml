@@ -1,0 +1,56 @@
+
+[provider]
+company = "Nexhalo Cloud Services B.V."
+
+[customer]
+company = "Bergman & Voss Insurance AG"
+contract_no = "MSA-2024-1187"
+
+[period]
+month = "June"
+year = "2026"
+
+[summary]
+overall_pct = 99.92
+total_credit = "EUR 1,840.00 (10% of PostgreSQL monthly fee)"
+notes = "The PostgreSQL availability miss was caused by a failed minor-version rollout on 2026-06-11 (INC-2026-0288) and an unplanned failover on 2026-06-23 (INC-2026-0301). A staged rollout policy with automatic rollback is in place as of 2026-06-30. Service credit will be applied to invoice NX-2026-07-1187."
+
+[[services]]
+name = "Managed Kubernetes (prod-eu1)"
+sla_target_pct = 99.95
+achieved_pct = 99.98
+downtime_min = 9
+incidents = 1
+credit_pct = 0
+
+[[services]]
+name = "Object Storage (S3-compatible)"
+sla_target_pct = 99.9
+achieved_pct = 99.99
+downtime_min = 4
+incidents = 0
+credit_pct = 0
+
+[[services]]
+name = "Managed PostgreSQL cluster"
+sla_target_pct = 99.95
+achieved_pct = 99.71
+downtime_min = 125
+incidents = 2
+credit_pct = 10
+
+[[services]]
+name = "API Gateway & CDN edge"
+sla_target_pct = 99.99
+achieved_pct = 100.0
+downtime_min = 0
+incidents = 0
+credit_pct = 0
+
+[[services]]
+name = "Identity & SSO (SAML/OIDC)"
+sla_target_pct = 99.9
+achieved_pct = 99.94
+downtime_min = 26
+incidents = 1
+credit_pct = 0

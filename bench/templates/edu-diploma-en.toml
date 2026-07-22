@@ -1,0 +1,26 @@
+
+[institution]
+name = "Harrowgate University"
+city = "Harrowgate, Vermont"
+seal_text = "SIGILLUM · UNIVERSITATIS · HARROVICENSIS · MDCCCLXXII"
+
+[graduate]
+name = "Alexandra Marie Whitfield"
+
+[degree]
+title = "Bachelor of Science"
+field = "Molecular Biology"
+honors = "summa cum laude"
+conferral_date = "the sixteenth day of May, two thousand twenty-six"
+
+[[signatories]]
+name = "Eleanor J. Prescott"
+title = "President of the University"
+
+[[signatories]]
+name = "David A. Lindqvist"
+title = "Dean, College of Sciences"
+
+[[signatories]]
+name = "Ruth M. Calloway"
+title = "Chair, Board of Trustees"

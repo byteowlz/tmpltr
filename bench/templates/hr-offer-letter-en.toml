@@ -1,0 +1,24 @@
+
+[company]
+name = "Lumen Grid Inc."
+address = "550 Townsend Street, Suite 400"
+city = "San Francisco, CA 94103"
+hr_contact = "Priya Raghavan, Head of Talent"
+email = "priya.raghavan@lumengrid.io"
+
+[candidate]
+name = "Marcus Ellery"
+address = "2214 Piedmont Avenue"
+city = "Oakland, CA 94611"
+
+[offer]
+position = "Staff Product Designer"
+department = "Design"
+start_date = "August 24, 2026"
+salary_annual = 189000
+currency = "USD"
+bonus_pct = 12
+equity = "22,000 ISOs vesting over 4 years (1-year cliff)"
+vacation_days = 25
+acceptance_deadline = "July 31, 2026"
+manager = "Dana Kowalczyk, VP of Design"

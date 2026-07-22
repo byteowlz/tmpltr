@@ -1,0 +1,76 @@
+
+[store]
+name = "Meadow Fresh Market"
+address = "2841 Willow Creek Pkwy"
+city = "Sacramento, CA 95833"
+phone = "(916) 555-0184"
+vat_id = "94-2817465"
+store_no = "0227"
+
+[receipt]
+number = "0227-004-118392"
+date = "07/12/2026"
+time = "17:42"
+cashier = "DENISE"
+register = "04"
+
+[totals]
+subtotal = 48.9
+tax = 1.43
+total = 50.33
+payment_method = "VISA CREDIT"
+card_last4 = "4821"
+change = 0.0
+
+[loyalty]
+member_no = "MFM-7745102"
+points_earned = 50
+points_balance = 1285
+
+[[items]]
+name = "Whole Milk 2% 1 Gal"
+qty = 1
+unit_price = 3.49
+tax_class = "F"
+
+[[items]]
+name = "Free-Range Eggs 12ct"
+qty = 2
+unit_price = 4.19
+tax_class = "F"
+
+[[items]]
+name = "Sourdough Loaf 24oz"
+qty = 1
+unit_price = 4.29
+tax_class = "F"
+
+[[items]]
+name = "Cheddar Cheese 8oz"
+qty = 1
+unit_price = 3.99
+tax_class = "F"
+
+[[items]]
+name = "Paper Towels 6-Roll"
+qty = 1
+unit_price = 7.49
+tax_class = "T"
+
+[[items]]
+name = "Dish Soap 28oz"
+qty = 1
+unit_price = 3.29
+tax_class = "T"
+
+[[items]]
+name = "Ground Coffee 12oz"
+qty = 1
+unit_price = 8.99
+tax_class = "F"
+
+[[items]]
+name = "Sparkling Water 12pk"
+qty = 2
+unit_price = 4.49
+tax_class = "T"

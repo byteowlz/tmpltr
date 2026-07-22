@@ -1,0 +1,28 @@
+{
+  "provider": {
+    "company": "Quayside Managed IT Services Ltd",
+    "address": "18 Marlow Wharf, Leeds LS1 4AP, United Kingdom",
+    "represented_by": "Sarah Okonkwo, Commercial Director"
+  },
+  "client": {
+    "company": "Bellhurst & Gray LLP",
+    "address": "77 King Street, Manchester M2 4NG, United Kingdom",
+    "represented_by": "Daniel Gray, Managing Partner"
+  },
+  "agreement": {
+    "effective_date": "1 September 2026",
+    "scope": "Fully managed IT operations for both Client offices: 24/7 monitoring, service desk (08:00-18:00 weekdays), patch and endpoint management for up to 140 devices, Microsoft 365 administration, backup operation with quarterly restore tests, and an annual security review.",
+    "fee_model": "Fixed monthly fee per agreed device volume; changes above 10% re-priced via change request",
+    "monthly_fee": 6840.0,
+    "currency": "GBP",
+    "term_months": 36,
+    "notice_months": 6,
+    "liability_cap": "12 months of fees paid in the preceding contract year, excluding liability that cannot be capped by law",
+    "governing_law": "England and Wales"
+  },
+  "signatures": {
+    "provider_name": "Sarah Okonkwo",
+    "client_name": "Daniel Gray",
+    "date": "14 August 2026"
+  }
+}

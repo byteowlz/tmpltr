@@ -1,0 +1,33 @@
+{
+  "provider": {
+    "name": "Brightpath Professional Training Institute",
+    "address": "210 Fenwick Road, Leeds LS2 8JT, United Kingdom",
+    "accreditation": "Accredited by the UK CPD Certification Service — Provider No. 785412"
+  },
+  "participant": {
+    "name": "Sarah Ngouabi",
+    "dob": "23 May 1994"
+  },
+  "course": {
+    "title": "Project Management Fundamentals",
+    "hours": 40,
+    "start_date": "2 March 2026",
+    "end_date": "27 March 2026",
+    "topics": [
+      "Project lifecycle and methodologies",
+      "Scope and requirements management",
+      "Scheduling and critical path analysis",
+      "Budgeting and cost control",
+      "Risk assessment and mitigation",
+      "Stakeholder communication and reporting"
+    ],
+    "grade": "Distinction (92%)",
+    "certificate_no": "BPTI-2026-1873"
+  },
+  "issued": {
+    "place": "Leeds",
+    "date": "30 March 2026",
+    "instructor": "James O'Rourke, PMP",
+    "director": "Dr. Alice Whitcombe"
+  }
+}

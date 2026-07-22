@@ -1,0 +1,47 @@
+{
+  "behoerde": {
+    "name": "Ordnungsamt München - Gewerbeangelegenheiten",
+    "strasse": "Maximilianstraße 1",
+    "plz_ort": "80539 München"
+  },
+  "anmelder": {
+    "name": "Maximilian Schmidt",
+    "geburtsdatum": "1985-05-14",
+    "geburtsort": "Augsburg",
+    "staatsangehoerigkeit": "deutsch",
+    "strasse": "Sonnenstraße 42",
+    "plz_ort": "80331 München"
+  },
+  "betrieb": {
+    "name": "Schmidt Digital Solutions e.K.",
+    "rechtsform": "Einzelunternehmen",
+    "taetigkeit": "IT-Beratung, Softwareentwicklung und technischer Support",
+    "strasse": "Leopoldstraße 115",
+    "plz_ort": "80802 München",
+    "beginn": "2023-11-01",
+    "mitarbeiter_anzahl": 3
+  },
+  "anmeldung": {
+    "datum": "2023-10-25",
+    "art": "Gewerbeanmeldung (Neugründung)",
+    "gebuehr": 45.00
+  },
+  "zusatzinformationen": [
+    {
+      "feld": "Handelsregister",
+      "wert": "Nicht eingetragen"
+    },
+    {
+      "feld": "Steuernummer",
+      "wert": "143/258/90123"
+    },
+    {
+      "feld": "Umsatzsteuer-Identifikationsnummer",
+      "wert": "DE312456789"
+    },
+    {
+      "feld": "Berufsverband",
+      "wert": "Bayerischer IT-Verband"
+    }
+  ]
+}

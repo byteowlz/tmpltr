@@ -1,0 +1,42 @@
+{
+  "makler": {
+    "firma": "Terrano Immobilien GmbH",
+    "ansprechpartner": "Katharina Ellwang",
+    "telefon": "0521 388 41 20",
+    "email": "k.ellwang@terrano-immobilien.de"
+  },
+  "objekt": {
+    "titel": "Lichtdurchflutete 3-Zimmer-Wohnung mit Südbalkon am Stadtpark",
+    "typ": "Eigentumswohnung",
+    "strasse": "Parkallee 26",
+    "plz_ort": "33615 Bielefeld",
+    "baujahr": "1998",
+    "wohnflaeche_qm": 84,
+    "grundstueck_qm": 0,
+    "zimmer": 3,
+    "etagen": "3. OG von 5, Aufzug vorhanden"
+  },
+  "preise": {
+    "kaufpreis_oder_miete": "389.000 € Kaufpreis",
+    "courtage": "3,57 % inkl. MwSt., käuferseitig",
+    "hausgeld": "285 €/Monat",
+    "verfuegbar_ab": "nach Absprache, spätestens 01.11.2026"
+  },
+  "ausstattung": [
+    "Südbalkon (8 m²) mit Blick auf den Stadtpark",
+    "Einbauküche (2022) mit Induktionskochfeld",
+    "Eichenparkett in allen Wohnräumen",
+    "Tageslichtbad mit bodengleicher Dusche und Badewanne",
+    "Tiefgaragenstellplatz (im Kaufpreis enthalten)",
+    "Kellerraum, ca. 6 m²",
+    "Glasfaseranschluss im Haus"
+  ],
+  "energie": {
+    "ausweisart": "Verbrauchsausweis",
+    "kennwert": "78 kWh/(m²·a)",
+    "klasse": "C",
+    "traeger": "Fernwärme",
+    "baujahr_anlage": "2014"
+  },
+  "beschreibung": "Die Wohnung liegt im dritten Obergeschoss eines gepflegten Mehrfamilienhauses von 1998 in ruhiger Lage direkt am Stadtpark. Der großzügige Wohn- und Essbereich öffnet sich über eine bodentiefe Fensterfront zum Südbalkon. Beide Schlafzimmer liegen zum ruhigen Innenhof. Die Wohnanlage wurde 2014 energetisch modernisiert (Fernwärmeanschluss, Dachdämmung); die Rücklage der WEG beträgt derzeit rund 48.000 €. Einkaufsmöglichkeiten, Grundschule und Stadtbahnhaltestelle sind fußläufig in unter zehn Minuten erreichbar."
+}

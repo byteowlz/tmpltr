@@ -1,0 +1,24 @@
+
+[organizer]
+name = "Northlight Live GmbH"
+website = "www.northlight-live.de"
+
+[event]
+name = "Aurora Skies – Open Air 2026"
+venue = "Stadtpark Freilichtbühne"
+address = "Saarlandstraße 71"
+city = "22303 Hamburg"
+date = "Sat 29 Aug 2026"
+doors_open = "17:30"
+start = "19:00"
+
+[ticket]
+type = "Seated – Category 2"
+section = "B"
+row = "12"
+seat = "07"
+price = 64.5
+currency = "EUR"
+order_no = "NL-2026-118427"
+barcode_ref = "NL118427B1207CAT2X"
+purchaser = "Jonas Sommer"

@@ -1,0 +1,24 @@
+
+[verein]
+name = "Förderverein Freiwillige Feuerwehr Lemgo e. V."
+strasse = "Brandmeisterweg 3"
+plz_ort = "32657 Lemgo"
+steuernr = "313/5902/4417"
+finanzamt = "Finanzamt Lemgo"
+freistellungsbescheid_datum = "11.03.2024"
+
+[spender]
+name = "Dr. Annette Roswald"
+strasse = "Echternstraße 48"
+plz_ort = "32657 Lemgo"
+
+[spende]
+betrag = 750.0
+betrag_in_worten = "siebenhundertfünfzig"
+datum = "02.07.2026"
+art = "Geldzuwendung"
+verzicht_auf_erstattung = false
+
+[ausstellung]
+ort = "Lemgo"
+datum = "18.07.2026"

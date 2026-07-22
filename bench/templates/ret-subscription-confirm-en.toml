@@ -1,0 +1,21 @@
+
+[provider]
+name = "Streamhaven Media Inc."
+address = "301 Mission Rock St, San Francisco, CA 94158"
+support_email = "help@streamhaven.tv"
+
+[customer]
+name = "Marcus Delaney"
+email = "m.delaney82@gmail.com"
+customer_no = "SH-8841207"
+
+[subscription]
+plan = "Premium 4K Family"
+price = 17.99
+currency = "USD"
+billing_cycle = "monthly"
+start_date = "July 10, 2026"
+next_renewal = "August 10, 2026"
+payment_method = "Mastercard"
+card_last4 = "5512"
+cancellation_policy = "You can cancel anytime from Account Settings or by contacting support. Cancellation takes effect at the end of the current billing period; you keep full access until then. No partial refunds are issued for unused days, except where required by law. If a renewal payment fails, we will retry for up to 7 days before the subscription is paused."

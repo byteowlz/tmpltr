@@ -1,0 +1,61 @@
+{
+  "betrieb": {
+    "firma": "Müller & Söhne Metallbau GmbH",
+    "bereich": "Fertigung / Schweißerei",
+    "arbeitsplatz": "Schweißstation 4 - MIG/MAG",
+    "taetigkeit": "Zusammenfügen von Stahlkonstruktionen mittels Lichtbogenschweißen"
+  },
+  "beurteilung": {
+    "nummer": "GB-2024-08-012",
+    "datum": "2024-08-15",
+    "ersteller": "Thomas Schneider (Fachkraft für Arbeitssicherheit)",
+    "naechste_pruefung": "2025-08-15"
+  },
+  "gefaehrdungen": [
+    {
+      "gefaehrdung": "Einwirkung von UV-Strahlung und heißem Metall",
+      "risiko_klasse": "Hoch",
+      "schutzmassnahme": "Tragen von Schweißerschutzhelm mit automatischer Abdunkelung und hitzebeständiger Schutzkleidung",
+      "verantwortlich": "Werkstattleiter",
+      "frist": "Sofort",
+      "wirksam": "Ja"
+    },
+    {
+      "gefaehrdung": "Einatmen von Schweißrauch (Metalloxide)",
+      "risiko_klasse": "Mittel",
+      "schutzmassnahme": "Installation einer Punktabsaugung und Nutzung von FFP3-Masken bei Wartungsarbeiten",
+      "verantwortlich": "Betriebsleitung",
+      "frist": "2024-09-01",
+      "wirksam": "In Umsetzung"
+    },
+    {
+      "gefaehrdung": "Lärmbelastung durch Schleifarbeiten",
+      "risiko_klasse": "Mittel",
+      "schutzmassnahme": "Tragen von Gehörschutz (Kapselgehörschutz nach EN 352-1)",
+      "verantwortlich": "Schichtführer",
+      "frist": "Sofort",
+      "wirksam": "Ja"
+    },
+    {
+      "gefaehrdung": "Brandgefahr durch Funkenflug",
+      "risiko_klasse": "Hoch",
+      "schutzmassnahme": "Bereitstellung von Feuerlöschern (CO2) in unmittelbarer Nähe und Entfernung brennbarer Stoffe",
+      "verantwortlich": "Brandschutzbeauftragter",
+      "frist": "2024-08-20",
+      "wirksam": "Ja"
+    },
+    {
+      "gefaehrdung": "Ergonomische Belastung durch statische Körperhaltung",
+      "risiko_klasse": "Gering",
+      "schutzmassnahme": "Einsatz von höhenverstellbaren Arbeitstischen und regelmäßige Pausen",
+      "verantwortlich": "Personalabteilung",
+      "frist": "2024-12-31",
+      "wirksam": "Nein"
+    }
+  ],
+  "unterschrift": {
+    "ort": "Düsseldorf",
+    "datum": "2024-08-16",
+    "name": "Andreas Müller"
+  }
+}

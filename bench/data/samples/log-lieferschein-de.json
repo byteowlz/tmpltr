@@ -1,0 +1,33 @@
+{
+  "lieferant": {
+    "firma": "Hartwig Befestigungstechnik GmbH",
+    "strasse": "Siemensring 14",
+    "plz_ort": "47877 Willich",
+    "telefon": "+49 2154 88 06-0"
+  },
+  "empfaenger": {
+    "firma": "Nordbau Systemhallen AG",
+    "ansprechpartner": "Herr Jens Petersen",
+    "strasse": "Gewerbering 3",
+    "plz_ort": "24537 Neumünster"
+  },
+  "lieferung": {
+    "lieferscheinnr": "LS-2026-08812",
+    "datum": "16.07.2026",
+    "bestellnr": "B-2026-3341",
+    "versandart": "Spedition Kühne, frei Bordsteinkante",
+    "packstuecke": "4 Paletten (EUR)",
+    "gewicht_kg": "612,5"
+  },
+  "positionen": [
+    {"artikelnr": "SDS-1080-VZ", "bezeichnung": "Schwerlastdübel SDS 10x80, verzinkt", "menge": 2000, "einheit": "Stk"},
+    {"artikelnr": "ANK-1612-A4", "bezeichnung": "Ankerbolzen M16x120, Edelstahl A4", "menge": 480, "einheit": "Stk"},
+    {"artikelnr": "GWS-0830-VZ", "bezeichnung": "Gewindestange M8x300 mm, DIN 976, verzinkt", "menge": 250, "einheit": "Stk"},
+    {"artikelnr": "MTL-2050-BL", "bezeichnung": "Montageschiene 41x41x2,0 mm, 5,0 m, blank", "menge": 60, "einheit": "Stg"},
+    {"artikelnr": "KLB-INJ-380", "bezeichnung": "Injektionsmörtel VME 380 ml Kartusche", "menge": 96, "einheit": "Kart"}
+  ],
+  "empfang": {
+    "name": "",
+    "datum": ""
+  }
+}

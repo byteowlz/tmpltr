@@ -1,0 +1,38 @@
+{
+  "seller": {
+    "name": "Northlight Systems Ltd",
+    "address": "14 Harbourside Way",
+    "city": "Bristol",
+    "postal": "BS1 5DB",
+    "country": "United Kingdom",
+    "vat_id": "GB 442 8091 27",
+    "email": "accounts@northlight-systems.co.uk",
+    "phone": "+44 117 456 0912",
+    "iban": "GB29 NWBK 6016 1331 9268 19",
+    "bic": "NWBKGB2L",
+    "bank": "NatWest Bank plc"
+  },
+  "buyer": {
+    "name": "Vantera Logistics GmbH",
+    "address": "Ostkai 7",
+    "city": "Hamburg",
+    "postal": "20457",
+    "country": "Germany",
+    "vat_id": "DE 315 442 871"
+  },
+  "invoice": {
+    "number": "INV-2026-0417",
+    "date": "2026-07-02",
+    "due_date": "2026-08-01",
+    "currency": "EUR",
+    "tax_rate": 0,
+    "po_number": "PO-88213"
+  },
+  "items": [
+    {"description": "Fleet telemetry gateway FT-200 (hardware)", "qty": 12, "unit": "pcs", "price": 385.0},
+    {"description": "Installation & commissioning, Hamburg depot", "qty": 3, "unit": "days", "price": 940.0},
+    {"description": "Telemetry platform subscription (12 months, per vehicle)", "qty": 46, "unit": "veh", "price": 96.0},
+    {"description": "Driver training workshop", "qty": 1, "unit": "flat", "price": 1250.0}
+  ],
+  "notes": "Reverse charge: VAT to be accounted for by the recipient under Art. 196 of Council Directive 2006/112/EC."
+}

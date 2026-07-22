@@ -1,0 +1,23 @@
+
+[anbieter]
+name = "velaris Telekommunikation GmbH"
+strasse = "Medienhafen 22"
+plz_ort = "40221 Düsseldorf"
+hotline = "0800 771 20 20"
+
+[kunde]
+name = "Herr Matthias Grundner"
+strasse = "Fliederweg 3"
+plz_ort = "40595 Düsseldorf"
+kundennr = "VX-8827 4410"
+
+[vertrag]
+tarif = "velaris Glasfaser 300"
+download_mbit = 300
+upload_mbit = 150
+monatspreis = 44.99
+einrichtungspreis = 69.99
+laufzeit_monate = 24
+schaltungstermin = "24.08.2026, 08:00 - 16:00 Uhr"
+router = "FRITZ!Box 7590 AX (Mietgerät, 4,99 €/Monat)"
+rufnummern = ["0211 884 172 09", "0211 884 172 10"]

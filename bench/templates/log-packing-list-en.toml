@@ -1,0 +1,63 @@
+
+[shipper]
+company = "Auriga Lighting Manufacture Ltd"
+address = "Unit 9, Kestrel Business Park, Falcon Way"
+city = "Sheffield S9 1XU"
+country = "United Kingdom"
+
+[consignee]
+company = "Helvetia Interior Solutions AG"
+address = "Industriestrasse 22"
+city = "8304 Wallisellen"
+country = "Switzerland"
+
+[shipment]
+number = "SHP-26-01983"
+date = "2026-07-14"
+order_ref = "SO-77120 / cust. PO 2026-556"
+carrier = "DSV Road Ltd, groupage"
+total_cartons = 18
+total_weight_kg = 402.6
+total_volume_m3 = 1.94
+
+[[cartons]]
+carton_no = "1-4"
+contents = "LED track spotlight AUR-TS30, white (4 per carton)"
+qty = 16
+weight_kg = 26.4
+dimensions_cm = "58 x 38 x 32"
+
+[[cartons]]
+carton_no = "5-9"
+contents = "LED track spotlight AUR-TS30, black (4 per carton)"
+qty = 20
+weight_kg = 26.4
+dimensions_cm = "58 x 38 x 32"
+
+[[cartons]]
+carton_no = "10-13"
+contents = "Track rail 2 m, 3-phase, white (6 per carton)"
+qty = 24
+weight_kg = 19.8
+dimensions_cm = "208 x 18 x 16"
+
+[[cartons]]
+carton_no = "14-16"
+contents = "Driver unit AUR-DRV-150W (10 per carton)"
+qty = 30
+weight_kg = 21.5
+dimensions_cm = "48 x 34 x 28"
+
+[[cartons]]
+carton_no = "17"
+contents = "Mounting kits, connectors, end caps (mixed)"
+qty = 120
+weight_kg = 14.2
+dimensions_cm = "48 x 34 x 28"
+
+[[cartons]]
+carton_no = "18"
+contents = "Spare lenses 24° / 38°, documentation"
+qty = 60
+weight_kg = 6.3
+dimensions_cm = "38 x 28 x 22"

@@ -1,0 +1,50 @@
+zuzahlung = "16,38 € (10 € Verordnungsgebühr + 10 % je Behandlung), bereits entrichtet am 20.07.2026"
+
+[praxis]
+name = "Physiotherapie am Stadtpark – Inh. Carsten Weidlich"
+strasse = "Eppendorfer Landstraße 58"
+plz_ort = "20249 Hamburg"
+telefon = "040 480 92 17"
+
+[patient]
+name = "Ingrid Petersen"
+geburtsdatum = "02.12.1958"
+krankenkasse = "AOK Rheinland/Hamburg"
+
+[verordnung]
+diagnose = "Chronisches Lumbalsyndrom bei Osteochondrose L4/L5 (M51.16 G), Zustand nach Bandscheibenprolaps"
+heilmittel = "KG – Krankengymnastik (Einzelbehandlung), ergänzend Wärmetherapie (Fango)"
+anzahl = "6 Einheiten"
+frequenz = "1–2× wöchentlich"
+verordnungsdatum = "07.07.2026"
+arzt = "Dr. med. Holger Brandes, Orthopädie, Winterhuder Weg 11, 22085 Hamburg"
+
+[[termine]]
+datum = "20.07.2026"
+uhrzeit = "09:30 Uhr"
+therapeut = "C. Weidlich"
+
+[[termine]]
+datum = "23.07.2026"
+uhrzeit = "11:00 Uhr"
+therapeut = "J. Matussek"
+
+[[termine]]
+datum = "28.07.2026"
+uhrzeit = "09:30 Uhr"
+therapeut = "C. Weidlich"
+
+[[termine]]
+datum = "31.07.2026"
+uhrzeit = "14:15 Uhr"
+therapeut = "J. Matussek"
+
+[[termine]]
+datum = "04.08.2026"
+uhrzeit = "09:30 Uhr"
+therapeut = "C. Weidlich"
+
+[[termine]]
+datum = "07.08.2026"
+uhrzeit = "10:45 Uhr"
+therapeut = "C. Weidlich"

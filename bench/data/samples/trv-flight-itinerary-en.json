@@ -1,0 +1,28 @@
+{
+  "agency": {
+    "name": "Meridian Voyages Ltd",
+    "phone": "+44 20 7946 0821",
+    "email": "bookings@meridianvoyages.co.uk"
+  },
+  "booking": {
+    "reference": "X4KQ9T",
+    "date": "2026-08-03",
+    "status": "CONFIRMED",
+    "total": 1284.60,
+    "currency": "EUR"
+  },
+  "passengers": [
+    {"name": "SOMMER/ANNIKA MRS", "type": "ADT", "ticket_no": "745-2201483956"},
+    {"name": "SOMMER/JONAS MR", "type": "ADT", "ticket_no": "745-2201483957"}
+  ],
+  "segments": [
+    {"flight": "AU 1423", "airline": "Aurelia Airways", "from": "Hamburg (HAM)", "to": "Madrid (MAD)", "depart": "Mon 14 Sep 2026, 07:35", "arrive": "Mon 14 Sep 2026, 10:20", "class": "Economy (T)", "seat": "14A / 14B", "baggage": "1 x 23 kg p.p."},
+    {"flight": "LU 208", "airline": "Lusitania Connect", "from": "Madrid (MAD)", "to": "Lisbon (LIS)", "depart": "Mon 14 Sep 2026, 11:50", "arrive": "Mon 14 Sep 2026, 12:15", "class": "Economy (T)", "seat": "09C / 09D", "baggage": "1 x 23 kg p.p."},
+    {"flight": "AU 1608", "airline": "Aurelia Airways", "from": "Lisbon (LIS)", "to": "Hamburg (HAM)", "depart": "Mon 21 Sep 2026, 13:40", "arrive": "Mon 21 Sep 2026, 18:05", "class": "Economy (Q)", "seat": "21E / 21F", "baggage": "1 x 23 kg p.p."}
+  ],
+  "fare": {
+    "base": 942.00,
+    "taxes": 342.60,
+    "total": 1284.60
+  }
+}

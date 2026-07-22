@@ -1,0 +1,20 @@
+
+[vendor]
+company = "Quantaleaf Software Corp."
+address = "2201 Mission College Blvd, Suite 400, Santa Clara, CA 95054, USA"
+
+[licensee]
+company = "Meridian Rail Analytics Ltd"
+address = "45 Clerkenwell Green, London EC1R 0DU, United Kingdom"
+contact = "procurement@meridianrail.co.uk"
+
+[license]
+product = "Quantaleaf DataForge Enterprise"
+version = "8.2"
+type = "Perpetual — Node-locked (production cluster)"
+seats = 250
+key = "QLDF-8E2K-PR9M-4VXT-C7BN-2026"
+issued = "2026-07-01"
+valid_until = "Perpetual"
+support_until = "2027-06-30"
+maintenance_included = "Yes — Gold tier (24x7, 4h response)"

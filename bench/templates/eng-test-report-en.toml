@@ -1,0 +1,62 @@
+
+[lab]
+name = "Precision Dynamics Testing Services"
+address = "Unit 12, Science Park Drive"
+accreditation = "ISO/IEC 17025:2017 Accredited (Certificate #7721-A)"
+
+[client]
+company = "Aether Robotics Corp"
+contact = "Elena Vance, Quality Assurance Manager"
+
+[dut]
+name = "Autonomous Navigation Module"
+model = "ANM-X5"
+serial = "SN-8842-091-B"
+fw_version = "v2.4.1-stable"
+
+[report]
+number = "QTR-2024-0552"
+date = "2024-11-14"
+standard = "IEC 62368-1:2020"
+engineer = "Marcus Thorne"
+
+[summary]
+passed = 4
+failed = 1
+verdict = "REJECTED"
+remarks = "The unit failed the idle power consumption test (TC-005). Current draw exceeds the maximum specification by 35mA. Investigation into the sleep-state firmware logic is required before re-testing."
+
+[[tests]]
+id = "TC-001"
+name = "Input Voltage Stability"
+requirement = "Operating range 12V to 24V DC; ripple < 50mV"
+measured = "12.05V - 23.95V; ripple 12mV"
+verdict = "PASS"
+
+[[tests]]
+id = "TC-002"
+name = "Thermal Dissipation (Full Load)"
+requirement = "Internal temperature must not exceed 65°C after 60 min"
+measured = "58.4°C"
+verdict = "PASS"
+
+[[tests]]
+id = "TC-003"
+name = "Signal Latency (UART)"
+requirement = "End-to-end latency < 5.0ms"
+measured = "4.2ms"
+verdict = "PASS"
+
+[[tests]]
+id = "TC-004"
+name = "Electromagnetic Interference (EMI)"
+requirement = "Radiated emissions within CISPR 32 Class B limits"
+measured = "Compliant within margin of 6dB"
+verdict = "PASS"
+
+[[tests]]
+id = "TC-005"
+name = "Power Consumption (Idle)"
+requirement = "Maximum current draw < 150mA @ 12V"
+measured = "185mA"
+verdict = "FAIL"

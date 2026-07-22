@@ -1,0 +1,33 @@
+{
+  "institution": {
+    "name": "Ashford Valley College",
+    "address": "58 Meadowbrook Lane, Burlington, VT 05401",
+    "bursar_email": "bursar@ashfordvalley.edu"
+  },
+  "student": {
+    "name": "Emily J. Vasquez",
+    "id": "AVC-88231",
+    "program": "B.A. Environmental Studies"
+  },
+  "invoice": {
+    "number": "TUI-2026-08815",
+    "date": "July 6, 2026",
+    "term": "Fall 2026",
+    "due_date": "August 15, 2026",
+    "currency": "USD"
+  },
+  "items": [
+    {"description": "Tuition — full-time block (12–18 credits)", "amount": 14250.0},
+    {"description": "Student activity fee", "amount": 210.0},
+    {"description": "Health services fee", "amount": 385.0},
+    {"description": "Technology fee", "amount": 150.0},
+    {"description": "Housing — Maple Hall, double occupancy", "amount": 4120.0},
+    {"description": "Meal plan — 14 meals per week", "amount": 2680.0},
+    {"description": "Presidential Merit Scholarship (credit)", "amount": -3500.0}
+  ],
+  "payment": {
+    "method": "ACH transfer or check payable to Ashford Valley College",
+    "account": "Green Mountain Trust Bank · Routing 211691185 · Account 004482913",
+    "reference": "TUI-2026-08815 / AVC-88231"
+  }
+}

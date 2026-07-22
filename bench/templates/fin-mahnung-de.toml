@@ -1,0 +1,25 @@
+
+[absender]
+firma = "Druckerei Wessels GmbH & Co. KG"
+strasse = "Gutenbergring 14"
+plz_ort = "49084 Osnabrück"
+email = "rechnungswesen@druckerei-wessels.de"
+telefon = "+49 541 77 03 45-20"
+iban = "DE28 2655 0105 0000 4483 71"
+bic = "NOLADE22XXX"
+
+[empfaenger]
+firma = "Eventura Veranstaltungs GmbH"
+ansprechpartner = "Frau Bettina Schöneberg"
+strasse = "Hafenpromenade 2"
+plz_ort = "48155 Münster"
+
+[mahnung]
+stufe = 2
+datum = "18.07.2026"
+rechnungsnr = "RE-2026-0577"
+rechnungsdatum = "28.04.2026"
+betrag = 2318.4
+mahngebuehr = 40.0
+gesamtbetrag = 2358.4
+frist = "31.07.2026"

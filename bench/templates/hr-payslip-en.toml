@@ -1,0 +1,45 @@
+
+[employer]
+company = "Harborview Retail Group plc"
+address = "220 Deansgate, Manchester M3 3NQ"
+payroll_ref = "PAYE 475/HR20441"
+
+[employee]
+name = "Charlotte Bevan"
+id = "EMP-04812"
+tax_code = "1257L"
+ni_number = "QQ 47 92 18 C"
+bank_last4 = "6631"
+department = "Merchandising"
+
+[period]
+month = "June 2026"
+pay_date = "26 Jun 2026"
+
+[pay]
+base_salary = 3416.67
+overtime = 142.5
+bonus = 250.0
+gross = 3809.17
+
+[totals]
+net = 2732.98
+ytd_gross = 22417.02
+ytd_tax = 3216.4
+ytd_net = 16311.55
+
+[[deductions]]
+label = "Income Tax (PAYE)"
+amount = 551.4
+
+[[deductions]]
+label = "National Insurance"
+amount = 271.83
+
+[[deductions]]
+label = "Pension (5% employee)"
+amount = 190.46
+
+[[deductions]]
+label = "Cycle to Work scheme"
+amount = 62.5

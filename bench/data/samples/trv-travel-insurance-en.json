@@ -1,0 +1,29 @@
+{
+  "insurer": {
+    "name": "Albatross Travel Assurance SE",
+    "address": "Domstraße 18, 20095 Hamburg, Germany",
+    "emergency_phone": "+49 40 5550 2424"
+  },
+  "insured": {
+    "name": "Annika Sommer",
+    "dob": "22 Mar 1987",
+    "address": "Eppendorfer Weg 61, 20259 Hamburg, Germany"
+  },
+  "policy": {
+    "number": "ATA-2026-0741862",
+    "trip_start": "14 Sep 2026",
+    "trip_end": "21 Sep 2026",
+    "destination": "Spain & Portugal",
+    "coverages": [
+      {"type": "Emergency medical expenses & repatriation", "limit": "EUR 10,000,000"},
+      {"type": "Trip cancellation (per trip)", "limit": "EUR 3,000"},
+      {"type": "Trip interruption / curtailment", "limit": "EUR 3,000"},
+      {"type": "Baggage loss or damage", "limit": "EUR 2,000"},
+      {"type": "Personal liability abroad", "limit": "EUR 1,000,000"},
+      {"type": "Travel delay (per full 12 hours)", "limit": "EUR 150"}
+    ],
+    "premium": 64.80,
+    "currency": "EUR",
+    "issued_date": "5 Aug 2026"
+  }
+}

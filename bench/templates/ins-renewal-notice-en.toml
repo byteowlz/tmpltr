@@ -1,0 +1,20 @@
+
+[insurer]
+name = "Kestrel & Vane Underwriting Ltd"
+address = "3rd Floor, 88 Fenchurch Street, London EC3M 4BY"
+phone = "+44 20 7946 3310"
+
+[policyholder]
+name = "Mr Samuel T. Pryce-Whitfield"
+address = "27 Aldermoor Lane"
+city = "Guildford GU2 7RN"
+
+[renewal]
+policy_no = "KV-MOT-19-552087"
+product = "Motor Comprehensive — Kestrel Drive Plus"
+current_premium = 684.12
+new_premium = 731.88
+change_pct = "7.0"
+renewal_date = "2026-09-01"
+action_deadline = "2026-08-25"
+changes = ["Windscreen excess increases from £75 to £95.", "Courtesy car cover now includes electric vehicles up to 60 kWh.", "Uninsured driver promise extended to named drivers.", "Claims helpline moves to a 24/7 service from 1 September 2026."]

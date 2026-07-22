@@ -1,0 +1,25 @@
+{
+  "arzt": {
+    "name": "Dr. med. Frank Oberhauser, Facharzt für Allgemeinmedizin",
+    "strasse": "Kaiserstraße 118",
+    "plz_ort": "76133 Karlsruhe",
+    "bsnr": "521234567",
+    "lanr": "738912346"
+  },
+  "patient": {
+    "name": "Melanie Sturmfels, Rüppurrer Str. 40, 76137 Karlsruhe",
+    "geburtsdatum": "27.03.1988",
+    "versichertennr": "T528604419",
+    "krankenkasse": "Techniker Krankenkasse"
+  },
+  "au": {
+    "art": "Erstbescheinigung",
+    "festgestellt_am": "17.07.2026",
+    "arbeitsunfaehig_seit": "17.07.2026",
+    "voraussichtlich_bis": "24.07.2026",
+    "diagnosen_icd": ["J20.9 G", "R05 G"]
+  },
+  "ausstellung": {
+    "datum": "17.07.2026"
+  }
+}

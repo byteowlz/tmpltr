@@ -1,0 +1,61 @@
+rules = ["Arrive at least 15 minutes before the scheduled start time; doors close at the start of the examination.", "Bring your student ID card and place it visibly on your desk.", "Mobile phones and smart devices must be switched off and stored in the bags area.", "Only the aids listed for each examination are permitted at your desk.", "Candidates may not leave the room during the first 30 or the final 15 minutes.", "Illness on the day of an examination must be reported to the Examinations Office before 12:00 with a medical certificate."]
+
+[institution]
+name = "Redbrook Institute of Technology"
+department = "School of Electrical & Computer Engineering"
+term = "Spring 2026 — Final Examination Period"
+
+[student]
+name = "Priya Raman"
+id = "RIT-2024-1107"
+program = "B.Eng. Electrical Engineering, Year 2"
+
+[[exams]]
+date = "Mon, 11 May 2026"
+time = "09:00"
+course_code = "EE 210"
+course = "Signals and Systems"
+room = "Halloran Hall 2.14"
+seat = "B-17"
+duration_min = 120
+aids = "Non-programmable calculator"
+
+[[exams]]
+date = "Wed, 13 May 2026"
+time = "13:30"
+course_code = "EE 225"
+course = "Analog Circuit Design"
+room = "Faraday Building 1.03"
+seat = "D-04"
+duration_min = 180
+aids = "One A4 formula sheet, calculator"
+
+[[exams]]
+date = "Fri, 15 May 2026"
+time = "09:00"
+course_code = "CS 240"
+course = "Embedded Programming"
+room = "Computing Centre Lab 3"
+seat = "W-22"
+duration_min = 150
+aids = "None (closed book)"
+
+[[exams]]
+date = "Tue, 19 May 2026"
+time = "10:15"
+course_code = "MATH 260"
+course = "Complex Analysis for Engineers"
+room = "Halloran Hall 2.14"
+seat = "B-09"
+duration_min = 120
+aids = "Formula booklet provided"
+
+[[exams]]
+date = "Thu, 21 May 2026"
+time = "14:00"
+course_code = "EE 230"
+course = "Electromagnetic Fields"
+room = "Faraday Building 2.20"
+seat = "A-31"
+duration_min = 180
+aids = "Non-programmable calculator"

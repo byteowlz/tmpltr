@@ -1,0 +1,33 @@
+{
+  "authority": {
+    "name": "Department of Home Affairs",
+    "address": "Level 15, 241 George Street",
+    "city": "Sydney",
+    "state": "NSW",
+    "postal": "2000",
+    "country": "Australia",
+    "office": "Visa Processing Centre - Central Division"
+  },
+  "applicant": {
+    "name": "Elena Sofia Rodriguez",
+    "dob": "1992-05-14",
+    "nationality": "Spain",
+    "passport_no": "ES99284711"
+  },
+  "visa": {
+    "type": "Subclass 482 - Temporary Skill Shortage",
+    "number": "772940118",
+    "valid_from": "2024-11-01",
+    "valid_until": "2027-10-31",
+    "entries": "Multiple",
+    "issue_date": "2024-10-15",
+    "conditions": [
+      "Must be employed by the approved sponsor: TechFlow Solutions Pty Ltd",
+      "Must not work for any other employer unless a new visa is granted",
+      "Must maintain adequate health insurance for the duration of stay",
+      "Must notify the Department of any change in residential address within 7 days",
+      "Must comply with all conditions of the work visa subclass 482",
+      "Must notify the Department of any change in passport details"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+
+[utility]
+name = "Brightgrove Energy Ltd"
+address = "Unit 4, Severn Business Park, Gloucester GL2 5FD"
+hotline = "0345 601 8842"
+vat_id = "GB 771 4402 58"
+
+[customer]
+name = "Ms Priya Raghavan"
+address = "22 Ashfield Terrace, Cheltenham GL52 6QJ"
+account_no = "BG-4471 2093"
+meter_no = "S21K 044318"
+
+[bill]
+number = "EB-2026-071553"
+date = "07 Jul 2026"
+period = "01 Apr 2026 - 30 Jun 2026"
+due_date = "28 Jul 2026"
+currency = "GBP"
+
+[consumption]
+previous_reading = 41208
+current_reading = 42101
+kwh = 893
+tariff_per_kwh = 0.2841
+standing_charge = 49.43
+
+[totals]
+net = 303.13
+tax = 15.16
+total = 318.29
+payment_method = "Direct Debit - collected on or shortly after 28 Jul 2026"
+
+[[charges]]
+label = "Electricity used: 893 kWh x 28.41p/kWh"
+amount = 253.7
+
+[[charges]]
+label = "Standing charge: 91 days x 54.32p/day"
+amount = 49.43

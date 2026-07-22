@@ -1,0 +1,81 @@
+
+[bank]
+name = "Meridian National Bank"
+address = "1200 Commerce Plaza, Wilmington, DE 19801"
+hotline = "1-800-555-0164"
+
+[account]
+holder = "Rachel M. Donovan"
+card_last4 = "7241"
+credit_limit = 8500.0
+statement_period = "06/16/2026 - 07/15/2026"
+statement_date = "07/15/2026"
+
+[summary]
+previous_balance = 1284.37
+payments = 1284.37
+purchases = 976.52
+interest = 0.0
+new_balance = 976.52
+min_payment = 35.0
+due_date = "08/09/2026"
+
+[[transactions]]
+date = "06/17/2026"
+merchant = "Whole Harvest Market"
+city = "Wilmington DE"
+amount = 84.19
+
+[[transactions]]
+date = "06/19/2026"
+merchant = "Shell Oil 5749"
+city = "Newark DE"
+amount = 46.3
+
+[[transactions]]
+date = "06/22/2026"
+merchant = "PAYMENT RECEIVED - THANK YOU"
+city = ""
+amount = -1284.37
+
+[[transactions]]
+date = "06/24/2026"
+merchant = "Amtrak Tickets"
+city = "Philadelphia PA"
+amount = 118.0
+
+[[transactions]]
+date = "06/27/2026"
+merchant = "The Copper Kettle Bistro"
+city = "Wilmington DE"
+amount = 67.85
+
+[[transactions]]
+date = "07/01/2026"
+merchant = "Streamline Media Monthly"
+city = "streamlinemedia.com"
+amount = 15.99
+
+[[transactions]]
+date = "07/03/2026"
+merchant = "Brandywine Pharmacy"
+city = "Wilmington DE"
+amount = 32.44
+
+[[transactions]]
+date = "07/06/2026"
+merchant = "Delta Air Lines"
+city = "Atlanta GA"
+amount = 342.6
+
+[[transactions]]
+date = "07/09/2026"
+merchant = "Harborview Hotel"
+city = "Cape May NJ"
+amount = 219.4
+
+[[transactions]]
+date = "07/12/2026"
+merchant = "Whole Harvest Market"
+city = "Wilmington DE"
+amount = 49.75

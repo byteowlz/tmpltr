@@ -1,0 +1,57 @@
+
+[carrier]
+company = "TransArdenne Freight S.A."
+address = "Rue de l'Industrie 44, 4020 Liège, Belgium"
+vat_id = "BE 0451.882.104"
+iban = "BE71 0961 2345 6769"
+bic = "GKCCBEBB"
+email = "billing@transardenne.be"
+phone = "+32 4 340 22 80"
+
+[customer]
+company = "Nordfeld Maschinenbau GmbH"
+address = "Industriestraße 18, 33602 Bielefeld, Germany"
+vat_id = "DE 812 449 216"
+
+[invoice]
+number = "FI-2026-07-0342"
+date = "2026-07-15"
+due_date = "2026-08-14"
+currency = "EUR"
+shipment_refs = ["CMR 442871", "CMR 442902", "CMR 443015"]
+
+[[charges]]
+description = "FTL road freight, 13.6 m tautliner"
+route = "Bielefeld DE → Lyon FR"
+weight_kg = 21400
+amount = 1620.0
+
+[[charges]]
+description = "LTL groupage, 6 pallets"
+route = "Bielefeld DE → Antwerp BE"
+weight_kg = 3180
+amount = 415.0
+
+[[charges]]
+description = "FTL road freight, mega trailer"
+route = "Liège BE → Bielefeld DE"
+weight_kg = 19850
+amount = 980.0
+
+[[charges]]
+description = "Waiting time, 2 h @ EUR 55.00 (CMR 442902)"
+route = "Antwerp BE"
+weight_kg = 0
+amount = 110.0
+
+[[surcharges]]
+label = "Diesel floater 8.4 %"
+amount = 262.5
+
+[[surcharges]]
+label = "Road toll (Maut/péage) pass-through"
+amount = 148.3
+
+[[surcharges]]
+label = "ADR handling, class 9 (CMR 443015)"
+amount = 85.0

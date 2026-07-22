@@ -1,0 +1,40 @@
+{
+  "university": {
+    "name": "Whitmore State University",
+    "address": "400 College Avenue, Marion, OH 43302",
+    "registrar": "Office of the University Registrar"
+  },
+  "student": {
+    "name": "Daniel R. Okafor",
+    "id": "WSU-2023-48815",
+    "program": "Bachelor of Science in Computer Science",
+    "enrollment_date": "August 21, 2023"
+  },
+  "courses": [
+    {"term": "Fall 2023", "code": "CS 101", "title": "Introduction to Computer Science", "credits": 4, "grade": "A"},
+    {"term": "Fall 2023", "code": "MATH 151", "title": "Calculus I", "credits": 4, "grade": "A-"},
+    {"term": "Fall 2023", "code": "ENGL 110", "title": "College Writing", "credits": 3, "grade": "B+"},
+    {"term": "Fall 2023", "code": "HIST 105", "title": "United States History to 1877", "credits": 3, "grade": "A"},
+    {"term": "Spring 2024", "code": "CS 201", "title": "Data Structures", "credits": 4, "grade": "A"},
+    {"term": "Spring 2024", "code": "MATH 152", "title": "Calculus II", "credits": 4, "grade": "B+"},
+    {"term": "Spring 2024", "code": "PHYS 201", "title": "General Physics I", "credits": 4, "grade": "B"},
+    {"term": "Spring 2024", "code": "COMM 120", "title": "Public Speaking", "credits": 3, "grade": "A-"},
+    {"term": "Fall 2024", "code": "CS 310", "title": "Design and Analysis of Algorithms", "credits": 4, "grade": "A"},
+    {"term": "Fall 2024", "code": "CS 305", "title": "Computer Organization", "credits": 3, "grade": "A-"},
+    {"term": "Fall 2024", "code": "MATH 250", "title": "Linear Algebra", "credits": 3, "grade": "B+"},
+    {"term": "Fall 2024", "code": "STAT 301", "title": "Probability and Statistics", "credits": 3, "grade": "A"},
+    {"term": "Spring 2025", "code": "CS 320", "title": "Operating Systems", "credits": 4, "grade": "B+"},
+    {"term": "Spring 2025", "code": "CS 330", "title": "Database Systems", "credits": 3, "grade": "A"},
+    {"term": "Spring 2025", "code": "CS 315", "title": "Software Engineering", "credits": 3, "grade": "A-"},
+    {"term": "Spring 2025", "code": "PHIL 210", "title": "Ethics and Technology", "credits": 3, "grade": "A"}
+  ],
+  "summary": {
+    "total_credits": 55,
+    "gpa": "3.68",
+    "class_rank": "41 of 342 (top 12%)"
+  },
+  "issued": {
+    "date": "July 10, 2026",
+    "signature": "Margaret L. Chen, University Registrar"
+  }
+}

@@ -1,0 +1,77 @@
+bemerkungen = "Lena hat im Schuljahr 2025/2026 mit Erfolg am Regionalwettbewerb \"Jugend forscht\" teilgenommen. Sie fehlte an 3 Tagen entschuldigt, an keinem Tag unentschuldigt."
+versetzung = "Versetzt in die Klassenstufe 9."
+
+[schule]
+name = "Städtisches Gymnasium Am Rosenhang"
+strasse = "Rosenhangstraße 12"
+plz_ort = "58455 Witten"
+schulform = "Gymnasium"
+
+[schueler]
+name = "Lena Marie Hoffmann"
+geburtsdatum = "14.03.2012"
+klasse = "8b"
+schuljahr = "2025/2026"
+halbjahr = "2. Halbjahr (Jahreszeugnis)"
+
+[ausstellung]
+ort = "Witten"
+datum = "26.06.2026"
+klassenleitung = "S. Brandt"
+schulleitung = "Dr. M. Kaltenbach"
+
+[[noten]]
+fach = "Deutsch"
+note = "gut"
+
+[[noten]]
+fach = "Englisch"
+note = "sehr gut"
+
+[[noten]]
+fach = "Französisch"
+note = "befriedigend"
+
+[[noten]]
+fach = "Mathematik"
+note = "gut"
+
+[[noten]]
+fach = "Physik"
+note = "befriedigend"
+
+[[noten]]
+fach = "Chemie"
+note = "gut"
+
+[[noten]]
+fach = "Biologie"
+note = "sehr gut"
+
+[[noten]]
+fach = "Geschichte"
+note = "gut"
+
+[[noten]]
+fach = "Erdkunde"
+note = "gut"
+
+[[noten]]
+fach = "Politik/Wirtschaft"
+note = "befriedigend"
+
+[[noten]]
+fach = "Kunst"
+note = "sehr gut"
+
+[[noten]]
+fach = "Musik"
+note = "gut"
+
+[[noten]]
+fach = "Sport"
+note = "gut"
+
+[[noten]]
+fach = "Evangelische Religionslehre"
+note = "gut"

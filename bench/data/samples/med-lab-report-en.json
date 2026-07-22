@@ -1,0 +1,39 @@
+{
+  "lab": {
+    "name": "Meridian Clinical Laboratories",
+    "address": "2410 Commerce Park Drive, Suite 120, Raleigh, NC 27604",
+    "phone": "(919) 555-0182",
+    "director": "Sandra E. Whitfield, MD, FCAP"
+  },
+  "patient": {
+    "name": "Marcus D. Ellison",
+    "dob": "03/22/1978",
+    "sex": "M",
+    "id": "PT-4471902"
+  },
+  "order": {
+    "physician": "Rachel Nguyen, MD",
+    "practice": "Triangle Internal Medicine Associates",
+    "date_collected": "07/09/2026 08:15",
+    "date_reported": "07/09/2026 16:42",
+    "specimen": "Whole blood (EDTA), Serum (SST)"
+  },
+  "results": [
+    {"analyte": "Hemoglobin", "value": "13.1", "unit": "g/dL", "reference": "13.5–17.5", "flag": "L"},
+    {"analyte": "Hematocrit", "value": "39.8", "unit": "%", "reference": "41.0–53.0", "flag": "L"},
+    {"analyte": "WBC Count", "value": "7.4", "unit": "10³/µL", "reference": "4.5–11.0", "flag": ""},
+    {"analyte": "Platelet Count", "value": "246", "unit": "10³/µL", "reference": "150–400", "flag": ""},
+    {"analyte": "Sodium", "value": "141", "unit": "mmol/L", "reference": "135–145", "flag": ""},
+    {"analyte": "Potassium", "value": "4.2", "unit": "mmol/L", "reference": "3.5–5.1", "flag": ""},
+    {"analyte": "Creatinine", "value": "1.08", "unit": "mg/dL", "reference": "0.74–1.35", "flag": ""},
+    {"analyte": "eGFR (CKD-EPI)", "value": "82", "unit": "mL/min/1.73m²", "reference": ">60", "flag": ""},
+    {"analyte": "Glucose, fasting", "value": "112", "unit": "mg/dL", "reference": "70–99", "flag": "H"},
+    {"analyte": "HbA1c", "value": "6.1", "unit": "%", "reference": "4.0–5.6", "flag": "H"},
+    {"analyte": "Total Cholesterol", "value": "228", "unit": "mg/dL", "reference": "<200", "flag": "H"},
+    {"analyte": "HDL Cholesterol", "value": "42", "unit": "mg/dL", "reference": ">40", "flag": ""},
+    {"analyte": "LDL Cholesterol (calc)", "value": "152", "unit": "mg/dL", "reference": "<100", "flag": "H"},
+    {"analyte": "Triglycerides", "value": "168", "unit": "mg/dL", "reference": "<150", "flag": "H"},
+    {"analyte": "TSH", "value": "2.31", "unit": "mIU/L", "reference": "0.40–4.20", "flag": ""}
+  ],
+  "comment": "Fasting glucose and HbA1c consistent with prediabetes; recommend repeat testing in 3 months and lifestyle counseling. Mild anemia — suggest iron studies if clinically indicated. Lipid panel above target; consider statin therapy per ASCVD risk assessment."
+}

@@ -1,0 +1,38 @@
+{
+  "company": {
+    "name": "IberiaWheels Rent-a-Car S.A.",
+    "station": "Lisbon Airport (LIS) – Terminal 1, Arrivals",
+    "address": "Alameda das Comunidades Portuguesas, 1700-111 Lisboa",
+    "phone": "+351 21 555 0192"
+  },
+  "renter": {
+    "name": "Jonas Sommer",
+    "license_no": "J01067XR41 (DE)",
+    "dob": "02 Nov 1985",
+    "address": "Eppendorfer Weg 61, 20259 Hamburg, Germany"
+  },
+  "rental": {
+    "agreement_no": "IW-LIS-482913",
+    "vehicle": "SEAT Leon 1.5 TSI (or similar)",
+    "plate": "AS-27-VL",
+    "class": "CDMR – Compact",
+    "pickup": "14 Sep 2026, 13:00",
+    "return": "21 Sep 2026, 10:00",
+    "pickup_location": "Lisbon Airport (LIS)",
+    "return_location": "Lisbon Airport (LIS)",
+    "rate_per_day": 38.50,
+    "days": 7,
+    "insurance": "CDW + Theft Protection (excess applies)",
+    "excess": "EUR 950.00",
+    "fuel_policy": "Full-to-Full",
+    "mileage_limit": "Unlimited km"
+  },
+  "totals": {
+    "base": 269.50,
+    "extras": 42.00,
+    "tax": 71.65,
+    "total": 383.15,
+    "currency": "EUR",
+    "deposit": "EUR 1,200.00 (card pre-authorisation)"
+  }
+}

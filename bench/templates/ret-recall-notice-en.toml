@@ -1,0 +1,18 @@
+date = "July 14, 2026"
+
+[manufacturer]
+name = "Brightpath Toys LLC"
+address = "980 Commerce Blvd, Suite 210, Columbus, OH 43215"
+hotline = "1-877-555-0192 (Mon-Fri 8am-8pm ET)"
+email = "recall@brightpathtoys.com"
+
+[recall]
+product = "GlowRider Balance Bike for children aged 2-5"
+lot_range = "Lot codes 2603A through 2611F (printed under the seat post)"
+sold_period = "January 2026 through June 2026 at toy stores nationwide and online"
+hazard = "The handlebar clamp bolt can loosen during use, allowing the handlebar to detach unexpectedly, posing fall and injury hazards to children."
+incidents = "17 reports of handlebars detaching, including 3 reports of minor injuries (scrapes and bruises). No serious injuries have been reported."
+remedy = "Full refund or free replacement handlebar clamp kit"
+instructions = "Immediately take the recalled balance bike away from children and stop using it. Contact Brightpath Toys to receive a prepaid return label for a full refund, or request a free reinforced clamp kit with step-by-step installation instructions. Do not return the product to the store."
+refund_amount = 89.99
+models = ["GR-12 Sunset Orange (SKU 74112)", "GR-12 Ocean Blue (SKU 74113)", "GR-14 Forest Green (SKU 74221)"]

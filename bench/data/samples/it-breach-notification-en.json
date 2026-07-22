@@ -1,0 +1,39 @@
+{
+  "company": {
+    "name": "CloudStream Fintech Solutions SE",
+    "address": "Friedrichstraße 105",
+    "city": "Berlin",
+    "postal": "10117",
+    "country": "Germany",
+    "dpo_email": "privacy.officer@cloudstream-fintech.de",
+    "hotline": "+49 30 555 0192"
+  },
+  "breach": {
+    "discovered_date": "2024-10-14",
+    "occurred_period": "2024-10-10 to 2024-10-13",
+    "description": "An unauthorized third party gained access to a misconfigured database containing customer profile metadata. The intrusion was detected via unusual outbound traffic patterns originating from our staging environment.",
+    "data_categories": [
+      "Full names",
+      "Email addresses",
+      "Hashed passwords",
+      "Residential addresses",
+      "Transaction history summaries"
+    ],
+    "affected_count": 14250,
+    "measures_taken": [
+      "Immediate isolation of the affected database server",
+      "Revocation of all compromised API credentials",
+      "Implementation of enhanced multi-factor authentication for internal access",
+      "Deployment of automated intrusion detection monitoring",
+      "Full forensic audit by external cybersecurity specialists"
+    ],
+    "recommendations": [
+      "Update your account password immediately",
+      "Enable two-factor authentication (2FA) on your CloudStream profile",
+      "Monitor your email for suspicious phishing attempts",
+      "Remain vigilant regarding any unsolicited communications requesting financial info"
+    ],
+    "authority_notified": true
+  },
+  "date": "2024-10-16"
+}

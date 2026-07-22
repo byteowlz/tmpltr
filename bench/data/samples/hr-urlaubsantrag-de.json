@@ -1,0 +1,24 @@
+{
+  "antragsteller": {
+    "name": "Sabine Krüger",
+    "personalnr": "3417",
+    "abteilung": "Einkauf / Materialwirtschaft"
+  },
+  "urlaub": {
+    "von": "10.08.2026",
+    "bis": "28.08.2026",
+    "arbeitstage": 14,
+    "art": "Erholungsurlaub",
+    "resturlaub_vorher": 22,
+    "resturlaub_nachher": 8
+  },
+  "vertretung": {
+    "name": "Holger Brandt",
+    "bestaetigt": "ja"
+  },
+  "genehmigung": {
+    "vorgesetzter": "Ines Kellermann",
+    "datum": "18.07.2026",
+    "status": "genehmigt"
+  }
+}

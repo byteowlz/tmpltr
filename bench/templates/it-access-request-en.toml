@@ -1,0 +1,49 @@
+
+[requester]
+name = "Elena Rodriguez"
+id = "EMP-99421"
+department = "Cloud Infrastructure Engineering"
+manager = "Marcus Thorne"
+
+[request]
+date = "2024-10-14"
+duration = "Permanent"
+data_classification = "Restricted"
+
+[[request.systems]]
+system = "AWS Production Environment"
+role = "Cloud Administrator"
+justification = "Required for managing auto-scaling groups and IAM policy updates for the Q4 migration project."
+
+[[request.systems]]
+system = "Jira Service Management"
+role = "Project Lead"
+justification = "Need permissions to manage workflow transitions and assign tickets to the DevOps team."
+
+[[request.systems]]
+system = "Snowflake Data Warehouse"
+role = "Read-Only Analyst"
+justification = "Required for auditing resource consumption metrics and cost optimization analysis."
+
+[[request.systems]]
+system = "GitHub Enterprise"
+role = "Repository Maintainer"
+justification = "To manage branch protection rules and oversee pull request approvals for core infrastructure repos."
+
+[[approvals]]
+approver = "Marcus Thorne"
+role = "Line Manager"
+status = "Approved"
+date = "2024-10-14"
+
+[[approvals]]
+approver = "Sarah Jenkins"
+role = "IT Security Officer"
+status = "Approved"
+date = "2024-10-15"
+
+[[approvals]]
+approver = "David Chen"
+role = "Data Custodian"
+status = "Pending"
+date = null

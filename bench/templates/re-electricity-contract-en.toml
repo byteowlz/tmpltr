@@ -1,0 +1,21 @@
+
+[supplier]
+name = "Aldergate Energy Ltd"
+address = "3 Foundry Wharf, Leeds LS10 1RT"
+hotline = "0330 122 9048"
+
+[customer]
+name = "Mr Daniel Whitmore"
+address = "8 Coppice Lane, Harrogate HG2 8DN"
+customer_no = "AE-2094 5518"
+
+[contract]
+tariff = "HomeFix 12 (fixed until 31 Aug 2027)"
+start_date = "01 Sep 2026"
+term_months = 12
+price_per_kwh = 0.2487
+standing_charge_month = 8.75
+est_annual_kwh = 2900
+est_annual_cost = 826.23
+cancellation_notice_weeks = 4
+previous_supplier = "Northern Power & Gas plc"

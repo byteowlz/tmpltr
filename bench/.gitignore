@@ -1,0 +1,4 @@
+# Rendered PDF corpus — 258MB, regenerate locally with:
+#   python3 bench/scripts/compile_corpus.py
+# from the tracked gold data (data/generated/*.jsonl) + templates.
+data/pdfs/

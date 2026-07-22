@@ -1,0 +1,28 @@
+{
+  "arbeitgeber": {
+    "firma": "Weißdorn Pharma Vertriebs GmbH",
+    "strasse": "Lindenthaler Hauptstraße 3",
+    "plz_ort": "50935 Köln",
+    "branche": "Pharmazeutischer Großhandel"
+  },
+  "arbeitnehmer": {
+    "name": "Frau Katharina Vogelsang",
+    "geburtsdatum": "03.06.1988",
+    "position": "Leiterin Qualitätsmanagement",
+    "eintritt": "01.02.2018",
+    "austritt": "30.06.2026"
+  },
+  "zeugnis": {
+    "taetigkeiten": "Verantwortung für das QM-System nach DIN EN ISO 9001 und GDP-Leitlinien; Planung und Durchführung interner und externer Audits; Schulung von 45 Mitarbeitenden in qualitätsrelevanten Prozessen; Leitung des CAPA-Managements sowie der Lieferantenqualifizierung; Ansprechpartnerin für Behörden und benannte Stellen",
+    "leistung_note_text": "Frau Vogelsang verfügt über ein hervorragendes, jederzeit abrufbares Fachwissen, das sie stets sicher und gewinnbringend in der Praxis einsetzte. Sie arbeitete auch unter hoher Belastung äußerst sorgfältig, strukturiert und zielorientiert und erledigte alle Aufgaben stets zu unserer vollsten Zufriedenheit.",
+    "verhalten_text": "Ihr Verhalten gegenüber Vorgesetzten, Kolleginnen und Kollegen sowie Geschäftspartnern war jederzeit vorbildlich. Sie wurde wegen ihrer verbindlichen und hilfsbereiten Art allseits geschätzt.",
+    "austrittsgrund": "auf eigenen Wunsch, um sich einer neuen beruflichen Herausforderung zu stellen",
+    "schlussformel": "Wir bedauern ihr Ausscheiden sehr, danken ihr für die stets hervorragende Zusammenarbeit und wünschen ihr für ihre berufliche und private Zukunft weiterhin viel Erfolg und alles Gute."
+  },
+  "ausstellung": {
+    "ort": "Köln",
+    "datum": "18.07.2026",
+    "unterzeichner": "Dr. Bettina Weißdorn",
+    "unterzeichner_position": "Geschäftsführerin"
+  }
+}

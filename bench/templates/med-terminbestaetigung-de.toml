@@ -1,0 +1,26 @@
+
+[praxis]
+name = "Zentrum für Dermatologie am Stadtpark"
+strasse = "Lindenstraße 42"
+plz_ort = "80331 München"
+telefon = "+49 89 12345678"
+email = "info@dermatologie-stadtpark.de"
+sprechzeiten = "Mo-Fr: 08:00 - 18:00 Uhr"
+
+[patient]
+name = "Maximilian Schmidt"
+strasse = "Schillerstraße 12"
+plz_ort = "80333 München"
+
+[termin]
+datum = "2024-11-14"
+uhrzeit = "10:30"
+art = "Hautkrebsvorsorgeuntersuchung"
+arzt = "Dr. med. Elena Weber"
+dauer_min = 30
+raum = "Behandlungszimmer 3"
+
+[hinweise]
+absage_frist = "Bitte sagen Sie Ihren Termin spätestens 24 Stunden im Voraus ab, um Ausfallgebühren zu vermeiden."
+vorbereitung = ["Bitte erscheinen Sie ohne Make-up oder Sonnencreme im Gesicht.", "Tragen Sie Kleidung, die leicht zu entfernen ist, um den Zugang zum Rücken zu erleichtern.", "Falls Sie aktuell Medikamente einnehmen, halten Sie bitte den aktuellen Plan bereit."]
+mitbringen = ["Versichertenkarte (elektronische Gesundheitskarte)", "Vorherige Befunde oder Hautkrebs-Screening-Berichte", "Aktuelle Medikamentenliste", "Impfpass (falls relevant)"]

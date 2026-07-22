@@ -1,0 +1,27 @@
+schadenhoehe_geschaetzt = "ca. 2.600 €"
+
+[versicherer]
+name = "Hanseatica Versicherung a.G."
+strasse = "Alsterufer 36"
+plz_ort = "20354 Hamburg"
+
+[melder]
+name = "Frau Katrin Seebald"
+versicherungsnr = "HV-KFZ-88-1204573"
+telefon = "+49 171 5528944"
+email = "katrin.seebald@gmx.de"
+iban = "DE44 2005 0550 1032 8871 09"
+
+[schaden]
+datum = "14.07.2026"
+uhrzeit = "17:25 Uhr"
+ort = "Kreuzung Fuhlsbüttler Straße / Hellbrookstraße, 22305 Hamburg"
+art = "KFZ-Haftpflicht (Auffahrunfall)"
+hergang = "Beim Anfahren an der Ampel Fuhlsbüttler Straße stadtauswärts rollte mein Fahrzeug (VW ID.3, HH-KS 2214) beim Anfahren am leichten Gefälle zurück und stieß gegen die Front des dahinter stehenden Fahrzeugs. Am gegnerischen Fahrzeug wurden Stoßfänger und Kennzeichenhalter beschädigt, an meinem Fahrzeug die Heckschürze. Es entstand kein Personenschaden. Die Beteiligten haben die Daten vor Ort ausgetauscht, die Polizei wurde hinzugezogen."
+polizei_aktenzeichen = "PK 31 - 2026/074482"
+zeugen = "Herr Ömer Aydin, Steilshooper Straße 41, 22305 Hamburg, Tel. 040 6392177"
+
+[[beteiligte]]
+name = "Jonas Petersen, Habichtstraße 88, 22307 Hamburg"
+kennzeichen = "HH-JP 731"
+versicherer = "Nordstern Direkt Versicherung AG"

@@ -1,0 +1,46 @@
+
+[praxis]
+name = "Medizinische Fachpraxis am Luisenplatz"
+arzt = "Dr. med. Stefan Weber"
+fachrichtung = "Innere Medizin & Gastroenterologie"
+strasse = "Luisenstraße 42"
+plz_ort = "65185 Wiesbaden"
+telefon = "+49 611 1234567"
+
+[patient]
+name = "Maximilian Schmidt"
+strasse = "Bachstraße 12"
+plz_ort = "65183 Wiesbaden"
+geburtsdatum = "1978-05-14"
+
+[befund]
+datum = "2023-11-15"
+untersuchung = "Gastroskopie (Magenspiegelung)"
+untersuchungsdatum = "2023-11-14"
+ergebnis_einfach = "Bei der Untersuchung Ihrer Magenschleimhaut wurde eine leichte Entzündung festgestellt. Es wurden keine Anzeichen für bösartige Veränderungen oder Geschwüre gefunden. Die Bakterienprobe war negativ."
+einordnung = "Es handelt sich um eine leichte Gastritis (Magenschleimhautentzündung), die häufig durch Stress oder die Einnahme bestimmter Medikamente verursacht wird. Der Befund ist nicht besorgniserregend."
+empfehlung = "Wir empfehlen eine Ernährungsumstellung mit weniger scharfen und säurehaltigen Speisen. Vermeiden Sie vorerst übermäßigen Kaffee und Alkohol. Die Fortführung der aktuellen Magenschutz-Medikation für weitere zwei Wochen wird empfohlen."
+kontrolle_in = "6 Monate"
+
+[unterschrift]
+name = "Dr. med. Stefan Weber"
+
+[[untersuchungs_details]]
+parameter = "Schleimhautzustand"
+wert = "leicht gerötet"
+status = "auffällig"
+
+[[untersuchungs_details]]
+parameter = "Helicobacter pylori Test"
+wert = "negativ"
+status = "unauffällig"
+
+[[untersuchungs_details]]
+parameter = "Geschwürbildung (Ulkus)"
+wert = "keine vorhanden"
+status = "unauffällig"
+
+[[untersuchungs_details]]
+parameter = "Refluxzeichen"
+wert = "minimal"
+status = "unauffällig"

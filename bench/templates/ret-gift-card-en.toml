@@ -1,0 +1,14 @@
+
+[issuer]
+name = "Cedar & Vine Home Goods"
+website = "www.cedarandvine.com"
+
+[voucher]
+code = "CVHG-9K42-TR8P-3WQM"
+value = 75.0
+currency = "USD"
+issued_date = "July 11, 2026"
+expiry_date = "July 11, 2029"
+recipient = "Hannah Osei"
+message = "Happy housewarming! May your new place be full of warmth, plants, and far too many candles. Love, the whole crew at book club."
+terms = ["Redeemable in-store and online at www.cedarandvine.com.", "Not redeemable for cash except where required by law.", "Remaining balance stays on the card after partial redemption.", "Lost or stolen cards cannot be replaced without the original code.", "Card expires on the date shown; unused balance is forfeited after expiry."]

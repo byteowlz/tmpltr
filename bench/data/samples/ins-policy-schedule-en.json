@@ -1,0 +1,31 @@
+{
+  "insurer": {
+    "name": "Caledonian Mutual Insurance plc",
+    "address": "40 Lothian Road, Edinburgh EH3 9WJ, United Kingdom",
+    "phone": "+44 131 240 7700",
+    "email": "service@caledonianmutual.co.uk"
+  },
+  "policyholder": {
+    "name": "Fiona M. Aldercroft",
+    "address": "12 Ravelston Grove",
+    "city": "Edinburgh EH4 3LP",
+    "dob": "1983-11-04"
+  },
+  "policy": {
+    "number": "CM-HH-2026-084512",
+    "product": "HomeShield Comprehensive Household Insurance",
+    "start": "2026-08-01",
+    "end": "2027-07-31",
+    "payment_frequency": "Monthly by direct debit"
+  },
+  "coverages": [
+    {"coverage": "Buildings cover", "limit": "750,000", "deductible": "500", "premium": 41.20},
+    {"coverage": "Contents cover", "limit": "85,000", "deductible": "250", "premium": 18.75},
+    {"coverage": "Accidental damage extension", "limit": "25,000", "deductible": "250", "premium": 7.4},
+    {"coverage": "Personal possessions away from home", "limit": "7,500", "deductible": "100", "premium": 5.1},
+    {"coverage": "Home emergency assistance", "limit": "1,500 per callout", "deductible": "0", "premium": 4.95},
+    {"coverage": "Legal expenses", "limit": "100,000", "deductible": "0", "premium": 3.3}
+  ],
+  "total_premium": 80.7,
+  "currency": "GBP"
+}

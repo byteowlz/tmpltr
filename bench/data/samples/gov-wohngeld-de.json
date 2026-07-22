@@ -1,0 +1,42 @@
+{
+  "behoerde": {
+    "name": "Stadtverwaltung München - Amt für Wohnen und Migration",
+    "strasse": "Blumenstraße 28",
+    "plz_ort": "80331 München",
+    "aktenzeichen": "WOG-2024-88421-B"
+  },
+  "antragsteller": {
+    "name": "Sabine Maria Weber",
+    "strasse": "Sonnenallee 14, 3. OG",
+    "plz_ort": "80805 München",
+    "haushaltsmitglieder": [
+      {
+        "name": "Sabine Maria Weber",
+        "rolle": "Hauptantragstellerin",
+        "alter": 42,
+        "behoerdestatus": "alleinerziehend"
+      },
+      {
+        "name": "Lukas Weber",
+        "rolle": "Kind",
+        "alter": 12,
+        "behoerdestatus": "schulpflichtig"
+      }
+    ]
+  },
+  "bescheid": {
+    "datum": "2024-03-15",
+    "monatlicher_betrag": 214.50,
+    "bewilligung_von": "2024-01-01",
+    "bewilligung_bis": "2024-06-30",
+    "gesamteinkommen": 1420.00,
+    "miete_beruecksichtigt": 780.00,
+    "iban_letzte4": "4412"
+  },
+  "rechtsbehelf": {
+    "typ": "Widerspruch",
+    "frist": "einen Monat nach Bekanntgabe des Bescheids",
+    "adresse": "Stadtverwaltung München, Amt für Wohnen und Migration, Blumenstraße 28, 80331 München",
+    "hinweis": "Gegen diesen Bescheid kann innerhalb eines Monats nach Bekanntgabe schriftlich oder zur Niederschrift Widerspruch erhoben werden."
+  }
+}

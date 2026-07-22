@@ -1,0 +1,68 @@
+{
+  "clinic": {
+    "name": "Maple Grove Family Health Center",
+    "address": "2840 Wedgewood Lane N, Maple Grove, MN 55369",
+    "phone": "(763) 555-0182"
+  },
+  "patient": {
+    "name": "Hannah R. Okafor",
+    "dob": "03/22/1994",
+    "id": "MGF-114208"
+  },
+  "vaccinations": [
+    {
+      "date": "09/14/2012",
+      "vaccine": "Tdap (Adacel)",
+      "disease": "Tetanus, Diphtheria, Pertussis",
+      "lot": "C4478AA",
+      "site": "Left deltoid, IM",
+      "administered_by": "K. Lindqvist, RN",
+      "next_due": "09/2022"
+    },
+    {
+      "date": "10/03/2019",
+      "vaccine": "MMR II",
+      "disease": "Measles, Mumps, Rubella",
+      "lot": "R021584",
+      "site": "Right deltoid, SC",
+      "administered_by": "D. Vang, LPN",
+      "next_due": "—"
+    },
+    {
+      "date": "11/18/2022",
+      "vaccine": "Boostrix",
+      "disease": "Tetanus, Diphtheria, Pertussis",
+      "lot": "AC52B441BA",
+      "site": "Left deltoid, IM",
+      "administered_by": "K. Lindqvist, RN",
+      "next_due": "11/2032"
+    },
+    {
+      "date": "10/09/2024",
+      "vaccine": "Fluzone Quadrivalent",
+      "disease": "Influenza",
+      "lot": "UJ742AC",
+      "site": "Left deltoid, IM",
+      "administered_by": "M. Castellanos, MA",
+      "next_due": "10/2025"
+    },
+    {
+      "date": "10/21/2025",
+      "vaccine": "Flublok Quadrivalent",
+      "disease": "Influenza",
+      "lot": "P300158764",
+      "site": "Right deltoid, IM",
+      "administered_by": "D. Vang, LPN",
+      "next_due": "10/2026"
+    },
+    {
+      "date": "03/06/2026",
+      "vaccine": "Heplisav-B (dose 2 of 2)",
+      "disease": "Hepatitis B",
+      "lot": "H8B2214",
+      "site": "Left deltoid, IM",
+      "administered_by": "K. Lindqvist, RN",
+      "next_due": "Series complete"
+    }
+  ]
+}

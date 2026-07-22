@@ -1,0 +1,34 @@
+
+[seller]
+name = "Deborah K. Ansley"
+address = "47 Millbrook Road"
+city = "Manchester M20 4TR"
+id_no = "Passport 553 902 118"
+
+[buyer]
+name = "Owen R. Fitzgerald"
+address = "12 Cotswold Avenue"
+city = "Stockport SK4 2JH"
+id_no = "Driving licence FITZG 809214 OR9EJ"
+
+[vehicle]
+make = "Volkswagen"
+model = "Golf 1.5 TSI Life"
+year = "2021"
+vin = "WVWZZZAUZMW042871"
+mileage_km = "58,340"
+plate = "MK21 XVE"
+first_registration = "12 March 2021"
+inspections_until = "MOT valid until 11 March 2027"
+
+[sale]
+price = "13,750.00"
+currency = "GBP"
+payment_method = "Bank transfer on handover (Faster Payments)"
+handover_date = "2 August 2026"
+defects_known = "Stone chip on windscreen (passenger side, outside field of vision); kerb scuff on front left alloy wheel"
+warranty_excluded = true
+
+[signatures]
+place = "Manchester"
+date = "2 August 2026"

@@ -1,0 +1,32 @@
+{
+  "buyer": {
+    "company": "Meridian Outdoor Supply Co.",
+    "address": "2140 Coldwater Industrial Pkwy",
+    "city": "Boise, ID 83705, USA",
+    "contact": "Dana Whitfield",
+    "email": "purchasing@meridianoutdoor.com"
+  },
+  "supplier": {
+    "company": "Baltika Components OÜ",
+    "address": "Peterburi tee 46",
+    "city": "11415 Tallinn, Estonia",
+    "contact": "Marten Kask"
+  },
+  "po": {
+    "number": "PO-2026-04471",
+    "date": "2026-07-09",
+    "delivery_date": "2026-08-21",
+    "incoterms": "DAP Boise (Incoterms 2020)",
+    "currency": "USD",
+    "payment_terms": "Net 45 days after receipt of goods",
+    "ship_to": "Meridian Outdoor Supply Co., DC West, 88 Gowen Field Rd, Boise, ID 83705"
+  },
+  "items": [
+    {"sku": "BRK-4420-BLK", "description": "Aluminium pannier rack 44 cm, black anodized", "qty": 320, "unit": "pcs", "unit_price": 18.4},
+    {"sku": "BRK-4420-SLV", "description": "Aluminium pannier rack 44 cm, silver", "qty": 180, "unit": "pcs", "unit_price": 18.4},
+    {"sku": "STR-1108-OLV", "description": "Cam buckle strap 25 mm x 1.8 m, olive", "qty": 1500, "unit": "pcs", "unit_price": 1.15},
+    {"sku": "CLM-0771-STD", "description": "Quick-release seat clamp 31.8 mm", "qty": 600, "unit": "pcs", "unit_price": 3.72},
+    {"sku": "PKG-RETL-06", "description": "Retail packaging set, printed sleeve + insert", "qty": 2600, "unit": "sets", "unit_price": 0.42}
+  ],
+  "notes": "Please confirm order within 5 business days. Part deliveries accepted only with prior written approval. Quote PO number on all shipping documents and invoices."
+}

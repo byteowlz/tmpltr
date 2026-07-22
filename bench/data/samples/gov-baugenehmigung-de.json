@@ -1,0 +1,32 @@
+{
+  "behoerde": {
+    "name": "Untere Bauaufsichtsbehörde Stadt München",
+    "strasse": "Tal 15",
+    "plz_ort": "80331 München",
+    "aktenzeichen": "Bau-2024-77-AB-42"
+  },
+  "bauherr": {
+    "name": "Müller & Söhne Immobilienentwicklung GmbH",
+    "strasse": "Sonnenallee 12",
+    "plz_ort": "81667 München"
+  },
+  "vorhaben": {
+    "bezeichnung": "Neubau eines viergeschossigen Mehrfamilienhauses mit Tiefgarage",
+    "grundstueck": "Eigentumsgrundstück im Bereich Leopoldstraße",
+    "flurstueck": "452/B",
+    "gemarkung": "Bogenhausen"
+  },
+  "genehmigung": {
+    "datum": "2024-10-15",
+    "auflagen": [
+      "Die Errichtung der Tiefgarage darf erst nach Abschluss der Entwässerungsarbeiten beginnen.",
+      "Ein begrünter Innenhof ist gemäß dem vorliegenden Begrünungskonzept gemäß § 9 BauGB umzusetzen.",
+      "Die Installation der Photovoltaikanlage muss den geltenden Brandschutzrichtlinien entsprechen.",
+      "Sämtliche Baustellenverkehrszeiten sind auf die Kernzeiten von 07:00 bis 18:00 Uhr zu beschränken.",
+      "Ein Nachweis über die fachgerechte Entsorgung der Erdaushubmengen ist nach Abschluss der Erdarbeiten einzureichen."
+    ],
+    "befristung": "2027-10-14",
+    "gebuehr": 3450.50
+  },
+  "rechtsbehelf": "Gegen diesen Bescheid kann innerhalb eines Monats nach Bekanntgabe Widerspruch beim Bayerischen Landesamt für Digitalisierung, Breitband und Vermessung eingelegt werden."
+}

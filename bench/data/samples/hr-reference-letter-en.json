@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Dr. Amelia Hartsong",
+    "title": "Director of Engineering",
+    "company": "Brightcove Systems Inc.",
+    "email": "a.hartsong@brightcovesys.com",
+    "phone": "+1 (617) 555-0143"
+  },
+  "subject": {
+    "name": "Nina Petrakis",
+    "relationship": "direct report (I was her manager for the full period)",
+    "period": "March 2022 to June 2026"
+  },
+  "body": {
+    "context": "Nina joined my platform team as a mid-level backend engineer and left as the acknowledged technical owner of our event streaming stack, which processes roughly 40 million messages per day.",
+    "achievements": "She led the migration from a self-managed Kafka cluster to a multi-region managed deployment with zero customer-facing downtime, cut our p99 pipeline latency by 60 percent, and designed the schema governance process the whole company now uses.",
+    "skills": "Nina combines rare depth in distributed systems with unusually clear written communication. Her design documents were regularly used as onboarding material, and she was the engineer other teams asked for when an incident got hard.",
+    "endorsement": "I recommend Nina without reservation for any senior or staff-level backend engineering role. I would hire her again immediately, and her departure is a genuine loss to our organization."
+  },
+  "date": "July 18, 2026"
+}

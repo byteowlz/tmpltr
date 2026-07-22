@@ -1,0 +1,25 @@
+{
+  "warehouse": {
+    "name": "Midlands Distribution Centre 2",
+    "location": "Unit 8, Prologis Park, Coventry CV6 4BX",
+    "received_by": "D. Okafor"
+  },
+  "supplier": {
+    "company": "Baltic Components OÜ"
+  },
+  "receipt": {
+    "grn_number": "GRN-26-04471",
+    "date": "2026-07-09",
+    "po_number": "PO-2026-1183",
+    "delivery_note_no": "DN-88/2026",
+    "carrier": "DSV Road Ltd — trailer WX64 KHT"
+  },
+  "items": [
+    {"sku": "BC-7204-BLK", "description": "Cable gland M20, IP68, black nylon", "ordered": 2000, "received": 2000, "condition": "OK", "discrepancy": ""},
+    {"sku": "BC-7311-GRY", "description": "Junction box 110x110x67 mm, ABS, grey", "ordered": 480, "received": 456, "condition": "OK", "discrepancy": "1 carton (24 pcs) short-shipped"},
+    {"sku": "BC-5520", "description": "DIN rail terminal block 4 mm², screw type", "ordered": 5000, "received": 5000, "condition": "OK", "discrepancy": ""},
+    {"sku": "BC-9910-SS", "description": "Stainless enclosure 300x200x150 mm", "ordered": 60, "received": 60, "condition": "Damaged", "discrepancy": "3 units dented — quarantined, photos on file"},
+    {"sku": "BC-1145", "description": "Strain relief bushing PG13.5", "ordered": 1200, "received": 1200, "condition": "OK", "discrepancy": ""}
+  ],
+  "remarks": "Short shipment and damage reported to supplier same day (ticket SUP-3391). Credit note requested for 24 pcs BC-7311-GRY; damaged BC-9910-SS held in QA cage pending disposition."
+}

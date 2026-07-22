@@ -1,0 +1,46 @@
+
+[klinik]
+name = "Städtisches Klinikum am Park"
+abteilung = "Abteilung für Innere Medizin"
+strasse = "Parkstraße 12"
+plz_ort = "80331 München"
+telefon = "+49 89 12345678"
+
+[patient]
+name = "Hans-Joachim Müller"
+strasse = "Birkenweg 4"
+plz_ort = "80805 München"
+geburtsdatum = "1958-05-14"
+
+[aufenthalt]
+aufnahme = "2023-10-12"
+entlassung = "2023-10-17"
+station = "Station 4B"
+
+[brief]
+datum = "2023-10-17"
+anrede = "Sehr geehrter Herr Müller,"
+diagnose_einfach = "Sie hatten eine Lungenentzündung. Das ist eine Infektion in der Lunge, die durch Bakterien verursacht wurde."
+was_wurde_gemacht = "Wir haben Sie im Krankenhaus mit Antibiotika behandelt. Wir haben auch Ihre Sauerstoffwerte kontrolliert und Ihnen Atemübungen gezeigt, damit Sie wieder besser Luft bekommen."
+verhaltenshinweise = "Bitte gönnen Sie sich noch viel Ruhe und vermeiden Sie körperliche Anstrengung für die nächsten zwei Wochen. Trinken Sie täglich mindestens 2 Liter Wasser oder Tee."
+warnzeichen = "Bitte rufen Sie sofort den Notruf oder kommen Sie zurück, wenn Sie plötzliche Atemnot bekommen, Schmerzen in der Brust haben oder wieder hohes Fieber auftritt."
+naechste_schritte = ["Termin beim Hausarzt in 5 Tagen zur Kontrolle", "Fortführung der Atemübungen zu Hause", "Regelmäßige Kontrolle der Temperatur in der ersten Woche"]
+
+[[brief.medikamente]]
+name = "Amoxicillin 500mg"
+einnahme = "2-mal täglich 1 Tablette nach dem Essen"
+wofuer = "Gegen die Bakterien in der Lunge"
+
+[[brief.medikamente]]
+name = "Paracetamol 500mg"
+einnahme = "Bei Bedarf bis zu 3-mal täglich 1 Tablette"
+wofuer = "Gegen Schmerzen oder Fieber"
+
+[[brief.medikamente]]
+name = "Bromhexin Tropfen"
+einnahme = "3-mal täglich 20 Tropfen"
+wofuer = "Damit der Schleim besser abgehustet werden kann"
+
+[arzt]
+name = "Dr. med. Stefan Wagner"
+funktion = "Oberarzt der Inneren Medizin"

@@ -1,0 +1,36 @@
+
+[carrier]
+name = "Meridian Star Container Line"
+scac = "MSCL"
+
+[shipper]
+company = "Cascadia Timber Products Inc."
+address = "4400 Marine Drive, Tacoma, WA 98421, USA"
+
+[consignee]
+company = "Yokohama Kensetsu Trading K.K."
+address = "2-14-1 Shinko, Naka-ku, Yokohama 231-0001, Japan"
+
+[notify]
+company = "Sanwa Customs Brokers Co., Ltd."
+address = "5-9 Kaigandori, Naka-ku, Yokohama 231-0002, Japan"
+
+[transport]
+bl_number = "MSCL-TAC-26-08814"
+vessel = "MV Meridian Aurora"
+voyage = "047E"
+port_of_loading = "Tacoma, WA, USA"
+port_of_discharge = "Yokohama, Japan"
+container_no = "MSKU 482913-0"
+seal_no = "SL-771402"
+
+[cargo]
+description = "Kiln-dried Douglas fir lumber, S4S, grade 2 & better, 1x 40' HC container said to contain 44 bundles. HS 4407.11. Shipper's load, stow and count."
+packages = "44 bundles"
+weight_kg = 24800
+volume_m3 = 54.2
+freight_terms = "FREIGHT PREPAID"
+
+[issue]
+place = "Tacoma, WA"
+date = "2026-07-11"

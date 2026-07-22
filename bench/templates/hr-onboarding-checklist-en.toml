@@ -1,0 +1,56 @@
+notes = "Yusuf starts remote for the first week; badge pickup at the Austin office on Aug 10."
+
+[employee]
+name = "Yusuf Demirci"
+start_date = "Aug 3, 2026"
+position = "Site Reliability Engineer"
+department = "Infrastructure"
+manager = "Elena Vasquez"
+buddy = "Tom Whitfield"
+
+[it]
+laptop_model = "ThinkPad T14s Gen 6"
+username = "ydemirci"
+email = "yusuf.demirci@corvexa.com"
+
+[[items]]
+task = "Sign and return contract addendum"
+owner = "HR Ops"
+due = "Jul 27"
+status = "Done"
+
+[[items]]
+task = "Create AD account and mailbox"
+owner = "IT Helpdesk"
+due = "Jul 30"
+status = "Done"
+
+[[items]]
+task = "Ship laptop and peripherals"
+owner = "IT Helpdesk"
+due = "Jul 31"
+status = "In progress"
+
+[[items]]
+task = "Add to on-call tooling (PagerDuty, Grafana)"
+owner = "Team Lead"
+due = "Aug 3"
+status = "Open"
+
+[[items]]
+task = "Security awareness training"
+owner = "Employee"
+due = "Aug 7"
+status = "Open"
+
+[[items]]
+task = "Benefits enrollment session"
+owner = "HR Ops"
+due = "Aug 10"
+status = "Open"
+
+[[items]]
+task = "30-day check-in scheduled"
+owner = "Manager"
+due = "Sep 2"
+status = "Open"

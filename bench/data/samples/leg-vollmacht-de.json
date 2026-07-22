@@ -1,0 +1,31 @@
+{
+  "vollmachtgeber": {
+    "name": "Renate Hillebrand",
+    "strasse": "Am Lindenhof 23",
+    "plz_ort": "49076 Osnabrueck",
+    "geburtsdatum": "03.11.1948",
+    "ausweis_nr": "L01X7RT4K"
+  },
+  "bevollmaechtigter": {
+    "name": "Dr. Markus Hillebrand",
+    "strasse": "Schillerstrasse 9",
+    "plz_ort": "48145 Muenster",
+    "geburtsdatum": "17.02.1976"
+  },
+  "vollmacht": {
+    "art": "Besondere Vollmacht in Vermoegens- und Behoerdenangelegenheiten",
+    "umfang": [
+      "Vertretung gegenueber Banken und Sparkassen, insbesondere Verfuegungen ueber das Girokonto IBAN DE44 2655 0105 0000 8731 22 bei der Sparkasse Osnabrueck",
+      "Entgegennahme und Abgabe von Erklaerungen gegenueber Behoerden, Rentenversicherungstraegern und Krankenkassen",
+      "Abschluss, Aenderung und Kuendigung von Vertraegen des taeglichen Lebens bis zu einem Geschaeftswert von 5.000 Euro im Einzelfall",
+      "Entgegennahme und Oeffnen der an mich gerichteten Post"
+    ],
+    "gueltig_ab": "01.08.2026",
+    "gueltig_bis": "31.07.2028",
+    "widerruflich": true
+  },
+  "unterschrift": {
+    "ort": "Osnabrueck",
+    "datum": "21.07.2026"
+  }
+}

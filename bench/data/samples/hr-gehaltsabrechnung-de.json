@@ -1,0 +1,41 @@
+{
+  "arbeitgeber": {
+    "firma": "Nordwind Logistik GmbH & Co. KG",
+    "strasse": "Am Containerhafen 12",
+    "plz_ort": "28217 Bremen",
+    "betriebsnummer": "28934177"
+  },
+  "arbeitnehmer": {
+    "name": "Jens-Peter Albers",
+    "personalnr": "10488",
+    "steuerklasse": "III",
+    "kinderfreibetraege": "1,0",
+    "konfession": "ev",
+    "sv_nummer": "53 220988 A 512",
+    "krankenkasse": "hkk Krankenkasse",
+    "eintritt": "01.03.2019"
+  },
+  "zeitraum": {
+    "monat": "Juni 2026",
+    "zahltag": "26.06.2026"
+  },
+  "brutto": {
+    "grundgehalt": 4280.0,
+    "zulagen": 185.0,
+    "vwl": 40.0,
+    "gesamt": 4505.0
+  },
+  "abzuege": [
+    {"bezeichnung": "Lohnsteuer", "betrag": 522.16},
+    {"bezeichnung": "Kirchensteuer", "betrag": 47.0},
+    {"bezeichnung": "Solidaritätszuschlag", "betrag": 0.0},
+    {"bezeichnung": "Krankenversicherung (8,15 %)", "betrag": 367.16},
+    {"bezeichnung": "Rentenversicherung (9,30 %)", "betrag": 418.97},
+    {"bezeichnung": "Arbeitslosenversicherung (1,30 %)", "betrag": 58.57},
+    {"bezeichnung": "Pflegeversicherung (1,80 %)", "betrag": 81.09}
+  ],
+  "netto": {
+    "auszahlung": 3010.05,
+    "iban_letzte4": "7702"
+  }
+}

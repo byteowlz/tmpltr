@@ -1,0 +1,42 @@
+{
+  "court": {
+    "name": "Central District Superior Court",
+    "address": "45 Chancery Lane",
+    "city": "London",
+    "postal": "WC2A 1JP",
+    "country": "United Kingdom",
+    "phone": "+44 20 7946 0122",
+    "case_no": "CIV-2024-8829-LDN"
+  },
+  "person": {
+    "name": "Jonathan Sterling Vance",
+    "address": "Apartment 4B, Riverside Towers",
+    "city": "London",
+    "postal": "E14 5AB",
+    "country": "United Kingdom",
+    "role": "Witness"
+  },
+  "hearing": {
+    "date": "2024-11-14",
+    "time": "10:30 AM",
+    "room": "Courtroom 12, Level 3",
+    "judge": "The Honourable Justice Elena Moretti",
+    "matter": "Breach of Contract and Intellectual Property Infringement regarding 'Project Helios' proprietary software architecture.",
+    "parties": [
+      {
+        "name": "Aether Dynamics Corp",
+        "role": "Plaintiff"
+      },
+      {
+        "name": "Vortex Solutions Ltd",
+        "role": "Defendant"
+      },
+      {
+        "name": "Marcus Thorne",
+        "role": "Intervenor"
+      }
+    ],
+    "instructions": "The recipient is required to present themselves in person at the designated time and room. Please bring valid photographic identification and any original documentation relevant to the software development logs mentioned in the subpoena. You may be required to provide sworn testimony under oath.",
+    "failure_consequences": "Failure to comply with this summons without lawful excuse may result in a warrant being issued for your arrest and may subject you to a finding of contempt of court, punishable by fine or imprisonment."
+  }
+}

@@ -1,0 +1,59 @@
+
+[vendor]
+company = "Hexaflow Cloud GmbH"
+address = "Rosenthaler Str. 40-41, 10178 Berlin"
+country = "Germany"
+vat_id = "DE 327 914 550"
+iban = "DE44 1005 0000 0192 8374 65"
+bic = "BELADEBEXXX"
+
+[customer]
+company = "Brightmoor Analytics Ltd"
+address = "18 Finsbury Square, London EC2A 1AH"
+country = "United Kingdom"
+vat_id = "GB 774 3021 88"
+
+[invoice]
+number = "HXF-2026-08214"
+date = "2026-07-01"
+due_date = "2026-07-15"
+period = "2026-06-01 to 2026-06-30"
+currency = "EUR"
+reverse_charge = true
+
+[totals]
+subtotal = 4144.4
+tax = 0.0
+total = 4144.4
+
+[[items]]
+plan = "Scale Plan (per seat, monthly)"
+seats = 85
+unit_price = 29.0
+usage_qty = 85
+usage_unit = "seats"
+amount = 2465.0
+
+[[items]]
+plan = "Workflow API — overage"
+seats = 0
+unit_price = 0.9
+usage_qty = 1240
+usage_unit = "1k calls"
+amount = 1116.0
+
+[[items]]
+plan = "Object storage"
+seats = 0
+unit_price = 0.021
+usage_qty = 5400
+usage_unit = "GB-month"
+amount = 113.4
+
+[[items]]
+plan = "Premium support add-on"
+seats = 1
+unit_price = 450.0
+usage_qty = 1
+usage_unit = "flat"
+amount = 450.0

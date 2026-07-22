@@ -1,0 +1,31 @@
+{
+  "arzt": {
+    "name": "Dr. med. Sabine Rottmann",
+    "fachrichtung": "Fachärztin für Innere Medizin – Kardiologie",
+    "strasse": "Prinzregentenplatz 9",
+    "plz_ort": "81675 München",
+    "iban": "DE44 7002 0270 0031 5588 90",
+    "bic": "HYVEDEMMXXX"
+  },
+  "patient": {
+    "name": "Herrn Alexander Grünewald",
+    "strasse": "Ismaninger Straße 74",
+    "plz_ort": "81675 München",
+    "geburtsdatum": "11.09.1963"
+  },
+  "rechnung": {
+    "nummer": "2026-0847",
+    "datum": "16.07.2026",
+    "behandlungszeitraum": "02.07.2026 – 09.07.2026",
+    "diagnose": "Belastungsdyspnoe (R06.0 G), V. a. koronare Herzkrankheit (I25.19 V), arterielle Hypertonie (I10.00 G)"
+  },
+  "positionen": [
+    { "datum": "02.07.2026", "ziffer": "1", "leistung": "Beratung, auch mittels Fernsprecher", "faktor": "2,3", "betrag": 24.13 },
+    { "datum": "02.07.2026", "ziffer": "8", "leistung": "Untersuchung, Ganzkörperstatus", "faktor": "2,3", "betrag": 60.33 },
+    { "datum": "02.07.2026", "ziffer": "651", "leistung": "EKG mit 12 Ableitungen in Ruhe", "faktor": "1,8", "betrag": 26.54 },
+    { "datum": "02.07.2026", "ziffer": "652", "leistung": "Belastungs-EKG (Ergometrie)", "faktor": "1,8", "betrag": 47.35 },
+    { "datum": "09.07.2026", "ziffer": "424", "leistung": "Echokardiographie mit Farbdoppler", "faktor": "1,8", "betrag": 174.83 },
+    { "datum": "09.07.2026", "ziffer": "75", "leistung": "Ausführlicher schriftlicher Krankheits- und Befundbericht", "faktor": "2,3", "betrag": 17.43 }
+  ],
+  "gesamtbetrag_hinweis": "Der Rechnungsbetrag ist innerhalb von 30 Tagen nach Rechnungseingang ohne Abzug fällig. Diese Rechnung entspricht den Vorschriften der Gebührenordnung für Ärzte (GOÄ) und ist zur Vorlage bei Ihrer privaten Krankenversicherung bzw. Beihilfestelle geeignet."
+}

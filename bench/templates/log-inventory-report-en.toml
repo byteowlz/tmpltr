@@ -1,0 +1,78 @@
+
+[warehouse]
+name = "Aurora Fulfilment Hub East"
+location = "1200 Commerce Loop, Columbus, OH 43219"
+counted_by = "M. Delgado, T. Nguyen"
+supervisor = "K. Whitfield"
+
+[count]
+date = "2026-07-12"
+zone = "Zone C — small parts, aisles C01–C14"
+method = "Blind cycle count, handheld RF scanners"
+
+[totals]
+total_variance_value = -71.05
+accuracy_pct = 99.56
+
+[[items]]
+sku = "AF-100442"
+description = "USB-C cable 1 m, braided, graphite"
+system_qty = 1840
+counted_qty = 1832
+variance = -8
+unit_cost = 2.15
+variance_value = -17.2
+
+[[items]]
+sku = "AF-100518"
+description = "Wireless mouse M310, matte black"
+system_qty = 640
+counted_qty = 640
+variance = 0
+unit_cost = 8.9
+variance_value = 0.0
+
+[[items]]
+sku = "AF-101206"
+description = "Laptop stand, aluminium, foldable"
+system_qty = 212
+counted_qty = 215
+variance = 3
+unit_cost = 11.4
+variance_value = 34.2
+
+[[items]]
+sku = "AF-101377"
+description = "HDMI 2.1 cable 2 m"
+system_qty = 970
+counted_qty = 958
+variance = -12
+unit_cost = 3.65
+variance_value = -43.8
+
+[[items]]
+sku = "AF-102040"
+description = "Mechanical keyboard K87, brown switches"
+system_qty = 155
+counted_qty = 155
+variance = 0
+unit_cost = 32.5
+variance_value = 0.0
+
+[[items]]
+sku = "AF-102518"
+description = "Webcam 1080p with privacy shutter"
+system_qty = 402
+counted_qty = 399
+variance = -3
+unit_cost = 14.75
+variance_value = -44.25
+
+[[items]]
+sku = "AF-103301"
+description = "Screen cleaning kit 250 ml"
+system_qty = 1210
+counted_qty = 1210
+variance = 0
+unit_cost = 1.85
+variance_value = 0.0

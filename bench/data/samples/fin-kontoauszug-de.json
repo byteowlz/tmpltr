@@ -1,0 +1,31 @@
+{
+  "bank": {
+    "name": "Kreissparkasse Ostwestfalen",
+    "strasse": "Am Markt 3",
+    "plz_ort": "33098 Paderborn",
+    "bic": "SPKODE33XXX"
+  },
+  "konto": {
+    "inhaber": "Martina Overbeck",
+    "iban": "DE71 4725 0101 0092 4417 55",
+    "auszug_nr": "7/2026",
+    "zeitraum": "01.07.2026 - 17.07.2026"
+  },
+  "salden": {
+    "alt": 2861.44,
+    "neu": 2374.9
+  },
+  "buchungen": [
+    {"buchungstag": "01.07.", "wertstellung": "01.07.", "verwendungszweck": "Miete Juli 2026 Wohnung Detmolder Str. 18", "auftraggeber": "Hausverwaltung Brinkmann KG", "betrag": -845.0},
+    {"buchungstag": "02.07.", "wertstellung": "02.07.", "verwendungszweck": "Lastschrift Strom Abschlag 07/2026 VK 4471209", "auftraggeber": "Stadtwerke Paderborn GmbH", "betrag": -78.0},
+    {"buchungstag": "06.07.", "wertstellung": "06.07.", "verwendungszweck": "Kartenzahlung girocard 05.07. 14:22 Uhr", "auftraggeber": "EDEKA Wiethaup Paderborn", "betrag": -63.27},
+    {"buchungstag": "08.07.", "wertstellung": "08.07.", "verwendungszweck": "Gutschrift Rueckerstattung Rechnung 2026-311", "auftraggeber": "Optik Sander e.K.", "betrag": 45.0},
+    {"buchungstag": "10.07.", "wertstellung": "10.07.", "verwendungszweck": "Dauerauftrag Sparplan Depot 733120", "auftraggeber": "Kreissparkasse Ostwestfalen", "betrag": -150.0},
+    {"buchungstag": "13.07.", "wertstellung": "13.07.", "verwendungszweck": "Lastschrift Mobilfunk Rg. 88213479", "auftraggeber": "Telvana GmbH", "betrag": -24.99},
+    {"buchungstag": "15.07.", "wertstellung": "15.07.", "verwendungszweck": "Ueberweisung Fahrtkostenerstattung 06/2026", "auftraggeber": "Landkreis Paderborn", "betrag": 112.4},
+    {"buchungstag": "16.07.", "wertstellung": "16.07.", "verwendungszweck": "Kartenzahlung girocard 15.07. 18:41 Uhr", "auftraggeber": "dm-drogerie markt Paderborn", "betrag": -31.68},
+    {"buchungstag": "17.07.", "wertstellung": "17.07.", "verwendungszweck": "Entgeltabrechnung Kontofuehrung Q2/2026", "auftraggeber": "Kreissparkasse Ostwestfalen", "betrag": -12.0},
+    {"buchungstag": "17.07.", "wertstellung": "17.07.", "verwendungszweck": "Kartenzahlung girocard 17.07. 09:12 Uhr", "auftraggeber": "Baeckerei Kloppenburg", "betrag": -8.0},
+    {"buchungstag": "17.07.", "wertstellung": "17.07.", "verwendungszweck": "Gutschrift Kindergeld 07/2026", "auftraggeber": "Familienkasse NRW Nord", "betrag": 569.0}
+  ]
+}

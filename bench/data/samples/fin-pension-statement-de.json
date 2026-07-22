@@ -1,0 +1,22 @@
+{
+  "traeger": {
+    "name": "Deutsche Rentenversicherung Bund",
+    "strasse": "Ruhrstraße 2",
+    "plz_ort": "10709 Berlin"
+  },
+  "versicherter": {
+    "name": "Petra Wallenhorst",
+    "strasse": "Am Kirchkamp 11",
+    "plz_ort": "33330 Gütersloh",
+    "versicherungsnummer": "53 190467 W 512",
+    "geburtsdatum": "19.04.1967"
+  },
+  "rente": {
+    "regelaltersrente_datum": "01.05.2033",
+    "bisherige_anwartschaft": 1287.44,
+    "hochrechnung": 1642.19,
+    "erwerbsminderung": 1174.65,
+    "beitragsjahre": 31,
+    "stand": "01.07.2026"
+  }
+}

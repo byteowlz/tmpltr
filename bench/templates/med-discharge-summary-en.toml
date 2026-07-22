@@ -1,0 +1,52 @@
+
+[hospital]
+name = "St. Vincent Regional Medical Center"
+department = "Department of Internal Medicine"
+address = "455 Harrison Avenue, Portland, ME 04102"
+phone = "(207) 555-4400"
+
+[patient]
+name = "Margaret E. Sullivan"
+dob = "08/14/1957"
+mrn = "SVR-00482913"
+
+[stay]
+admitted = "07/08/2026"
+discharged = "07/13/2026"
+attending = "Rajiv Menon, MD, FACP"
+
+[summary]
+course = "The patient presented to the Emergency Department with a 4-day history of productive cough, fever to 102.6 F, and worsening dyspnea. She was admitted for community-acquired pneumonia complicated by a moderate COPD exacerbation (CURB-65 score 2). She was started on IV ceftriaxone and azithromycin, with nebulized bronchodilators and a tapering course of prednisone. Blood cultures grew S. pneumoniae and therapy was narrowed to IV ampicillin on hospital day 2. Supplemental oxygen was weaned off by hospital day 4. Blood glucose was managed on a basal-bolus insulin regimen with correction scale. At discharge she was afebrile for more than 48 hours, ambulating independently, and saturating 94% on room air."
+follow_up = "Follow up with primary care (Dr. Amanda Cho) within 7 days; repeat chest X-ray in 6 weeks to document resolution. Pulmonology referral placed for outpatient spirometry. Pneumococcal vaccination status to be reviewed at PCP visit. Return to the ED for fever above 101 F, worsening shortness of breath, or chest pain."
+diagnoses = ["Community-acquired pneumonia, right lower lobe (J18.1)", "Acute exacerbation of COPD (J44.1)", "Type 2 diabetes mellitus, on insulin (E11.65)", "Hypertension (I10)"]
+procedures = ["Chest X-ray, PA/lateral (07/08/2026): RLL consolidation", "CT chest without contrast (07/09/2026): dense RLL consolidation, no empyema", "Blood cultures x2 (07/08/2026): Streptococcus pneumoniae, penicillin-sensitive"]
+
+[[summary.medications]]
+name = "Amoxicillin"
+dose = "875 mg"
+frequency = "twice daily x 5 days"
+
+[[summary.medications]]
+name = "Prednisone"
+dose = "20 mg"
+frequency = "daily x 3 days, then stop"
+
+[[summary.medications]]
+name = "Tiotropium (Spiriva HandiHaler)"
+dose = "18 mcg"
+frequency = "inhaled once daily"
+
+[[summary.medications]]
+name = "Albuterol HFA"
+dose = "90 mcg, 2 puffs"
+frequency = "every 4-6 h as needed"
+
+[[summary.medications]]
+name = "Insulin glargine (Lantus)"
+dose = "24 units"
+frequency = "subcutaneously at bedtime"
+
+[[summary.medications]]
+name = "Lisinopril"
+dose = "20 mg"
+frequency = "once daily"

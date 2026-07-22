@@ -1,0 +1,39 @@
+{
+  "schule": {
+    "name": "Städtisches Gymnasium Am Rosenhang",
+    "strasse": "Rosenhangstraße 12",
+    "plz_ort": "58455 Witten",
+    "schulform": "Gymnasium"
+  },
+  "schueler": {
+    "name": "Lena Marie Hoffmann",
+    "geburtsdatum": "14.03.2012",
+    "klasse": "8b",
+    "schuljahr": "2025/2026",
+    "halbjahr": "2. Halbjahr (Jahreszeugnis)"
+  },
+  "noten": [
+    {"fach": "Deutsch", "note": "gut"},
+    {"fach": "Englisch", "note": "sehr gut"},
+    {"fach": "Französisch", "note": "befriedigend"},
+    {"fach": "Mathematik", "note": "gut"},
+    {"fach": "Physik", "note": "befriedigend"},
+    {"fach": "Chemie", "note": "gut"},
+    {"fach": "Biologie", "note": "sehr gut"},
+    {"fach": "Geschichte", "note": "gut"},
+    {"fach": "Erdkunde", "note": "gut"},
+    {"fach": "Politik/Wirtschaft", "note": "befriedigend"},
+    {"fach": "Kunst", "note": "sehr gut"},
+    {"fach": "Musik", "note": "gut"},
+    {"fach": "Sport", "note": "gut"},
+    {"fach": "Evangelische Religionslehre", "note": "gut"}
+  ],
+  "bemerkungen": "Lena hat im Schuljahr 2025/2026 mit Erfolg am Regionalwettbewerb \"Jugend forscht\" teilgenommen. Sie fehlte an 3 Tagen entschuldigt, an keinem Tag unentschuldigt.",
+  "versetzung": "Versetzt in die Klassenstufe 9.",
+  "ausstellung": {
+    "ort": "Witten",
+    "datum": "26.06.2026",
+    "klassenleitung": "S. Brandt",
+    "schulleitung": "Dr. M. Kaltenbach"
+  }
+}

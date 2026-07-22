@@ -1,0 +1,33 @@
+{
+  "insurer": {
+    "name": "Meridian Global Health Insurance Ltd.",
+    "address": "Claims Department, PO Box 4419, Dublin 2, D02 XT91, Ireland"
+  },
+  "member": {
+    "name": "Fiona McAllister",
+    "policy_no": "MGH-IE-2214 8830 71",
+    "dob": "16/11/1985",
+    "email": "f.mcallister@postbox.ie",
+    "iban": "IE29 AIBK 9311 5212 3456 78"
+  },
+  "claim": {
+    "date": "16/07/2026",
+    "provider": "Blackrock Clinic, Rock Road, Blackrock, Co. Dublin",
+    "treatment_dates": "22/06/2026 - 03/07/2026",
+    "diagnosis": "Acute appendicitis (ICD-10 K35.80); laparoscopic appendectomy with uneventful recovery",
+    "items": [
+      { "date": "22/06/2026", "description": "Emergency consultation, general surgery", "amount": 180.0 },
+      { "date": "22/06/2026", "description": "Abdominal ultrasound and blood panel", "amount": 245.5 },
+      { "date": "23/06/2026", "description": "Laparoscopic appendectomy (theatre and surgeon fees)", "amount": 2840.0 },
+      { "date": "23/06/2026", "description": "Anaesthetist fee", "amount": 620.0 },
+      { "date": "23/06/2026", "description": "Private room, 2 nights", "amount": 780.0 },
+      { "date": "03/07/2026", "description": "Post-operative review and suture removal", "amount": 95.0 }
+    ],
+    "total": 4760.5,
+    "currency": "EUR"
+  },
+  "declaration": {
+    "signed_place": "Dublin",
+    "signed_date": "16/07/2026"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "employee": {
+    "name": "Rachel Nkemdirim",
+    "id": "CT-2087",
+    "department": "Client Delivery"
+  },
+  "period": {
+    "month": "June",
+    "year": "2026"
+  },
+  "entries": [
+    {"date": "Mon 01 Jun", "project": "AXA-114", "task": "Data migration dry run", "hours": 8.0, "overtime": 0.0},
+    {"date": "Tue 02 Jun", "project": "AXA-114", "task": "Migration issue triage", "hours": 8.0, "overtime": 1.5},
+    {"date": "Wed 03 Jun", "project": "INT-000", "task": "Team planning / internal", "hours": 7.5, "overtime": 0.0},
+    {"date": "Thu 04 Jun", "project": "BRX-201", "task": "Reporting API integration", "hours": 8.0, "overtime": 0.0},
+    {"date": "Fri 05 Jun", "project": "BRX-201", "task": "Reporting API integration", "hours": 7.5, "overtime": 0.0},
+    {"date": "Mon 08 Jun", "project": "BRX-201", "task": "Dashboard QA + fixes", "hours": 8.0, "overtime": 0.5},
+    {"date": "Tue 09 Jun", "project": "AXA-114", "task": "Cutover rehearsal", "hours": 8.0, "overtime": 2.0},
+    {"date": "Wed 10 Jun", "project": "AXA-114", "task": "Production cutover support", "hours": 8.0, "overtime": 3.0},
+    {"date": "Thu 11 Jun", "project": "AXA-114", "task": "Hypercare / defect fixes", "hours": 8.0, "overtime": 0.0},
+    {"date": "Fri 12 Jun", "project": "INT-000", "task": "Retro + documentation", "hours": 7.5, "overtime": 0.0}
+  ],
+  "totals": {
+    "regular": 78.5,
+    "overtime": 7.0,
+    "billable": 63.5
+  },
+  "approval": {
+    "manager": "Stephen Carraway",
+    "date": "03 Jul 2026",
+    "status": "Approved"
+  }
+}

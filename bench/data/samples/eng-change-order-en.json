@@ -1,0 +1,70 @@
+{
+  "company": {
+    "name": "Aerospace Dynamics Corp",
+    "site": "Munich Production Facility"
+  },
+  "eco": {
+    "number": "ECO-2024-0812",
+    "date": "2024-11-14",
+    "title": "Redesign of Avionics Cooling Manifold",
+    "originator": "Dr. Elena Vance",
+    "priority": "High",
+    "reason": "Thermal stress failure detected during long-duration flight simulation testing.",
+    "description": "Replacement of aluminum alloy housing with reinforced composite material and updated mounting bracket geometry to improve heat dissipation efficiency by 15%.",
+    "disposition_stock": "Scrap existing inventory of Rev B manifolds; use Rev C only for new builds.",
+    "disposition_wip": "Rework current assembly line units by retrofitting new mounting brackets.",
+    "effective_date": "2025-01-01"
+  },
+  "affected": [
+    {
+      "part_number": "M-4402-AL",
+      "description": "Cooling Manifold Housing - Aluminum",
+      "from_rev": "B",
+      "to_rev": "C"
+    },
+    {
+      "part_number": "BKT-99-01",
+      "description": "Manifold Mounting Bracket",
+      "from_rev": "A",
+      "to_rev": "B"
+    },
+    {
+      "part_number": "GASK-772",
+      "description": "High-Temp Silicone Seal",
+      "from_rev": "D",
+      "to_rev": "D"
+    },
+    {
+      "part_number": "ASM-AV-102",
+      "description": "Avionics Thermal Module Assembly",
+      "from_rev": "F",
+      "to_rev": "G"
+    }
+  ],
+  "approvals": [
+    {
+      "role": "Lead Design Engineer",
+      "name": "Marcus Thorne",
+      "status": "Approved",
+      "date": "2024-11-15"
+    },
+    {
+      "role": "Quality Assurance Manager",
+      "name": "Sarah Jenkins",
+      "status": "Approved",
+      "date": "2024-11-16"
+    },
+    {
+      "role": "Manufacturing Director",
+      "name": "Hiroshi Tanaka",
+      "status": "Approved",
+      "date": "2024-11-18"
+    },
+    {
+      "role": "Chief Technical Officer",
+      "name": "Robert Sterling",
+      "status": "Pending",
+      "date": null
+    }
+  ]
+}

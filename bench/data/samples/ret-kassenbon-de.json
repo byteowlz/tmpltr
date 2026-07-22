@@ -1,0 +1,42 @@
+{
+  "markt": {
+    "name": "NORDKAUF",
+    "strasse": "Bremer Landstr. 47",
+    "plz_ort": "28217 Bremen",
+    "ustid": "DE 214 887 903",
+    "filiale": "1183"
+  },
+  "bon": {
+    "nummer": "4711-118392",
+    "datum": "15.07.2026",
+    "uhrzeit": "18:23",
+    "kasse": "003",
+    "bediener": "MEIER, S."
+  },
+  "artikel": [
+    {"name": "Vollmilch 3,5% 1L", "menge": 1, "preis": 1.19, "mwst_klasse": "B"},
+    {"name": "Bio-Bananen 5 Stk", "menge": 1, "preis": 1.89, "mwst_klasse": "B"},
+    {"name": "Roggenbrot 750g", "menge": 1, "preis": 2.79, "mwst_klasse": "B"},
+    {"name": "Deutsche Markenbutter 250g", "menge": 1, "preis": 2.49, "mwst_klasse": "B"},
+    {"name": "Spuelmittel Zitrone 500ml", "menge": 1, "preis": 1.95, "mwst_klasse": "A"},
+    {"name": "Kuechenrollen 4er Pack", "menge": 1, "preis": 3.49, "mwst_klasse": "A"},
+    {"name": "Apfelschorle 1,5L", "menge": 2, "preis": 0.99, "mwst_klasse": "A"},
+    {"name": "Kaffee gemahlen 500g", "menge": 1, "preis": 5.99, "mwst_klasse": "B"},
+    {"name": "Zahncreme Fresh 75ml", "menge": 1, "preis": 2.75, "mwst_klasse": "A"}
+  ],
+  "summen": {
+    "netto_a": 8.55,
+    "mwst_a": 1.62,
+    "netto_b": 13.41,
+    "mwst_b": 0.94,
+    "gesamt": 24.52,
+    "zahlart": "BAR",
+    "gegeben": 30.00,
+    "rueckgeld": 5.48
+  },
+  "tse": {
+    "signatur": "pQZ8vK3mN7xR2tYw9aLc4dHf6gJs1uEbo5iPnB0kMqXzT8rVyW3eA7cD2fG6hJ9kL4mN8pQ1sT5vX0zB3dF7gH2jK6lM9nP4qS8tU1wY5xA0cE3fI7hK2mO6pR9sV4uX8zC1eG5iJ0lN3qT7wZ2bD6fH9kM4oQ8rU1vY5xA3cE7gI0jL",
+    "transaktionsnr": "384291",
+    "seriennr": "bdf9a2c4-77e1-4b30-9d58-c1a6f0e2b845"
+  }
+}

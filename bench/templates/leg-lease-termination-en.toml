@@ -1,0 +1,21 @@
+
+[sender]
+name = "Marcus T. Whitfield"
+address = "Apt 4B, 1128 Sycamore Lane"
+city = "Portland, OR 97214"
+role = "Tenant"
+
+[recipient]
+name = "Cascadia Property Management LLC"
+address = "310 SE Grand Avenue, Suite 200"
+city = "Portland, OR 97214"
+
+[termination]
+property_address = "Apt 4B, 1128 Sycamore Lane, Portland, OR 97214"
+lease_start = "September 1, 2024"
+termination_date = "September 30, 2026"
+move_out_date = "September 28, 2026"
+notice_period = "60 days"
+deposit_amount = "$2,150.00"
+deposit_iban = "US routing 123006800, account 4471 9902 35"
+forwarding_address = "2205 NE Alberta Street, Unit 12, Portland, OR 97211"

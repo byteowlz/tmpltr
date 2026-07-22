@@ -1,0 +1,71 @@
+{
+  "company": {
+    "name": "Aerodyne Robotics Corp",
+    "project": "SkyScan-V4 Multirotor"
+  },
+  "assembly": {
+    "number": "ASM-772-B",
+    "name": "Heavy-Lift Propulsion Module",
+    "revision": "C",
+    "date": "2024-10-14",
+    "author": "Elena Rodriguez",
+    "status": "Released"
+  },
+  "items": [
+    {
+      "pos": 1,
+      "part_number": "MOT-440-X",
+      "description": "Brushless DC Motor 450KV",
+      "qty": 4,
+      "unit": "pcs",
+      "material": "Aluminum/Copper",
+      "supplier": "VoltDrive Propulsion",
+      "unit_cost": 85.50
+    },
+    {
+      "pos": 2,
+      "part_number": "ESC-60A-PRO",
+      "description": "60A Electronic Speed Controller",
+      "qty": 4,
+      "unit": "pcs",
+      "material": "Silicon/FR4",
+      "supplier": "ElectroFlow Systems",
+      "unit_cost": 42.25
+    },
+    {
+      "pos": 3,
+      "part_number": "PROP-1270-C",
+      "description": "12x7 Carbon Fiber Propeller",
+      "qty": 8,
+      "unit": "pcs",
+      "material": "Carbon Fiber Reinforced Polymer",
+      "supplier": "AeroBlade Dynamics",
+      "unit_cost": 14.10
+    },
+    {
+      "pos": 4,
+      "part_number": "FRM-ALU-30",
+      "description": "Motor Mount Bracket 30mm",
+      "qty": 4,
+      "unit": "pcs",
+      "material": "6061 Aluminum",
+      "supplier": "Precision Machining Ltd",
+      "unit_cost": 9.75
+    },
+    {
+      "pos": 5,
+      "part_number": "WIR-14AWG-RED",
+      "description": "14AWG Silicone Insulated Wire (1m)",
+      "qty": 5,
+      "unit": "m",
+      "material": "Copper/Silicone",
+      "supplier": "Global Wire & Cable",
+      "unit_cost": 2.40
+    }
+  ],
+  "totals": {
+    "part_count": 5,
+    "total_cost": 652.50,
+    "currency": "USD"
+  }
+}

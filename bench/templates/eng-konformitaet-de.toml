@@ -1,0 +1,23 @@
+
+[hersteller]
+name = "ElektroTechnik Mittelstand GmbH"
+strasse = "Industriestraße 42"
+plz_ort = "80331 München"
+
+[produkt]
+bezeichnung = "Industrie-Steuergerät Pro-Control X1"
+typ = "SPS-Steuerung"
+seriennummer_bereich = "SN-2024-0001 bis SN-2024-5000"
+baujahr = 2024
+
+[erklaerung]
+benannte_stelle = "TÜV SÜD Product Service GmbH"
+zertifikat_nr = "CERT-DE-992834-2024"
+richtlinien = ["2014/35/EU (Niederspannungsrichtlinie)", "2014/30/EU (EMV-Richtlinie)", "2011/65/EU (RoHS-Richtlinie)"]
+normen = ["EN 61010-1:2010", "EN 61326-1:2013", "EN IEC 63000:2018"]
+
+[unterzeichner]
+name = "Dr. Hans-Joachim Weber"
+funktion = "Geschäftsführer & Technischer Leiter"
+ort = "München"
+datum = "2024-05-15"

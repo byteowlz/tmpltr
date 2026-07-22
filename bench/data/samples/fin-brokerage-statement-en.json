@@ -1,0 +1,26 @@
+{
+  "broker": {
+    "name": "Meridian Securities LLC",
+    "address": "One Exchange Plaza, Suite 4200, New York, NY 10006",
+    "contact": "clientdesk@meridiansec.com · +1 (212) 555-0187"
+  },
+  "account": {
+    "holder": "Daniel R. Okafor",
+    "number": "MS-7745-8812",
+    "period": "June 1 – June 30, 2026",
+    "base_currency": "USD"
+  },
+  "summary": {
+    "total_value": 248775.32,
+    "cash_balance": 12409.87,
+    "period_change_pct": 2.7
+  },
+  "positions": [
+    {"symbol": "AAPL", "name": "Apple Inc.", "quantity": 120, "price": 228.4, "market_value": 27408.0, "gain_pct": 4.1},
+    {"symbol": "MSFT", "name": "Microsoft Corp.", "quantity": 85, "price": 512.1, "market_value": 43528.5, "gain_pct": 3.2},
+    {"symbol": "VTI", "name": "Vanguard Total Stock Market ETF", "quantity": 310, "price": 296.75, "market_value": 91992.5, "gain_pct": 2.4},
+    {"symbol": "JNJ", "name": "Johnson & Johnson", "quantity": 140, "price": 158.9, "market_value": 22246.0, "gain_pct": -0.8},
+    {"symbol": "BND", "name": "Vanguard Total Bond Market ETF", "quantity": 420, "price": 73.6, "market_value": 30912.0, "gain_pct": 0.6},
+    {"symbol": "NVDA", "name": "NVIDIA Corp.", "quantity": 55, "price": 368.5, "market_value": 20267.5, "gain_pct": 6.9}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "utility": {
+    "name": "City of Maplewood Water & Sewer Utility",
+    "address": "410 Civic Center Drive, Maplewood, MN 55109",
+    "phone": "(651) 555-0134"
+  },
+  "customer": {
+    "name": "Robert & Janet Kowalski",
+    "service_address": "1847 Hazelwood Street, Maplewood, MN 55109",
+    "account_no": "WS-118-40372"
+  },
+  "bill": {
+    "number": "2026-07-081244",
+    "date": "07/06/2026",
+    "period": "04/01/2026 - 06/30/2026",
+    "due_date": "08/05/2026",
+    "currency": "USD"
+  },
+  "usage": {
+    "previous_reading": 128400,
+    "current_reading": 134600,
+    "gallons_or_m3": 6200,
+    "unit": "gallons"
+  },
+  "charges": [
+    {"label": "Water usage: 6.2 kgal x $4.85/kgal", "amount": 30.07},
+    {"label": "Sewer service: 6.2 kgal x $6.10/kgal", "amount": 37.82},
+    {"label": "Base service charge (5/8\" meter)", "amount": 14.50},
+    {"label": "Stormwater management fee", "amount": 6.25}
+  ],
+  "total": 88.64
+}

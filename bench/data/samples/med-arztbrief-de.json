@@ -1,0 +1,48 @@
+{
+  "absender": {
+    "klinik": "Klinikum St. Elisabeth Bamberg",
+    "abteilung": "Medizinische Klinik II – Kardiologie und Angiologie",
+    "strasse": "Buger Straße 80",
+    "plz_ort": "96049 Bamberg",
+    "telefon": "0951 503-11201",
+    "chefarzt": "Prof. Dr. med. Matthias Roggenkamp"
+  },
+  "empfaenger": {
+    "name": "Frau Dr. med. Annette Schierling",
+    "praxis": "Hausärztliche Gemeinschaftspraxis Schierling & Baum",
+    "strasse": "Luitpoldstraße 23",
+    "plz_ort": "96052 Bamberg"
+  },
+  "patient": {
+    "name": "Werner Kastenmeier, geb. 04.06.1951",
+    "geburtsdatum": "04.06.1951",
+    "aufnahme": "06.07.2026",
+    "entlassung": "11.07.2026"
+  },
+  "brief": {
+    "diagnosen": [
+      "Akutes Koronarsyndrom: NSTEMI (I21.4), Zustand nach PCI mit DES-Implantation RIVA am 07.07.2026",
+      "Koronare Zweigefäßerkrankung (I25.12)",
+      "Arterielle Hypertonie (I10.90)",
+      "Diabetes mellitus Typ 2, oral eingestellt (E11.90)",
+      "Hyperlipidämie (E78.5)"
+    ],
+    "anamnese": "Die stationäre Aufnahme erfolgte notfallmäßig bei seit den frühen Morgenstunden bestehendem retrosternalem Druckgefühl mit Ausstrahlung in den linken Arm, begleitet von Dyspnoe und Kaltschweißigkeit. Kardiovaskuläre Risikofaktoren: langjähriger Nikotinkonsum (ca. 35 py), arterielle Hypertonie, Diabetes mellitus Typ 2.",
+    "befund": "Bei Aufnahme Troponin T hs 412 ng/l (Verlauf ansteigend), CK 385 U/l. EKG: Sinusrhythmus, 78/min, ST-Senkungen in V4–V6. Echokardiographie: leicht reduzierte LV-Funktion (EF 48 %), Hypokinesie anteroseptal, keine relevanten Vitien. Koronarangiographie vom 07.07.2026: hochgradige Stenose des proximalen RIVA (90 %), erfolgreiche PCI mit Implantation eines medikamentenbeschichteten Stents; RCX mit 50%iger Stenose, konservativ.",
+    "therapie": "Komplikationslose PCI mit DES-Implantation in den RIVA. Beginn einer dualen Thrombozytenaggregationshemmung sowie leitliniengerechte Sekundärprophylaxe. Unter Mobilisation auf Stationsebene beschwerdefrei, Punktionsstelle reizlos.",
+    "medikation": [
+      "ASS 100 mg 1-0-0 (dauerhaft)",
+      "Ticagrelor 90 mg 1-0-1 (für 12 Monate)",
+      "Atorvastatin 80 mg 0-0-1",
+      "Ramipril 5 mg 1-0-0",
+      "Metoprololsuccinat 47,5 mg 1-0-0",
+      "Metformin 1000 mg 1-0-1",
+      "Pantoprazol 20 mg 1-0-0"
+    ],
+    "empfehlung": "Wir bitten um regelmäßige hausärztliche Kontrollen von Blutdruck, Lipidstatus (Ziel-LDL < 55 mg/dl) und HbA1c. Eine kardiologische Verlaufskontrolle inkl. Echokardiographie ist in 3 Monaten empfohlen. Die duale Plättchenhemmung darf ohne kardiologische Rücksprache nicht unterbrochen werden. Eine Anschlussheilbehandlung wurde eingeleitet, dringende Nikotinkarenz wurde besprochen."
+  },
+  "unterzeichner": {
+    "name": "Dr. med. Katrin Hollfelder",
+    "position": "Oberärztin, Medizinische Klinik II"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "arbeitgeber": {
+    "firma": "Roland Speditions- und Lagerhaus GmbH",
+    "strasse": "Gewerbering 7",
+    "plz_ort": "86156 Augsburg"
+  },
+  "arbeitnehmer": {
+    "name": "Herr Patrick Söllner",
+    "personalnr": "2291",
+    "abteilung": "Lager / Kommissionierung"
+  },
+  "abmahnung": {
+    "datum": "18.07.2026",
+    "vorfall_datum": "09.07.2026 und 13.07.2026",
+    "sachverhalt": "Sie sind am 09.07.2026 ohne Ankündigung erst um 08:47 Uhr (statt 06:00 Uhr) und am 13.07.2026 um 07:12 Uhr zum Dienst erschienen. Eine Krankmeldung oder sonstige Entschuldigung lag jeweils nicht vor. Ihre Schicht musste kurzfristig durch Kollegen abgedeckt werden.",
+    "pflichtverletzung": "wiederholtes unentschuldigtes verspätetes Erscheinen zur vereinbarten Arbeitszeit und damit ein Verstoß gegen Ihre arbeitsvertraglichen Hauptpflichten (§ 3 Ihres Arbeitsvertrages)",
+    "frist": "Wir erwarten, dass Sie ab sofort Ihre Arbeitszeiten einhalten.",
+    "konsequenzen": "Im Wiederholungsfall müssen Sie mit weiteren arbeitsrechtlichen Konsequenzen bis hin zur ordentlichen oder außerordentlichen Kündigung des Arbeitsverhältnisses rechnen."
+  },
+  "unterschrift": {
+    "name": "Gabriele Roland-Fitz",
+    "position": "Personalleiterin"
+  }
+}

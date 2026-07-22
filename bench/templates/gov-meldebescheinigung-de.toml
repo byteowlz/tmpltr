@@ -1,0 +1,24 @@
+
+[behoerde]
+name = "Stadt Lemgo – Bürgerbüro"
+strasse = "Marktplatz 1"
+plz_ort = "32657 Lemgo"
+
+[person]
+name = "Frau Katharina Ostwald"
+geburtsdatum = "03.11.1989"
+geburtsort = "Detmold"
+staatsangehoerigkeit = "deutsch"
+familienstand = "verheiratet"
+
+[meldung]
+wohnung_strasse = "Echternstraße 14"
+wohnung_plz_ort = "32657 Lemgo"
+einzugsdatum = "01.04.2021"
+wohnungsstatus = "alleinige Wohnung"
+weitere_wohnsitze = "keine"
+
+[ausstellung]
+datum = "16.07.2026"
+gebuehr = "9,00 €"
+sachbearbeiter = "Frau Wiebke Sander"

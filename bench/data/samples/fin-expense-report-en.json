@@ -1,0 +1,30 @@
+{
+  "employee": {
+    "name": "Laura Simmons",
+    "id": "EMP-04471",
+    "department": "Field Engineering",
+    "cost_center": "CC-3305",
+    "iban": "GB07 HLFX 1102 4816 5540 22"
+  },
+  "trip": {
+    "purpose": "Customer site commissioning, Aurora Wind Park",
+    "destination": "Aberdeen, Scotland",
+    "start_date": "6 July 2026",
+    "end_date": "10 July 2026",
+    "project_code": "PRJ-AUR-118"
+  },
+  "expenses": [
+    {"date": "6 Jul 2026", "category": "Travel", "description": "Rail ticket London – Aberdeen (return)", "amount": 214.5, "receipt_no": "R-001"},
+    {"date": "6 Jul 2026", "category": "Lodging", "description": "Hotel Caledonian, 4 nights", "amount": 512.0, "receipt_no": "R-002"},
+    {"date": "7 Jul 2026", "category": "Meals", "description": "Dinner with site supervisor (2 pax)", "amount": 68.4, "receipt_no": "R-003"},
+    {"date": "8 Jul 2026", "category": "Transport", "description": "Taxi harbour – wind park office", "amount": 23.75, "receipt_no": "R-004"},
+    {"date": "9 Jul 2026", "category": "Meals", "description": "Per-diem lunch allowance", "amount": 18.0, "receipt_no": "R-005"},
+    {"date": "10 Jul 2026", "category": "Other", "description": "PPE replacement gloves (site requirement)", "amount": 12.9, "receipt_no": "R-006"}
+  ],
+  "approval": {
+    "manager": "Gareth Whitfield",
+    "status": "Approved",
+    "date": "15 July 2026"
+  },
+  "currency": "GBP"
+}

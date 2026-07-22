@@ -1,0 +1,33 @@
+rechtsbehelf = "Gegen diesen Bußgeldbescheid können Sie innerhalb von zwei Wochen nach Zustellung schriftlich oder zur Niederschrift bei der oben bezeichneten Verwaltungsbehörde Einspruch einlegen (§ 67 OWiG). Der Einspruch kann auf bestimmte Beschwerdepunkte beschränkt werden. Wird kein Einspruch eingelegt, wird der Bescheid rechtskräftig und vollstreckbar."
+
+[behoerde]
+name = "Kreis Höxter – Straßenverkehrsamt, Bußgeldstelle"
+strasse = "Moltkestraße 12"
+plz_ort = "37671 Höxter"
+aktenzeichen = "32.1-5204-VG/2026/04471"
+
+[betroffener]
+name = "Herr Daniel Krettek"
+strasse = "Corveyer Allee 8"
+plz_ort = "37671 Höxter"
+geburtsdatum = "22.05.1993"
+
+[tat]
+datum = "14.05.2026"
+uhrzeit = "17:42 Uhr"
+ort = "B 64, Höxter-Godelheim, km 21,4, Fahrtrichtung Paderborn"
+vorwurf = "Überschreitung der zulässigen Höchstgeschwindigkeit außerhalb geschlossener Ortschaften um 26 km/h"
+fahrzeug = "PKW Skoda Octavia, grau"
+kennzeichen = "HX-DK 482"
+messverfahren = "PoliScan FM1 (standardisiertes Messverfahren)"
+messwert = "129 km/h"
+toleranz = "3 km/h"
+
+[sanktion]
+bussgeld = 150.0
+gebuehren = 25.0
+auslagen = 3.5
+gesamt = 178.5
+punkte = 1
+fahrverbot_monate = 0
+zahlungsfrist = "14.08.2026"

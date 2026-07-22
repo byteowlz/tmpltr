@@ -1,0 +1,28 @@
+
+[employer]
+company = "Meridian Analytics Ltd"
+address = "48 Fenchurch Avenue"
+city = "London EC3M 5AD"
+represented_by = "Sarah Whitmore, Director of People"
+
+[employee]
+name = "Daniel Okafor"
+address = "17 Belgrave Road"
+city = "London SW1V 2AR"
+dob = "14 March 1991"
+
+[terms]
+position = "Senior Data Engineer"
+department = "Platform Engineering"
+start_date = "1 September 2026"
+salary_annual = 78500
+currency = "GBP"
+hours_per_week = 37.5
+vacation_days = 27
+probation_months = 6
+notice_weeks = 8
+workplace = "London office (hybrid, min. 2 days on site)"
+
+[signatures]
+place = "London"
+date = "18 July 2026"

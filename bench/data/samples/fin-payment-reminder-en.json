@@ -1,0 +1,27 @@
+{
+  "sender": {
+    "company": "Bluewater Office Interiors Ltd",
+    "address": "Unit 9, Riverside Business Park",
+    "city": "Leeds LS10 1DX",
+    "email": "accounts@bluewater-interiors.co.uk",
+    "phone": "+44 113 496 2280",
+    "iban": "GB55 BWOI 6083 1177 2455 90",
+    "bic": "BWOIGB2LXXX"
+  },
+  "recipient": {
+    "company": "Fenwick Digital Agency Ltd",
+    "contact": "Ms Charlotte Ainsworth",
+    "address": "8 Millgarth Court",
+    "city": "Leeds LS2 7EH"
+  },
+  "reminder": {
+    "level": "Second Reminder",
+    "date": "18 July 2026",
+    "invoice_number": "BW-2026-0341",
+    "invoice_date": "12 May 2026",
+    "original_amount": 4860.0,
+    "late_fee": 72.9,
+    "total_due": 4932.9,
+    "deadline": "1 August 2026"
+  }
+}

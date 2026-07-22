@@ -1,0 +1,26 @@
+{
+  "darlehensgeber": {
+    "name": "Heinrich Albers",
+    "strasse": "Lindenallee 27",
+    "plz_ort": "48145 Münster"
+  },
+  "darlehensnehmer": {
+    "name": "Sandra Krüger",
+    "strasse": "Bogenstraße 5",
+    "plz_ort": "48153 Münster",
+    "geburtsdatum": "22.11.1989"
+  },
+  "darlehen": {
+    "betrag": 25000.0,
+    "zinssatz": 3.2,
+    "laufzeit_monate": 60,
+    "rate": 451.6,
+    "auszahlungsdatum": "01.08.2026",
+    "verwendung": "Modernisierung der Eigentumswohnung Bogenstraße 5, Münster",
+    "iban": "DE62 4005 0150 0134 7729 86"
+  },
+  "unterschrift": {
+    "ort": "Münster",
+    "datum": "18.07.2026"
+  }
+}

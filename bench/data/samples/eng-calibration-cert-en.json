@@ -1,0 +1,79 @@
+{
+  "lab": {
+    "name": "Precision Metrology Services Ltd",
+    "address": "Unit 12, Industrial Estate",
+    "city": "Reading",
+    "postal": "RG1 4PN",
+    "country": "United Kingdom",
+    "accreditation_no": "UKAS-CAL-99281"
+  },
+  "customer": {
+    "company": "Aerospace Dynamics Corp",
+    "address": "Skyline Drive 450",
+    "city": "Toulouse",
+    "postal": "31000",
+    "country": "France"
+  },
+  "instrument": {
+    "type": "Digital Multimeter",
+    "manufacturer": "Fluke Corporation",
+    "model": "87V",
+    "serial": "FLK-99203341",
+    "id_no": "ASSET-772"
+  },
+  "calibration": {
+    "cert_no": "CERT-2024-8812",
+    "date": "2024-03-15",
+    "procedure": "ISO/IEC 17025:2017 Standard DC Voltage Verification",
+    "ambient_temp": 21.4,
+    "humidity": 42.5,
+    "due_date": "2025-03-15"
+  },
+  "standards": [
+    {
+      "description": "High Precision Voltage Reference",
+      "serial": "REF-001",
+      "traceability": "NIST SRM 272G"
+    },
+    {
+      "description": "Digital Calibrator",
+      "serial": "CAL-X5",
+      "traceability": "NPL-UK-2023-99"
+    }
+  ],
+  "results": [
+    {
+      "point": "Low Range",
+      "nominal": 10.000,
+      "measured": 10.002,
+      "deviation": 0.002,
+      "uncertainty": 0.001,
+      "unit": "V"
+    },
+    {
+      "point": "Mid Range",
+      "nominal": 50.000,
+      "measured": 49.997,
+      "deviation": -0.003,
+      "uncertainty": 0.002,
+      "unit": "V"
+    },
+    {
+      "point": "High Range",
+      "nominal": 100.000,
+      "measured": 100.005,
+      "deviation": 0.005,
+      "uncertainty": 0.003,
+      "unit": "V"
+    },
+    {
+      "point": "Full Scale",
+      "nominal": 500.000,
+      "measured": 499.991,
+      "deviation": -0.009,
+      "uncertainty": 0.008,
+      "unit": "V"
+    }
+  ],
+  "statement": "The instrument meets the specified accuracy requirements for the tested points. All measurements are reported in accordance with ISO/IEC 17025 standards."
+}

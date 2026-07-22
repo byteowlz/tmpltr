@@ -1,0 +1,34 @@
+{
+  "org": {
+    "company": "Cloudspire Technologies Inc.",
+    "team": "Platform Reliability Engineering",
+    "report_author": "Dana Okafor, Senior SRE"
+  },
+  "incident": {
+    "id": "INC-2026-0342",
+    "severity": "SEV-1",
+    "title": "API gateway outage due to certificate expiry in edge fleet",
+    "start": "2026-07-08 03:12 UTC",
+    "detected": "2026-07-08 03:19 UTC",
+    "resolved": "2026-07-08 05:47 UTC",
+    "duration_min": 155,
+    "affected_services": ["Public REST API", "Webhooks delivery", "Dashboard login", "Mobile sync"],
+    "customer_impact": "Approximately 62% of API requests failed with TLS handshake errors for 2h 35m. Webhook deliveries were queued and replayed after recovery; no data was lost. 41 enterprise customers were affected, 18 support tickets were opened."
+  },
+  "timeline": [
+    {"time": "03:12", "event": "Leaf certificate on edge proxy fleet eu-west expires; TLS handshakes begin failing"},
+    {"time": "03:19", "event": "PagerDuty alert edge-tls-error-rate fires; on-call SRE acknowledges"},
+    {"time": "03:31", "event": "Incident declared SEV-1, incident channel #inc-0342 opened"},
+    {"time": "03:55", "event": "Root cause identified: cert-manager renewal job stuck since 2026-06-24 due to revoked API token"},
+    {"time": "04:20", "event": "New certificate issued manually and pushed to 12 of 48 edge nodes"},
+    {"time": "05:02", "event": "Rollout completed to all edge nodes; error rate below 1%"},
+    {"time": "05:47", "event": "Webhook backlog fully drained; incident resolved"}
+  ],
+  "root_cause": "The cert-manager renewal CronJob had been failing silently since 2026-06-24 because its Vault API token was revoked during a quarterly credential rotation. The job's failure alerts were routed to a decommissioned Slack channel, so the expiring certificate went unnoticed until it lapsed in production.",
+  "action_items": [
+    {"action": "Route cert-manager job failures to PagerDuty with SEV-2 priority", "owner": "D. Okafor", "due": "2026-07-15"},
+    {"action": "Add synthetic TLS expiry probe (alert at 14 days remaining)", "owner": "M. Lindqvist", "due": "2026-07-22"},
+    {"action": "Include service tokens in rotation runbook checklist", "owner": "Security Eng", "due": "2026-07-31"},
+    {"action": "Automate staged cert rollout to edge fleet", "owner": "R. Vasquez", "due": "2026-08-14"}
+  ]
+}

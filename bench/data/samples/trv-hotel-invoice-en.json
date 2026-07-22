@@ -1,0 +1,44 @@
+{
+  "hotel": {
+    "name": "Hotel Miradouro Atlântico",
+    "address": "Rua das Janelas Verdes 94",
+    "city": "1200-692 Lisboa, Portugal",
+    "vat_id": "PT509334817",
+    "phone": "+351 21 555 0448"
+  },
+  "guest": {
+    "name": "Annika Sommer",
+    "company": "",
+    "address": "Eppendorfer Weg 61, 20259 Hamburg, Germany"
+  },
+  "stay": {
+    "confirmation_no": "MA-2026-084172",
+    "room": "412 – Double Deluxe, sea view",
+    "check_in": "14 Sep 2026",
+    "check_out": "21 Sep 2026",
+    "nights": 7,
+    "guests": 2
+  },
+  "charges": [
+    {"date": "14 Sep 2026", "description": "Room charge – Double Deluxe", "amount": 142.00},
+    {"date": "15 Sep 2026", "description": "Room charge – Double Deluxe", "amount": 142.00},
+    {"date": "15 Sep 2026", "description": "Minibar", "amount": 12.40},
+    {"date": "16 Sep 2026", "description": "Room charge – Double Deluxe", "amount": 142.00},
+    {"date": "17 Sep 2026", "description": "Room charge – Double Deluxe", "amount": 142.00},
+    {"date": "17 Sep 2026", "description": "Laundry service", "amount": 24.00},
+    {"date": "18 Sep 2026", "description": "Room charge – Double Deluxe", "amount": 142.00},
+    {"date": "19 Sep 2026", "description": "Room charge – Double Deluxe", "amount": 142.00},
+    {"date": "19 Sep 2026", "description": "Restaurant Varanda – dinner", "amount": 60.00},
+    {"date": "20 Sep 2026", "description": "Room charge – Double Deluxe", "amount": 142.00}
+  ],
+  "totals": {
+    "room_total": 994.00,
+    "city_tax": 28.00,
+    "extras": 96.40,
+    "vat": 63.30,
+    "total": 1118.40,
+    "payment_method": "Visa credit card",
+    "card_last4": "4821"
+  },
+  "currency": "EUR"
+}

@@ -1,0 +1,47 @@
+{
+  "praxis": {
+    "name": "Zahnmedizinische Gemeinschaftspraxis Dr. med. dent. Stefan Weber",
+    "strasse": "Schillerstraße 12",
+    "plz_ort": "80336 München",
+    "telefon": "+49 89 12345678",
+    "online_buchung": "https://www.zahnarzt-weber-muenchen.de/termin"
+  },
+  "patient": {
+    "name": "Maximilian Schmidt",
+    "strasse": "Sonnenallee 45",
+    "plz_ort": "80331 München"
+  },
+  "recall": {
+    "datum": "2023-11-15",
+    "letzte_untersuchung": "2022-10-20",
+    "faellige_leistung": "Professionelle Zahnreinigung (PZR) & Parodontalstatus",
+    "empfohlener_zeitraum": "alle 6 bis 12 Monate",
+    "bonusheft_hinweis": "Bitte bringen Sie Ihr Bonusheft zum Termin mit, damit wir die regelmäßige Vorsorge dokumentieren können."
+  },
+  "suggested_appointments": [
+    {
+      "date": "2023-12-05",
+      "time": "09:00",
+      "type": "Vorsorgeuntersuchung"
+    },
+    {
+      "date": "2023-12-05",
+      "time": "14:30",
+      "type": "Vorsorgeuntersuchung"
+    },
+    {
+      "date": "2023-12-06",
+      "time": "11:15",
+      "type": "Vorsorgeuntersuchung"
+    },
+    {
+      "date": "2023-12-07",
+      "time": "16:00",
+      "type": "Vorsorgeuntersuchung"
+    }
+  ],
+  "additional_info": {
+    "cancelation_policy": "Termine bitte mindestens 24 Stunden vorher absagen.",
+    "emergency_contact": "Bei akuten Schmerzen kontaktieren Sie uns bitte telefonisch während der Sprechzeiten."
+  }
+}

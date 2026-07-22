@@ -1,0 +1,20 @@
+{
+  "versicherer": {
+    "name": "Bavaria Direkt Sachversicherung AG",
+    "strasse": "Landsberger Straße 402",
+    "plz_ort": "81241 München"
+  },
+  "versicherungsnehmer": {
+    "name": "Herr Timo Wessendorf",
+    "strasse": "Ligusterweg 9",
+    "plz_ort": "86157 Augsburg"
+  },
+  "kuendigung": {
+    "vertragsnr": "BD-HR-55-903312",
+    "sparte": "Hausratversicherung, Tarif HausratSchutz Kompakt",
+    "eingang_datum": "10.07.2026",
+    "wirksam_zum": "30.09.2026",
+    "restbeitrag_erstattung": 47.85,
+    "iban_letzte4": "4471"
+  }
+}

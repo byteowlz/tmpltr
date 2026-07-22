@@ -1,0 +1,42 @@
+{
+  "vermieter": {
+    "name": "Wohnbau Rheinland GmbH, vertreten durch Herrn Stefan Kroll"
+  },
+  "mieter": {
+    "name": "Frau Leonie Aydin"
+  },
+  "wohnung": {
+    "strasse": "Severinswall 9",
+    "plz_ort": "50678 Köln",
+    "etage": "1. OG rechts"
+  },
+  "uebergabe": {
+    "datum": "15.07.2026, 14:00 Uhr",
+    "art": "Wohnungsübergabe bei Einzug"
+  },
+  "zaehler": [
+    {"typ": "Strom", "nummer": "1ESY0067123448", "stand": "44.812,6 kWh"},
+    {"typ": "Kaltwasser", "nummer": "KW-88213-04", "stand": "512,44 m³"},
+    {"typ": "Warmwasser", "nummer": "WW-88213-04", "stand": "238,17 m³"},
+    {"typ": "Heizung (Wärmemenge)", "nummer": "WMZ-4471-1", "stand": "18.204 kWh"}
+  ],
+  "raeume": [
+    {"raum": "Flur / Diele", "zustand": "gut", "maengel": "keine"},
+    {"raum": "Wohnzimmer", "zustand": "gut", "maengel": "Kratzer im Parkett vor der Balkontür (ca. 15 cm)"},
+    {"raum": "Schlafzimmer", "zustand": "gut", "maengel": "keine"},
+    {"raum": "Küche", "zustand": "gut", "maengel": "Arbeitsplatte am Herd leicht ausgeblichen"},
+    {"raum": "Bad / WC", "zustand": "gut", "maengel": "Silikonfuge an der Duschwanne erneuerungsbedürftig"},
+    {"raum": "Balkon", "zustand": "gut", "maengel": "keine"},
+    {"raum": "Kellerraum Nr. 7", "zustand": "besenrein", "maengel": "keine"}
+  ],
+  "schluessel": [
+    {"art": "Haustür", "anzahl": 2},
+    {"art": "Wohnungstür", "anzahl": 3},
+    {"art": "Briefkasten", "anzahl": 2},
+    {"art": "Keller", "anzahl": 1}
+  ],
+  "unterschrift": {
+    "ort": "Köln",
+    "datum": "15.07.2026"
+  }
+}

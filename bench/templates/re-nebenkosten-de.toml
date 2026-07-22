@@ -1,0 +1,72 @@
+
+[vermieter]
+name = "Hausverwaltung Brandt & Söhne GmbH"
+strasse = "Kaiserstraße 41"
+plz_ort = "44135 Dortmund"
+
+[mieter]
+name = "Familie Okafor"
+wohnung = "2. OG links, Wohnung Nr. 5"
+strasse = "Lindenhofstraße 17"
+plz_ort = "44139 Dortmund"
+
+[abrechnung]
+jahr = "2025"
+zeitraum = "01.01.2025 - 31.12.2025"
+wohnflaeche_qm = 68
+gesamtflaeche_qm = 542
+personen = 2
+
+[ergebnis]
+summe_anteile = 2164.37
+vorauszahlungen = 2040.0
+nachzahlung_guthaben = 124.37
+frist = "17.08.2026"
+
+[[kosten]]
+art = "Grundsteuer"
+gesamtkosten = 2184.0
+umlageschluessel = "Wohnfläche"
+anteil = 274.05
+
+[[kosten]]
+art = "Wasser / Abwasser"
+gesamtkosten = 3960.0
+umlageschluessel = "Personen"
+anteil = 720.0
+
+[[kosten]]
+art = "Müllabfuhr"
+gesamtkosten = 1485.0
+umlageschluessel = "Personen"
+anteil = 270.0
+
+[[kosten]]
+art = "Hausmeister"
+gesamtkosten = 2640.0
+umlageschluessel = "Wohnfläche"
+anteil = 331.22
+
+[[kosten]]
+art = "Treppenhausreinigung"
+gesamtkosten = 1320.0
+umlageschluessel = "Wohnfläche"
+anteil = 165.61
+
+[[kosten]]
+art = "Gebäudeversicherung"
+gesamtkosten = 1890.0
+umlageschluessel = "Wohnfläche"
+anteil = 237.12
+
+[[kosten]]
+art = "Allgemeinstrom"
+gesamtkosten = 486.0
+umlageschluessel = "Wohnfläche"
+anteil = 60.98
+
+[[kosten]]
+art = "Gartenpflege"
+gesamtkosten = 840.0
+umlageschluessel = "Wohnfläche"
+anteil = 105.39

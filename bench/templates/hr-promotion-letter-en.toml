@@ -1,0 +1,19 @@
+
+[company]
+name = "Aldergate Financial Services"
+address = "1 Bishopsgate Court, London EC2N 4AS"
+hr_contact = "Fiona McAllister, HR Business Partner"
+
+[employee]
+name = "James Osei-Bonsu"
+id = "AFS-11276"
+current_title = "Risk Analyst"
+
+[promotion]
+new_title = "Senior Risk Analyst"
+new_department = "Credit Risk — Corporate Portfolios"
+effective_date = "1 August 2026"
+new_salary = 71500
+currency = "GBP"
+new_manager = "Victoria Lang, Head of Credit Risk"
+rationale = "consistently strong model validation work, leadership on the IFRS 9 recalibration project, and mentoring of two junior analysts"

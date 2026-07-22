@@ -1,0 +1,27 @@
+{
+  "arzt": {
+    "name": "Dr. med. Johannes Pfeiffer",
+    "fachrichtung": "Facharzt für Allgemeinmedizin",
+    "strasse": "Marktstraße 12",
+    "plz_ort": "79098 Freiburg im Breisgau",
+    "telefon": "0761 20 74 88",
+    "lanr": "845672901",
+    "bsnr": "529876543"
+  },
+  "patient": {
+    "name": "Christiane Weckerlin",
+    "strasse": "Am Mühlbach 4",
+    "plz_ort": "79102 Freiburg",
+    "geburtsdatum": "19.02.1969",
+    "krankenkasse": "Privat (Debeka PKV)"
+  },
+  "rezept": {
+    "datum": "15.07.2026",
+    "gueltig_bis": "15.10.2026"
+  },
+  "verordnungen": [
+    {"medikament": "Ramipril", "staerke": "5 mg", "menge": "100 Tbl. (N3)", "dosierung": "1-0-0"},
+    {"medikament": "Pantoprazol", "staerke": "40 mg", "menge": "30 Tbl. (N1)", "dosierung": "1-0-0, vor dem Frühstück"},
+    {"medikament": "Ibuprofen", "staerke": "600 mg", "menge": "20 Tbl. (N1)", "dosierung": "bei Bedarf, max. 3× tgl."}
+  ]
+}

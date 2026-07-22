@@ -1,0 +1,23 @@
+
+[glaeubiger]
+name = "Stadtwerke Ravensburg GmbH"
+strasse = "Schussenstraße 22"
+plz_ort = "88212 Ravensburg"
+glaeubiger_id = "DE79ZZZ00001172863"
+
+[mandat]
+referenz = "SWR-2026-0048821"
+art = "Wiederkehrende Zahlungen"
+datum = "18.07.2026"
+
+[zahler]
+name = "Markus Hettlage"
+strasse = "Eschacher Weg 9"
+plz_ort = "88214 Ravensburg"
+iban = "DE44 6505 0110 0102 4437 65"
+bic = "SOLADES1RVB"
+bank = "Kreissparkasse Ravensburg"
+
+[unterschrift]
+ort = "Ravensburg"
+datum = "18.07.2026"

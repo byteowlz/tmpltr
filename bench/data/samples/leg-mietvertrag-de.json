@@ -1,0 +1,35 @@
+{
+  "vermieter": {
+    "name": "Grundbesitz Wexler GbR, vertreten durch Heinrich Wexler",
+    "strasse": "Kaiserswerther Str. 218",
+    "plz_ort": "40474 Duesseldorf"
+  },
+  "mieter": {
+    "name": "Anna-Lena Prochazka",
+    "strasse": "bisher: Gerresheimer Landstr. 44",
+    "plz_ort": "40627 Duesseldorf",
+    "geburtsdatum": "14.09.1993"
+  },
+  "objekt": {
+    "strasse": "Brehmstrasse 71",
+    "plz_ort": "40239 Duesseldorf",
+    "etage": "2. Obergeschoss links",
+    "zimmer": "3",
+    "flaeche_qm": "78,4",
+    "stellplatz": "Tiefgaragenstellplatz Nr. 12"
+  },
+  "miete": {
+    "kalt": "1.020,00",
+    "nebenkosten_vorauszahlung": "185,00",
+    "heizkosten_vorauszahlung": "95,00",
+    "gesamt": "1.300,00",
+    "kaution": "3.060,00",
+    "mietbeginn": "01.10.2026",
+    "zahlungsweise": "monatlich im Voraus, spaetestens zum 3. Werktag",
+    "iban": "DE91 3005 0110 0044 7812 96"
+  },
+  "unterschrift": {
+    "ort": "Duesseldorf",
+    "datum": "28.07.2026"
+  }
+}

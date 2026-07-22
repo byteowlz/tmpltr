@@ -1,0 +1,30 @@
+{
+  "praxis": {
+    "name": "Zahnarztpraxis am Löwentor",
+    "zahnarzt": "Dr. med. dent. Miriam Schattenberg",
+    "strasse": "Heilbronner Straße 214",
+    "plz_ort": "70191 Stuttgart",
+    "abrechnungsnr": "123456-77"
+  },
+  "patient": {
+    "name": "Roland Kiesewetter",
+    "geburtsdatum": "23.05.1966",
+    "krankenkasse": "Barmer",
+    "versichertennr": "B104778215"
+  },
+  "plan": {
+    "datum": "14.07.2026",
+    "befund": "Zahn 36: tief zerstört, nicht erhaltungswürdig (Befund x). Zahn 25: fehlend (Befund f). Zahn 26: erneuerungsbedürftige Krone mit Sekundärkaries (Befund kw). Lückensituation Oberkiefer links, Freiendsituation nicht gegeben.",
+    "regelversorgung": "Zahn 26: Erneuerung der vollverblendeten Krone. Region 25: Ersatz durch dreigliedrige Brücke 24–26 (Regelversorgung), vestibulär verblendet. Zahn 36: Extraktion, anschließend Versorgung mit Brücke 35–37 nach Abheilung.",
+    "positionen": [
+      { "zahn": "24-26", "leistung": "Brücke, dreigliedrig, NEM vestibulär verblendet (BEMA 91b, 92)", "betrag": 1685.4 },
+      { "zahn": "26", "leistung": "Stumpfaufbau plastisch (BEMA 13b)", "betrag": 68.2 },
+      { "zahn": "36", "leistung": "Extraktion, mehrwurzeliger Zahn (BEMA 44)", "betrag": 41.3 },
+      { "zahn": "35-37", "leistung": "Brücke, dreigliedrig, NEM (BEMA 91b, 92), Eingliederung nach Abheilung", "betrag": 1540.9 },
+      { "zahn": "-", "leistung": "Material- und Laborkosten gem. Kostenvoranschlag Dentallabor Cannstatt", "betrag": 1176.5 }
+    ],
+    "gesamtkosten": 4512.3,
+    "festzuschuss": 1861.75,
+    "eigenanteil": 2650.55
+  }
+}

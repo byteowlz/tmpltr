@@ -1,0 +1,50 @@
+
+[shop]
+name = "WALDGRÜN Outdoor GmbH"
+strasse = "Gutenbergstraße 14"
+plz_ort = "79098 Freiburg im Breisgau"
+email = "service@waldgruen-outdoor.de"
+ustid = "DE 297 441 588"
+
+[kunde]
+name = "Katharina Vogel"
+email = "k.vogel@posteo.de"
+kundennr = "KD-204871"
+
+[bestellung]
+nummer = "WG-2026-73914"
+datum = "16.07.2026"
+zahlart = "PayPal"
+versandart = "DHL Paket (klimaneutral)"
+lieferzeit = "2-4 Werktage"
+
+[lieferadresse]
+name = "Katharina Vogel"
+strasse = "Sonnhalde 23"
+plz_ort = "79104 Freiburg im Breisgau"
+
+[summen]
+zwischensumme = 284.6
+versand = 4.95
+mwst = 46.23
+gesamt = 289.55
+
+[[artikel]]
+bezeichnung = "Trekkingrucksack Alpin 45L, anthrazit"
+menge = 1
+einzelpreis = 129.9
+
+[[artikel]]
+bezeichnung = "Isomatte selbstaufblasend 5 cm"
+menge = 2
+einzelpreis = 44.95
+
+[[artikel]]
+bezeichnung = "Titan-Besteckset 3-teilig"
+menge = 1
+einzelpreis = 24.9
+
+[[artikel]]
+bezeichnung = "Merino-Wandersocken 3er-Pack, Gr. 39-42"
+menge = 2
+einzelpreis = 19.95

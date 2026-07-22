@@ -1,0 +1,24 @@
+date = "July 12, 2026"
+
+[author]
+name = "Prof. Katherine M. Doyle"
+title = "Professor of Chemistry"
+institution = "Hollis College"
+department = "Department of Chemistry"
+email = "k.doyle@hollis-college.edu"
+
+[student]
+name = "Marcus T. Adebayo"
+program = "B.S. Chemistry, Class of 2026"
+known_since = "September 2023"
+courses = ["CHEM 301 — Organic Chemistry I (grade: A)", "CHEM 402 — Advanced Synthesis Laboratory (grade: A)", "Undergraduate research assistant, Doyle Group (2024–2026)"]
+
+[body]
+context = "I write to offer my strongest recommendation for Marcus T. Adebayo, who is applying to your doctoral program. I have known Marcus since September 2023, first as a student in two of my courses and for the past two years as an undergraduate researcher in my laboratory, where he has worked on copper-catalyzed C–N coupling reactions."
+strengths = "Marcus combines exceptional experimental technique with genuine intellectual independence. Within his first semester in my group he had reproduced a troublesome literature procedure that had defeated two graduate students, then systematically identified the trace-oxygen sensitivity that was causing the failures. He designed and executed the screening campaign that forms the core of our forthcoming manuscript, on which he is second author."
+comparison = "In fourteen years of teaching at Hollis College I have supervised more than forty undergraduate researchers. Marcus ranks among the top two or three of them, and he is the strongest student in his cohort by a clear margin. His written work is publication-quality, and his oral presentation at the Northeast Regional ACS meeting drew unsolicited praise from colleagues at other institutions."
+endorsement = "Marcus has my highest and unreserved recommendation. He will arrive ready to contribute from his first day, and I am confident he will develop into an outstanding independent scientist. I would be glad to provide further detail by phone or email."
+
+[target]
+program = "Ph.D. Program in Organic Chemistry"
+institution = "Sterling University Graduate School"

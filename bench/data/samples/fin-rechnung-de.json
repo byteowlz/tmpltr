@@ -1,0 +1,36 @@
+{
+  "absender": {
+    "firma": "Feldmann & Sohn Metallbau GmbH",
+    "strasse": "Werkstraße 12",
+    "plz": "33602",
+    "ort": "Bielefeld",
+    "ustid": "DE 214 559 831",
+    "steuernr": "305/5762/4821",
+    "email": "buchhaltung@feldmann-metallbau.de",
+    "telefon": "+49 521 44 08 12-0",
+    "iban": "DE44 4805 0161 0044 2211 09",
+    "bic": "SPBIDE3BXXX",
+    "bank": "Sparkasse Bielefeld"
+  },
+  "empfaenger": {
+    "firma": "Hanselmann Bau AG",
+    "ansprechpartner": "Herr Jörg Wiedemann",
+    "strasse": "Industriering 44",
+    "plz": "70565",
+    "ort": "Stuttgart"
+  },
+  "rechnung": {
+    "nummer": "R-2026-1088",
+    "datum": "18.07.2026",
+    "leistungsdatum": "06.07.2026 – 10.07.2026",
+    "zahlungsziel_tage": 14,
+    "ust_satz": 19
+  },
+  "positionen": [
+    {"beschreibung": "Stahlträger HEB 200, S235JR, zugeschnitten und grundiert", "menge": 8, "einheit": "Stk.", "einzelpreis": 312.5},
+    {"beschreibung": "Geländer aus Flachstahl, feuerverzinkt, montiert", "menge": 14.5, "einheit": "lfm", "einzelpreis": 148.0},
+    {"beschreibung": "Montagearbeiten vor Ort (2 Monteure)", "menge": 18, "einheit": "Std.", "einzelpreis": 86.0},
+    {"beschreibung": "Anfahrt und Kranstellung Baustelle Stuttgart-Vaihingen", "menge": 1, "einheit": "pausch.", "einzelpreis": 420.0}
+  ],
+  "hinweis": "Bitte überweisen Sie den Rechnungsbetrag unter Angabe der Rechnungsnummer. Es gilt der Eigentumsvorbehalt gemäß unseren AGB."
+}

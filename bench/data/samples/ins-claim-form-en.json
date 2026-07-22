@@ -1,0 +1,33 @@
+{
+  "insurer": {
+    "name": "Beacon Point Insurance Company",
+    "address": "1800 Harborview Plaza, Suite 900, Tacoma, WA 98402"
+  },
+  "claimant": {
+    "name": "Derek J. Okonkwo",
+    "policy_no": "BP-PROP-4471820",
+    "phone": "+1 (253) 555-0184",
+    "email": "d.okonkwo@fastmail.com",
+    "iban": "US64 SVBK 0000 0012 3456 789"
+  },
+  "incident": {
+    "date": "2026-07-09",
+    "time": "approx. 9:40 PM",
+    "location": "Insured premises, 5219 N Whitman St, Tacoma, WA 98407",
+    "type": "Water damage",
+    "description": "Supply hose to the second-floor washing machine burst while the machine was running. Water penetrated the ceiling of the kitchen below, damaging drywall, the oak flooring in the hallway, and a built-in cabinet. Water main was shut off within approximately 20 minutes; a restoration company (DryFast NW LLC) was called the same evening for emergency water extraction.",
+    "police_report_no": ""
+  },
+  "damages": [
+    {"item": "Kitchen ceiling drywall repair and repainting", "value": 2840.0},
+    {"item": "Oak hallway flooring, approx. 14 sqm, replacement", "value": 4620.0},
+    {"item": "Built-in cabinet (lower hallway unit)", "value": 1150.0},
+    {"item": "Emergency water extraction and drying (DryFast NW invoice 26-2211)", "value": 1875.5},
+    {"item": "Washing machine supply hose and valve replacement", "value": 240.0}
+  ],
+  "total_claimed": 10725.5,
+  "declaration": {
+    "place": "Tacoma, WA",
+    "date": "2026-07-12"
+  }
+}

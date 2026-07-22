@@ -1,0 +1,39 @@
+{
+  "labor": {
+    "name": "MVZ Labor Dr. Kirchner & Kollegen GbR",
+    "strasse": "Siemensstraße 40",
+    "plz_ort": "70469 Stuttgart",
+    "telefon": "0711 894420-0",
+    "leitung": "Dr. med. Ute Kirchner, Fachärztin für Laboratoriumsmedizin"
+  },
+  "patient": {
+    "name": "Brandt, Heinrich",
+    "geburtsdatum": "07.11.1954",
+    "geschlecht": "männlich",
+    "versichertennr": "A384920157"
+  },
+  "auftrag": {
+    "einsender": "Dr. med. Sabine Vollmer, Hausärztliche Praxis, Ludwigsburg",
+    "entnahme_datum": "14.07.2026, 08:40 Uhr",
+    "eingang_datum": "14.07.2026, 11:05 Uhr",
+    "material": "Serum, EDTA-Vollblut, Citratplasma"
+  },
+  "werte": [
+    {"parameter": "Hämoglobin", "wert": "14,2", "einheit": "g/dl", "referenz": "13,5–17,5", "bewertung": ""},
+    {"parameter": "Erythrozyten", "wert": "4,71", "einheit": "Mio/µl", "referenz": "4,3–5,7", "bewertung": ""},
+    {"parameter": "Leukozyten", "wert": "11,8", "einheit": "Tsd/µl", "referenz": "3,9–10,2", "bewertung": "+"},
+    {"parameter": "Thrombozyten", "wert": "382", "einheit": "Tsd/µl", "referenz": "150–370", "bewertung": "+"},
+    {"parameter": "CRP", "wert": "28,4", "einheit": "mg/l", "referenz": "< 5,0", "bewertung": "++"},
+    {"parameter": "Kreatinin", "wert": "1,32", "einheit": "mg/dl", "referenz": "0,70–1,20", "bewertung": "+"},
+    {"parameter": "GFR (CKD-EPI)", "wert": "56", "einheit": "ml/min", "referenz": "> 60", "bewertung": "−"},
+    {"parameter": "Harnsäure", "wert": "7,9", "einheit": "mg/dl", "referenz": "3,4–7,0", "bewertung": "+"},
+    {"parameter": "GOT (AST)", "wert": "31", "einheit": "U/l", "referenz": "< 50", "bewertung": ""},
+    {"parameter": "GPT (ALT)", "wert": "44", "einheit": "U/l", "referenz": "< 50", "bewertung": ""},
+    {"parameter": "Gamma-GT", "wert": "88", "einheit": "U/l", "referenz": "< 60", "bewertung": "+"},
+    {"parameter": "Kalium", "wert": "4,6", "einheit": "mmol/l", "referenz": "3,5–5,1", "bewertung": ""},
+    {"parameter": "Natrium", "wert": "138", "einheit": "mmol/l", "referenz": "135–145", "bewertung": ""},
+    {"parameter": "TSH basal", "wert": "1,84", "einheit": "mU/l", "referenz": "0,27–4,20", "bewertung": ""},
+    {"parameter": "Quick-Wert", "wert": "92", "einheit": "%", "referenz": "70–120", "bewertung": ""}
+  ],
+  "kommentar": "Deutlich erhöhtes CRP mit Leukozytose — vereinbar mit akutem entzündlichem Geschehen, Verlaufskontrolle in 3–5 Tagen empfohlen. Eingeschränkte Nierenfunktion (GFR 56 ml/min): bitte Medikation prüfen, Kontrolle von Kreatinin und GFR in 4 Wochen. Gamma-GT-Erhöhung bei sonst unauffälligen Transaminasen."
+}

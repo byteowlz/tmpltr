@@ -1,0 +1,27 @@
+{
+  "lender": {
+    "name": "Ashford Consumer Finance Ltd",
+    "address": "3rd Floor, 41 Castle Street, Manchester M3 4LZ, United Kingdom",
+    "regulator_id": "FCA Firm Reference No. 714388"
+  },
+  "borrower": {
+    "name": "Priya S. Raghavan",
+    "address": "17 Elderfield Road, Sale, Manchester M33 2GT",
+    "dob": "14 March 1991",
+    "email": "priya.raghavan@mailbox.co.uk"
+  },
+  "loan": {
+    "amount": 15000.0,
+    "currency": "GBP",
+    "apr": 6.9,
+    "term_months": 48,
+    "monthly_payment": 357.42,
+    "first_payment_date": "1 September 2026",
+    "purpose": "Purchase of a used vehicle",
+    "account_iban": "GB29 HFBK 4022 5519 0072 44"
+  },
+  "signatures": {
+    "place": "Manchester",
+    "date": "18 July 2026"
+  }
+}
