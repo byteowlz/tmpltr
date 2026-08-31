@@ -119,3 +119,21 @@ release: build-release
 release-tag VERSION:
     git tag v{{VERSION}}
     git push --tags
+
+# Publish tmpltr's agent skills to the canonical byteowlz skills repository.
+sync-skills:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    target="${SKILLISSUES:-$HOME/byteowlz/skillissues}"
+    test -d "$target/skills" || { echo "skillissues repo not found: $target" >&2; exit 1; }
+    for skill in document_generation document_template_creation; do
+        rm -rf "$target/skills/$skill"
+        cp -a "skills/$skill" "$target/skills/"
+    done
+    just --justfile "$target/Justfile" update-readme
+    git -C "$target" add skills/document_generation skills/document_template_creation README.md
+    if [[ -n "$(git -C "$target" status --porcelain -- skills/document_generation skills/document_template_creation README.md)" ]]; then
+        git -C "$target" commit -m "skills/tmpltr: sync from tmpltr" -- skills/document_generation skills/document_template_creation README.md
+    else
+        echo "tmpltr skills are already up to date"
+    fi
