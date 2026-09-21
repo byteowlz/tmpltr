@@ -28,7 +28,7 @@ pub enum OutputFormat {
 
 impl OutputFormat {
     /// Parse from string
-    pub fn from_str(s: &str) -> Option<Self> {
+    pub fn parse(s: &str) -> Option<Self> {
         match s.to_lowercase().as_str() {
             "pdf" => Some(Self::Pdf),
             "svg" => Some(Self::Svg),
@@ -42,7 +42,7 @@ impl OutputFormat {
     pub fn from_path(path: &Path) -> Option<Self> {
         path.extension()
             .and_then(|ext| ext.to_str())
-            .and_then(Self::from_str)
+            .and_then(Self::parse)
     }
 
     /// Get Typst format argument (only for formats that typst compile supports)
@@ -187,8 +187,7 @@ impl TypstCompiler {
         let template_path = content
             .meta
             .resolved_template
-            .as_ref()
-            .map(|p| p.as_path())
+            .as_deref()
             .unwrap_or(Path::new(&content.meta.template));
 
         let template_source = fs::read_to_string(template_path).map_err(|e: std::io::Error| {
@@ -240,7 +239,7 @@ impl TypstCompiler {
         output.push_str("// Self-contained Typst file exported by tmpltr\n");
         output.push_str("// This file can be used directly in the Typst online editor.\n");
         output.push_str("// All assets (images, data, library) are embedded inline.\n");
-        output.push_str("\n");
+        output.push('\n');
 
         // Inline image assets as raw string variables
         if !inlined_images.is_empty() {
@@ -366,10 +365,7 @@ impl TypstCompiler {
         // For check-only mode, use a temp file
         let (output_path, temp_file) = if options.check_only {
             let temp = tempfile::NamedTempFile::new().map_err(|e| {
-                Error::Io(std::io::Error::new(
-                    std::io::ErrorKind::Other,
-                    format!("creating temp file: {}", e),
-                ))
+                Error::Io(std::io::Error::other(format!("creating temp file: {}", e)))
             })?;
             let path = temp.path().to_path_buf();
             (path, Some(temp))
@@ -429,8 +425,7 @@ impl TypstCompiler {
         let template_path = content
             .meta
             .resolved_template
-            .as_ref()
-            .map(|p| p.as_path())
+            .as_deref()
             .unwrap_or(Path::new(&content.meta.template));
         cmd.arg(template_path);
 
@@ -791,18 +786,17 @@ fn enhance_error_message(stderr: &str) -> String {
     }
 
     // Check for missing function errors
-    if stderr_lower.contains("unknown variable") || stderr_lower.contains("cannot find") {
-        if stderr_lower.contains("tmpltr-data")
+    if (stderr_lower.contains("unknown variable") || stderr_lower.contains("cannot find"))
+        && (stderr_lower.contains("tmpltr-data")
             || stderr_lower.contains("editable")
-            || stderr_lower.contains("tmpltr-lib")
-        {
-            hints.push(
+            || stderr_lower.contains("tmpltr-lib"))
+    {
+        hints.push(
                 "HINT: Make sure your template imports the tmpltr library:\n\
                  \n\
                  #import \"@local/tmpltr-lib:1.0.0\": editable, editable-block, tmpltr-data, md, get"
                     .to_string(),
             );
-        }
     }
 
     // Check for missing data field errors

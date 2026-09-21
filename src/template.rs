@@ -52,6 +52,9 @@ pub struct TemplateInfo {
     pub blocks: Vec<EditableBlock>,
 }
 
+/// Field paths grouped by top-level key: `key -> [(remaining_parts, default)]`.
+type GroupByPath = std::collections::BTreeMap<String, Vec<(Vec<String>, Option<String>)>>;
+
 /// Extracted data access pattern from template
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct DataAccess {
@@ -471,8 +474,7 @@ impl TemplateInfo {
         }
 
         // Group fields by top-level key and build nested properties
-        let mut groups: std::collections::BTreeMap<String, Vec<(Vec<String>, Option<String>)>> =
-            std::collections::BTreeMap::new();
+        let mut groups: GroupByPath = std::collections::BTreeMap::new();
 
         for (path, default) in &all_fields {
             let parts: Vec<String> = path.split('.').map(String::from).collect();
@@ -558,8 +560,7 @@ impl TemplateInfo {
     fn build_nested_schema(fields: &[(Vec<String>, Option<String>)]) -> serde_json::Value {
         // Separate leaf fields from nested groups
         let mut leaves: Vec<(String, Option<String>)> = Vec::new();
-        let mut nested: std::collections::BTreeMap<String, Vec<(Vec<String>, Option<String>)>> =
-            std::collections::BTreeMap::new();
+        let mut nested: GroupByPath = std::collections::BTreeMap::new();
 
         for (parts, default) in fields {
             if parts.is_empty() {

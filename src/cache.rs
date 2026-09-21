@@ -120,7 +120,7 @@ impl DocumentCache {
         // Keep only recent entries (max 100)
         if self.entries.len() > 100 {
             self.entries
-                .sort_by(|a, b| b.last_used_at.cmp(&a.last_used_at));
+                .sort_by_key(|e| std::cmp::Reverse(e.last_used_at));
             self.entries.truncate(100);
         }
 
@@ -138,7 +138,7 @@ impl DocumentCache {
     /// Get all cached entries, sorted by last used (most recent first)
     pub fn list(&self) -> Vec<&CacheEntry> {
         let mut entries: Vec<_> = self.entries.iter().collect();
-        entries.sort_by(|a, b| b.last_used_at.cmp(&a.last_used_at));
+        entries.sort_by_key(|e| std::cmp::Reverse(e.last_used_at));
         entries
     }
 

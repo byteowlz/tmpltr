@@ -459,8 +459,7 @@ impl ContentFile {
     pub fn template_path(&self) -> &Path {
         self.meta
             .resolved_template
-            .as_ref()
-            .map(|p| p.as_path())
+            .as_deref()
             .unwrap_or(Path::new(&self.meta.template))
     }
 }
@@ -653,8 +652,8 @@ pub fn fill_from_json(
 ) -> Result<ContentFile> {
     // First, create a base content file from the template
     let template = crate::template::TemplateInfo::parse(&template_path)?;
-    let mut builder = ContentBuilder::new(&template_path.as_ref().display().to_string())
-        .template_id(&template.id);
+    let mut builder =
+        ContentBuilder::new(template_path.as_ref().display().to_string()).template_id(&template.id);
 
     if let Some(version) = &template.version {
         builder = builder.template_version(version);

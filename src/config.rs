@@ -16,6 +16,7 @@ const APP_NAME: &str = "tmpltr";
 /// Main configuration structure
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(default)]
+#[derive(Default)]
 pub struct AppConfig {
     /// Path configuration
     pub paths: PathsConfig,
@@ -30,19 +31,6 @@ pub struct AppConfig {
     /// Fenced-block renderers (mermaid, d2, dot, …). Keyed by fence language.
     /// Adding support for a new diagram tool is a config entry, never code.
     pub blocks: BlockRenderers,
-}
-
-impl Default for AppConfig {
-    fn default() -> Self {
-        Self {
-            paths: PathsConfig::default(),
-            brand: BrandConfig::default(),
-            typst: TypstConfig::default(),
-            output: OutputConfig::default(),
-            experimental: ExperimentalConfig::default(),
-            blocks: BlockRenderers::default(),
-        }
-    }
 }
 
 /// Path configuration
@@ -62,6 +50,7 @@ pub struct PathsConfig {
 /// Brand configuration
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(default)]
+#[derive(Default)]
 pub struct BrandConfig {
     /// Default brand ID to use when --brand is not specified
     pub default: Option<String>,
@@ -75,12 +64,6 @@ impl Default for PathsConfig {
             brands_dir: Some("$XDG_DATA_HOME/tmpltr/brands".to_string()),
             cache_dir: Some("$XDG_CACHE_HOME/tmpltr".to_string()),
         }
-    }
-}
-
-impl Default for BrandConfig {
-    fn default() -> Self {
-        Self { default: None }
     }
 }
 
@@ -146,15 +129,10 @@ impl Default for OutputConfig {
 /// Experimental features configuration
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(default)]
+#[derive(Default)]
 pub struct ExperimentalConfig {
     /// Enable experimental HTML output
     pub html: bool,
-}
-
-impl Default for ExperimentalConfig {
-    fn default() -> Self {
-        Self { html: false }
-    }
 }
 
 /// Resolved application paths

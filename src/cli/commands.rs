@@ -93,7 +93,7 @@ pub fn handle_init(ctx: &Context, args: InitArgs) -> Result<()> {
 
     // Build content file
     let mut builder =
-        ContentBuilder::new(&args.template.display().to_string()).template_id(&template.id);
+        ContentBuilder::new(args.template.display().to_string()).template_id(&template.id);
 
     if let Some(ref version) = template.version {
         builder = builder.template_version(version);
@@ -379,7 +379,7 @@ pub fn handle_compile(ctx: &mut Context, args: CompileArgs) -> Result<()> {
             PathBuf::from(format!("{}.pdf", stem))
         });
 
-        let format = args.format.as_deref().and_then(OutputFormat::from_str);
+        let format = args.format.as_deref().and_then(OutputFormat::parse);
 
         let options = CompileOptions {
             output,
@@ -762,7 +762,7 @@ fn set_value_at_path(doc: &mut toml_edit::DocumentMut, path: &str, value: &str) 
             // Last part - set the value
             if let Some(table) = current.as_table_mut() {
                 // Check if this is a block with content field
-                if let Some(block) = table.get_mut(*part) {
+                if let Some(block) = table.get_mut(part) {
                     if let Some(block_table) = block.as_table_mut() {
                         if block_table.contains_key("content") {
                             block_table["content"] = toml_edit::value(value);
@@ -780,7 +780,7 @@ fn set_value_at_path(doc: &mut toml_edit::DocumentMut, path: &str, value: &str) 
         } else {
             // Navigate deeper
             if let Some(table) = current.as_table_mut() {
-                if !table.contains_key(*part) {
+                if !table.contains_key(part) {
                     table[*part] = toml_edit::Item::Table(toml_edit::Table::new());
                 }
                 current = &mut table[*part];
@@ -889,7 +889,7 @@ pub fn handle_watch(ctx: &mut Context, args: WatchArgs) -> Result<()> {
         PathBuf::from(format!("{}.pdf", stem))
     });
 
-    let format = args.format.as_deref().and_then(OutputFormat::from_str);
+    let format = args.format.as_deref().and_then(OutputFormat::parse);
 
     // Load brand if specified
     let (brand_data, brand_font_paths) = load_brand_for_compile(ctx, args.brand.as_deref())?;
@@ -1344,7 +1344,7 @@ fn open_file(path: &std::path::Path) -> Result<()> {
         std::process::Command::new("xdg-open")
             .arg(path)
             .spawn()
-            .map_err(|e| Error::Io(e))?;
+            .map_err(Error::Io)?;
     }
 
     #[cfg(target_os = "windows")]
@@ -1945,9 +1945,7 @@ fn parse_json_input(input: &str) -> Result<serde_json::Value> {
     // Try as stdin
     if trimmed == "-" {
         let mut buf = String::new();
-        io::stdin()
-            .read_to_string(&mut buf)
-            .map_err(|e| Error::Io(e))?;
+        io::stdin().read_to_string(&mut buf).map_err(Error::Io)?;
         return serde_json::from_str(&buf)
             .map_err(|e| Error::Content(format!("parsing JSON from stdin: {}", e)));
     }
@@ -2095,7 +2093,7 @@ pub fn handle_pipe(ctx: &mut Context, args: PipeArgs) -> Result<()> {
         .output
         .unwrap_or_else(|| PathBuf::from(format!("{}.{}", template_info.id, args.format)));
 
-    let format = OutputFormat::from_str(&args.format);
+    let format = OutputFormat::parse(&args.format);
 
     // Load brand if specified
     let (brand_data, brand_font_paths) = load_brand_for_compile(ctx, args.brand.as_deref())?;
