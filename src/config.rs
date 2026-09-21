@@ -8,6 +8,7 @@ use std::path::{Path, PathBuf};
 
 use serde::{Deserialize, Serialize};
 
+use crate::blocks::BlockRenderers;
 use crate::error::{Error, Result};
 
 const APP_NAME: &str = "tmpltr";
@@ -26,6 +27,9 @@ pub struct AppConfig {
     pub output: OutputConfig,
     /// Experimental features
     pub experimental: ExperimentalConfig,
+    /// Fenced-block renderers (mermaid, d2, dot, …). Keyed by fence language.
+    /// Adding support for a new diagram tool is a config entry, never code.
+    pub blocks: BlockRenderers,
 }
 
 impl Default for AppConfig {
@@ -36,6 +40,7 @@ impl Default for AppConfig {
             typst: TypstConfig::default(),
             output: OutputConfig::default(),
             experimental: ExperimentalConfig::default(),
+            blocks: BlockRenderers::default(),
         }
     }
 }

@@ -40,6 +40,12 @@ notify-debouncer-mini = "0.4"
 # Markdown parsing
 pulldown-cmark = "0.12"
 
+# Content hashing for fenced-block renderers
+sha2 = "0.10"
+
+# Markdown frontmatter parsing
+serde_yaml = "0.9"
+
 # Date/time
 chrono = { version = "0.4", features = ["serde"] }
 

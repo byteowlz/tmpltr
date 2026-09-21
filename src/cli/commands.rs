@@ -329,7 +329,7 @@ pub fn handle_compile(ctx: &mut Context, args: CompileArgs) -> Result<()> {
     // Update cache
     ctx.cache.update(&content)?;
 
-    let compiler = TypstCompiler::from_config(&ctx.config)?;
+    let compiler = TypstCompiler::from_config(&ctx.config, &ctx.paths)?;
 
     // Load brand if specified
     let (brand_data, brand_font_paths) = load_brand_for_compile(ctx, args.brand.as_deref())?;
@@ -906,7 +906,7 @@ pub fn handle_watch(ctx: &mut Context, args: WatchArgs) -> Result<()> {
 
     // Initial compile
     let content = ContentFile::load(&args.content)?;
-    let compiler = TypstCompiler::from_config(&ctx.config)?;
+    let compiler = TypstCompiler::from_config(&ctx.config, &ctx.paths)?;
 
     match compiler.compile(&content, &options) {
         Ok(_) => {
@@ -2009,7 +2009,10 @@ pub fn handle_fill(ctx: &Context, args: FillArgs) -> Result<()> {
     });
 
     if ctx.common.dry_run {
-        log::info!("dry-run: would write filled content to {}", output_path.display());
+        log::info!(
+            "dry-run: would write filled content to {}",
+            output_path.display()
+        );
         println!("{}", toml_str);
         return Ok(());
     }
@@ -2079,7 +2082,8 @@ pub fn handle_pipe(ctx: &mut Context, args: PipeArgs) -> Result<()> {
             .map_err(|e| Error::Content(format!("parsing JSON from stdin: {}", e)))?
     } else {
         return Err(Error::Content(
-            "no JSON data provided. Use --data <json>, --data <file>, or pipe via stdin".to_string(),
+            "no JSON data provided. Use --data <json>, --data <file>, or pipe via stdin"
+                .to_string(),
         ));
     };
 
@@ -2087,9 +2091,9 @@ pub fn handle_pipe(ctx: &mut Context, args: PipeArgs) -> Result<()> {
     let content = crate::content::fill_from_json(&template_info.path, &json_data)?;
 
     // Determine output path
-    let output = args.output.unwrap_or_else(|| {
-        PathBuf::from(format!("{}.{}", template_info.id, args.format))
-    });
+    let output = args
+        .output
+        .unwrap_or_else(|| PathBuf::from(format!("{}.{}", template_info.id, args.format)));
 
     let format = OutputFormat::from_str(&args.format);
 
@@ -2115,7 +2119,7 @@ pub fn handle_pipe(ctx: &mut Context, args: PipeArgs) -> Result<()> {
         return Ok(());
     }
 
-    let compiler = TypstCompiler::from_config(&ctx.config)?;
+    let compiler = TypstCompiler::from_config(&ctx.config, &ctx.paths)?;
     let result = compiler.compile(&content, &options)?;
 
     if ctx.common.json {

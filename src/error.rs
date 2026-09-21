@@ -76,6 +76,32 @@ pub enum Error {
     #[error("validation error: {0}")]
     Validation(String),
 
+    /// A configured block renderer's binary is not installed
+    #[error("block renderer `{language}` requires binary `{binary}`, which is not installed\n  command: {command}\n  install one of: {install_hints}")]
+    RendererBinaryNotFound {
+        language: String,
+        binary: String,
+        command: String,
+        install_hints: String,
+    },
+
+    /// A configured block renderer ran but failed
+    #[error("block renderer `{language}` failed\n  command: {command}\n  exit: {exit}\n  stderr:\n{stderr}")]
+    RendererFailed {
+        language: String,
+        command: String,
+        exit: String,
+        stderr: String,
+    },
+
+    /// A configured block renderer ran but produced no output file
+    #[error("block renderer `{language}` produced no output\n  command: {command}\n  expected at: {output}")]
+    RendererNoOutput {
+        language: String,
+        command: String,
+        output: PathBuf,
+    },
+
     /// Watch error
     #[error("watch error: {0}")]
     Watch(String),
@@ -104,7 +130,10 @@ impl Error {
             | Error::Template(_)
             | Error::Cache(_)
             | Error::NoRecentDocument
-            | Error::Watch(_) => 1,
+            | Error::Watch(_)
+            | Error::RendererBinaryNotFound { .. }
+            | Error::RendererFailed { .. }
+            | Error::RendererNoOutput { .. } => 1,
             Error::Other(_) => 10,
         }
     }
@@ -129,6 +158,9 @@ impl Error {
             Error::NoRecentDocument => "no_recent_document",
             Error::Validation(_) => "validation_error",
             Error::Watch(_) => "watch_error",
+            Error::RendererBinaryNotFound { .. } => "renderer_binary_not_found",
+            Error::RendererFailed { .. } => "renderer_failed",
+            Error::RendererNoOutput { .. } => "renderer_no_output",
             Error::Other(_) => "internal_error",
         }
     }

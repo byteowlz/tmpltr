@@ -9,10 +9,11 @@ use std::process::Command;
 
 use serde::{Deserialize, Serialize};
 
+use crate::blocks::BlockRenderers;
 use crate::config::AppConfig;
 use crate::content::ContentFile;
 use crate::error::{Error, Result};
-use crate::markdown::markdown_to_typst;
+use crate::markdown::markdown_to_typst_with;
 
 /// Output format for compilation
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
@@ -126,11 +127,18 @@ pub struct TypstCompiler {
     font_paths: Vec<PathBuf>,
     /// Package path for bundled tmpltr Typst library
     package_path: PathBuf,
+    /// Fenced-block renderers (mermaid, d2, dot, …)
+    block_renderers: BlockRenderers,
+    /// Cache directory for rendered block images
+    block_cache_dir: PathBuf,
 }
 
 impl TypstCompiler {
-    /// Create a new compiler from configuration
-    pub fn from_config(config: &AppConfig) -> Result<Self> {
+    /// Create a new compiler from configuration and resolved paths.
+    ///
+    /// The cache directory (from resolved paths) backs fenced-block renderer
+    /// output; the `[blocks.*]` map enables diagram languages like d2/mermaid.
+    pub fn from_config(config: &AppConfig, paths: &crate::config::ResolvedPaths) -> Result<Self> {
         let binary = if config.typst.binary.is_empty() {
             which_typst()?
         } else {
@@ -147,10 +155,21 @@ impl TypstCompiler {
 
         let package_path = prepare_tmpltr_package()?;
 
+        let block_cache_dir = paths.cache_dir.join("blocks");
+        std::fs::create_dir_all(&block_cache_dir).map_err(|e| {
+            Error::Cache(format!(
+                "creating block cache directory {}: {}",
+                block_cache_dir.display(),
+                e
+            ))
+        })?;
+
         Ok(Self {
             binary,
             font_paths,
             package_path,
+            block_renderers: config.blocks.clone(),
+            block_cache_dir,
         })
     }
 
@@ -445,8 +464,7 @@ impl TypstCompiler {
             // real errors from warnings (which may also cause a non-zero exit code).
             let has_error = stderr.lines().any(|line| {
                 let lt = line.trim().to_lowercase();
-                lt.starts_with("error:")
-                    || lt.starts_with("error[")
+                lt.starts_with("error:") || lt.starts_with("error[")
             });
 
             if has_error {
@@ -550,7 +568,11 @@ impl TypstCompiler {
 
                     if format == "markdown" {
                         if let Some(content) = block_obj.get("content").and_then(|v| v.as_str()) {
-                            let typst_content = markdown_to_typst(content)?;
+                            let typst_content = markdown_to_typst_with(
+                                content,
+                                &self.block_renderers,
+                                &self.block_cache_dir,
+                            )?;
                             block_obj.insert(
                                 "content".to_string(),
                                 serde_json::Value::String(typst_content),

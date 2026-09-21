@@ -38,3 +38,39 @@ watch_debounce_ms = 300
 [experimental]
 # Enable experimental HTML output
 html = false
+
+# ────────────────────────────────────────────────────────────────────────────
+# Fenced-block renderers
+#
+# A fenced code block whose language matches a key below is rendered to an
+# image by running the configured command and emitted as #image(). A fence
+# language with NO matching entry stays a plain Typst code listing (with the
+# language passed through for syntax highlighting). A renderer that is
+# configured but whose binary is missing or fails aborts the build loudly.
+#
+# The command is tokenized (no shell): only {input} and {output} are
+# substituted. Rendered outputs are cached by content hash.
+#
+# Add support for a new diagram tool by adding an entry here — never code.
+# ────────────────────────────────────────────────────────────────────────────
+
+# [blocks.d2]
+# command = "d2 {input} {output}"
+# output = "svg"
+
+# [blocks.mermaid]
+# command = "mmdc -i {input} -o {output} -b transparent"
+# output = "svg"
+# input_ext = "mmd"
+
+# [blocks.dot]
+# command = "dot -Tsvg {input} -o {output}"
+# output = "svg"
+
+# [blocks.plantuml]
+# command = "plantuml -tsvg {input}"
+# output = "svg"
+
+# [blocks.gnuplot]
+# command = "gnuplot -e \"set output '{output}'\" {input}"
+# output = "svg"

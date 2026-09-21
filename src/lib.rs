@@ -3,6 +3,7 @@
 //! This library provides the core functionality for the tmpltr CLI tool,
 //! which generates professional documents from structured data using Typst templates.
 
+pub mod blocks;
 pub mod brand;
 pub mod cache;
 pub mod cli;

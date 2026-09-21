@@ -1,6 +1,8 @@
 .pi/todos/
 history/
 /target
+/editor-spike/node_modules/
+/editor-spike/dist/
 .env 
 .DS_Store
 .vscode/

@@ -178,13 +178,62 @@ impl ContentFile {
             }
         })?;
 
+        // A Markdown file is a content source: YAML frontmatter feeds template
+        // fields, the body becomes a markdown block. This is the "send my
+        // Markdown nicely rendered" path — no separate TOML needed.
+        if Self::is_markdown(path) {
+            return Self::parse_markdown(path.to_path_buf(), &content);
+        }
+
         Self::parse(path.to_path_buf(), &content)
+    }
+
+    /// True for `.md` / `.markdown` files.
+    fn is_markdown(path: &Path) -> bool {
+        matches!(
+            path.extension().and_then(|e| e.to_str()),
+            Some("md" | "markdown")
+        )
+    }
+
+    /// Parse a Markdown file (frontmatter → fields, body → blocks.body).
+    pub fn parse_markdown(path: PathBuf, content: &str) -> Result<Self> {
+        let (frontmatter, body) = split_frontmatter(content);
+
+        // Frontmatter is YAML; deserialize into a JSON value then round-trip
+        // through TOML so the rest of the pipeline sees its native type.
+        let mut data: toml::Value = if let Some(yaml) = frontmatter {
+            let json: serde_json::Value = serde_yaml::from_str(yaml)
+                .map_err(|e| Error::Content(format!("parsing Markdown frontmatter: {e}")))?;
+            json_to_toml_value(&json)?
+        } else {
+            toml::Value::Table(toml::value::Table::new())
+        };
+
+        // The Markdown body is the document content. A template renders it via
+        // the editable-block path, so expose it as `blocks.body` (markdown).
+        if let Some(table) = data.as_table_mut() {
+            let mut body_block = toml::value::Table::new();
+            body_block.insert("title".into(), toml::Value::String("Body".to_string()));
+            body_block.insert("format".into(), toml::Value::String("markdown".into()));
+            body_block.insert("content".into(), toml::Value::String(body.to_string()));
+            let mut blocks = toml::value::Table::new();
+            blocks.insert("body".into(), toml::Value::Table(body_block));
+            table.insert("blocks".into(), toml::Value::Table(blocks));
+        }
+
+        Self::from_data(path, data)
     }
 
     /// Parse content from a string
     pub fn parse(path: PathBuf, content: &str) -> Result<Self> {
         let data: toml::Value = toml::from_str(content)?;
+        Self::from_data(path, data)
+    }
 
+    /// Build a ContentFile from an already-parsed data tree (shared by TOML,
+    /// Markdown, and future adapters).
+    fn from_data(path: PathBuf, data: toml::Value) -> Result<Self> {
         let mut meta = Self::extract_meta(&data)?;
 
         // Resolve template path relative to content file
@@ -215,30 +264,31 @@ impl ContentFile {
         Ok(file)
     }
 
-    /// Extract metadata from TOML
+    /// Extract metadata from the data tree.
+    ///
+    /// Looks in a `[meta]` table first; for Markdown content whose frontmatter
+    /// carries fields at the top level, falls back to top-level `template`.
     fn extract_meta(data: &toml::Value) -> Result<ContentMeta> {
-        let meta_table = data
-            .get("meta")
-            .ok_or_else(|| Error::Content("missing [meta] section in content file".to_string()))?;
+        let meta_table = data.get("meta");
 
-        let template = meta_table
-            .get("template")
-            .and_then(|v| v.as_str())
-            .ok_or_else(|| Error::Content("missing meta.template field".to_string()))?
-            .to_string();
+        let pick = |key: &str| -> Option<String> {
+            meta_table
+                .and_then(|m| m.get(key))
+                .or_else(|| data.get(key))
+                .and_then(|v| v.as_str())
+                .map(|s| s.to_string())
+        };
 
-        let template_id = meta_table
-            .get("template_id")
-            .and_then(|v| v.as_str())
-            .map(|s| s.to_string());
+        let template = pick("template").ok_or_else(|| {
+            Error::Content(
+                "missing template reference: set meta.template (TOML) or a top-level `template` in Markdown frontmatter".to_string(),
+            )
+        })?;
 
-        let template_version = meta_table
-            .get("template_version")
-            .and_then(|v| v.as_str())
-            .map(|s| s.to_string());
-
+        let template_id = pick("template_id");
+        let template_version = pick("template_version");
         let generated_at = meta_table
-            .get("generated_at")
+            .and_then(|m| m.get("generated_at"))
             .and_then(|v| v.as_str())
             .and_then(|s| DateTime::parse_from_rfc3339(s).ok())
             .map(|dt| dt.with_timezone(&Utc));
@@ -564,8 +614,37 @@ impl ContentBuilder {
     }
 }
 
+/// Split YAML frontmatter from a Markdown document.
+///
+/// Returns `(Some(yaml), body)` when the document starts with a `---` fence,
+/// otherwise `(None, original)`. Only a leading frontmatter block is
+/// recognized; mid-document fences are body content.
+pub fn split_frontmatter(markdown: &str) -> (Option<&str>, &str) {
+    let trimmed_start = markdown.trim_start_matches(['\u{feff}', '\r', '\n']);
+    let after_fence = match trimmed_start.strip_prefix("---") {
+        Some(rest) => rest,
+        None => return (None, markdown),
+    };
+    // The fence may be followed by a newline; the frontmatter runs until the
+    // next line that is exactly `---` (or `...`).
+    let rest = after_fence.strip_prefix('\n').unwrap_or(after_fence);
+    match rest.find("\n---\n").or_else(|| rest.find("\n...\n")) {
+        Some(end) => {
+            let yaml = &rest[..end];
+            let body_start = rest[end..]
+                .find('\n')
+                .map(|i| end + i + 1)
+                .unwrap_or(rest.len());
+            let body = &rest[body_start..];
+            (Some(yaml), body)
+        }
+        // Closing fence missing — no valid frontmatter, treat whole doc as body.
+        None => (None, markdown),
+    }
+}
+
 /// Fill a content file from JSON data
-/// 
+///
 /// This takes a base content structure (or creates one from a template) and fills it
 /// with values from a JSON object.
 pub fn fill_from_json(
@@ -840,5 +919,41 @@ content = "This is the **introduction**."
 
         assert!(content.contains("template = \"test-template\""));
         assert!(content.contains("Introduction"));
+    }
+
+    #[test]
+    fn test_split_frontmatter_extracts_yaml_and_body() {
+        let md = "---\ntitle: Hello\ntemplate: letter\n---\n\n# Heading\n\nBody text.";
+        let (fm, body) = split_frontmatter(md);
+        assert_eq!(fm, Some("title: Hello\ntemplate: letter"));
+        assert!(body.contains("# Heading"));
+        assert!(!body.contains("title:"));
+    }
+
+    #[test]
+    fn test_split_frontmatter_without_fence() {
+        let md = "# Just a doc\n\nNo frontmatter here.";
+        let (fm, body) = split_frontmatter(md);
+        assert!(fm.is_none());
+        assert_eq!(body, md);
+    }
+
+    #[test]
+    fn test_parse_markdown_frontmatter_feeds_fields() {
+        let md = "---\ntemplate: letter\ntitle: Quarterly Review\nauthor: Mara\n---\n\n## Findings\n\nNumbers are up *this* quarter.";
+        let file = ContentFile::parse_markdown(PathBuf::from("doc.md"), md).unwrap();
+        assert_eq!(file.meta.template, "letter");
+        // Frontmatter fields land at the top level of the data tree.
+        assert_eq!(
+            file.data.get("title").and_then(|v| v.as_str()),
+            Some("Quarterly Review")
+        );
+        // The body becomes a markdown block.
+        let info = file
+            .get_block_info("blocks.body")
+            .expect("body block present");
+        assert_eq!(info.format, Some("markdown".to_string()));
+        let body = file.get_content("blocks.body").unwrap();
+        assert!(body.contains("Findings"));
     }
 }

@@ -163,17 +163,14 @@ impl TemplateInfo {
 
         // Match #editable("path", ... ) - extract the path and look for default: "value"
         // The editable function signature is: editable(id, value, type: "text", default: none)
-        let re = Regex::new(
-            r#"#editable\s*\(\s*"([^"]+)"[^)]*\)"#
-        ).map_err(|e| Error::Template(format!("regex error: {}", e)))?;
+        let re = Regex::new(r#"#editable\s*\(\s*"([^"]+)"[^)]*\)"#)
+            .map_err(|e| Error::Template(format!("regex error: {}", e)))?;
 
-        let default_re = Regex::new(
-            r#"default:\s*"([^"]*)""#
-        ).map_err(|e| Error::Template(format!("regex error: {}", e)))?;
+        let default_re = Regex::new(r#"default:\s*"([^"]*)""#)
+            .map_err(|e| Error::Template(format!("regex error: {}", e)))?;
 
-        let type_re = Regex::new(
-            r#"type:\s*"([^"]*)""#
-        ).map_err(|e| Error::Template(format!("regex error: {}", e)))?;
+        let type_re = Regex::new(r#"type:\s*"([^"]*)""#)
+            .map_err(|e| Error::Template(format!("regex error: {}", e)))?;
 
         for cap in re.captures_iter(content) {
             let full_match = cap.get(0).map(|m| m.as_str()).unwrap_or_default();
@@ -468,7 +465,9 @@ impl TemplateInfo {
             if access.path.starts_with("brand.") || access.path.starts_with("blocks.") {
                 continue; // brand fields are injected by tmpltr; blocks handled below
             }
-            all_fields.entry(access.path.clone()).or_insert_with(|| access.default.clone());
+            all_fields
+                .entry(access.path.clone())
+                .or_insert_with(|| access.default.clone());
         }
 
         // Group fields by top-level key and build nested properties
